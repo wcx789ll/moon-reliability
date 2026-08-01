@@ -1,0 +1,7 @@
+/.moon/
+/target/
+/_build/
+.DS_Store
+*.exe
+*.wasm
+.repos/

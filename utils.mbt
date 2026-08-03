@@ -2,7 +2,7 @@
 /// Standard normal cumulative distribution function (CDF)
 /// $\Phi(x) = \frac{1}{2} \left[ 1 + \text{erf}\left( \frac{x}{\sqrt{2}} \right) \right]$
 pub fn standard_normal_cdf(x : Double) -> Double {
-  0.5 * (1.0 + erf(x / @math.SQRT2))
+  0.5 * (1.0 + erf(x / 1.4142135623730951))
 }
 
 ///|
@@ -17,7 +17,7 @@ pub fn erf(x : Double) -> Double {
   let a5 = 1.061405429
 
   let sign = if x < 0.0 { -1.0 } else { 1.0 }
-  let abs_x = @math.abs(x)
+  let abs_x = x.abs()
 
   let t = 1.0 / (1.0 + p * abs_x)
   let y = 1.0 -
@@ -38,13 +38,13 @@ pub fn erfinv(y : Double) -> Double {
   let ln1_y2 = @math.ln(1.0 - y2)
   let term1 = 2.0 / (@math.PI * a) + ln1_y2 / 2.0
 
-  sign * (term1 * term1 - ln1_y2 / a).sqrt().sqrt() - term1
+  sign * ((term1 * term1 - ln1_y2 / a).sqrt() - term1).sqrt()
 }
 
 ///|
 /// Inverse standard normal CDF (Probit function)
 pub fn standard_normal_inv(p : Double) -> Double {
-  @math.SQRT2 * erfinv(2.0 * p - 1.0)
+  1.4142135623730951 * erfinv(2.0 * p - 1.0)
 }
 
 ///|
@@ -64,7 +64,6 @@ pub fn gamma(z : Double) -> Double {
       x = x + p[i] / (z + i.to_double() + 1.0)
     }
     let t = z + p.length().to_double() - 0.5
-    @math.sqrt(2.0 * @math.PI) * @math.pow(t, z + 0.5) * @math.exp(-t) * x
+    (2.0 * @math.PI).sqrt() * @math.pow(t, z + 0.5) * @math.exp(-t) * x
   }
 }
-

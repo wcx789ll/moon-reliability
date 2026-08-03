@@ -25,7 +25,7 @@ pub fn Weibull::pdf(self : Weibull, t : Double) -> Double {
   } else if t == 0.0 && self.shape < 1.0 {
     // PDF approaches infinity as t -> 0 when shape < 1
     // Usually represented as infinity or NaN in IEEE-754, but let's return a very large value or let it compute.
-    let t_safe = 1e-150
+    let t_safe = 1.0e-150
     self.shape /
     self.scale *
     @math.pow(t_safe / self.scale, self.shape - 1.0) *
@@ -82,4 +82,3 @@ pub fn Weibull::quantile(self : Weibull, p : Double) -> Double {
   }
   self.scale * @math.pow(-@math.ln(1.0 - p), 1.0 / self.shape)
 }
-

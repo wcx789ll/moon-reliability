@@ -24,7 +24,7 @@ pub fn Lognormal::pdf(self : Lognormal, t : Double) -> Double {
   } else {
     let ln_t = @math.ln(t)
     let z = (ln_t - self.mu) / self.sigma
-    1.0 / (t * self.sigma * @math.sqrt(2.0 * @math.PI)) * @math.exp(-0.5 * z * z)
+    1.0 / (t * self.sigma * (2.0 * @math.PI).sqrt()) * @math.exp(-0.5 * z * z)
   }
 }
 
@@ -65,4 +65,3 @@ pub fn Lognormal::quantile(self : Lognormal, p : Double) -> Double {
   let z = standard_normal_inv(p)
   @math.exp(self.mu + self.sigma * z)
 }
-

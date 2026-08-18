@@ -1,0 +1,53 @@
+name: Publish to Mooncakes
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install latest stable MoonBit
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+
+      - name: Validate package
+        run: |
+          moon version --all
+          moon update
+          moon fmt --check
+          moon check --target all --deny-warn
+          moon test --target all --deny-warn
+          moon info
+          git diff --exit-code
+
+      - name: Configure Mooncakes credentials
+        env:
+          MOONCAKES_TOKEN: ${{ secrets.MOONCAKES_TOKEN }}
+          MOONCAKES_USERNAME: ${{ secrets.MOONCAKES_USERNAME }}
+        run: |
+          test -n "$MOONCAKES_TOKEN"
+          mkdir -p "$HOME/.moon"
+          printf '{"token":"%s","username":"%s"}\n' "$MOONCAKES_TOKEN" "$MOONCAKES_USERNAME" > "$HOME/.moon/credentials.json"
+
+      - name: Publish
+        run: moon publish --frozen
+
+      - name: Remove credentials
+        if: always()
+        run: rm -f "$HOME/.moon/credentials.json"

@@ -1,0 +1,1707 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "wcx789ll/moon-reliability"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn accelerated_life_model(law~ : String, coefficients~ : Array[Double], reference_stress~ : Double, unit~ : String, fit~ : RegressionResult) -> AcceleratedLifeModel
+
+pub fn acceptance_number(Int, Double) -> Int
+
+pub fn action_from_metric(MetricEstimate, Double) -> PolicyAction
+
+pub fn actuarial_life_table(Array[LifeObservation], Array[Double]) -> LifeTable
+
+pub fn add_vectors(Array[Double], Array[Double]) -> Array[Double]
+
+pub fn age_replacement_schedule(ReliabilityModel, Double, Double, Double, Double, Int) -> MaintenanceSchedule
+
+pub fn aic(Double, Int) -> Double
+
+pub fn akaike_weights(ModelComparison) -> Array[Double]
+
+pub fn alert_budget(Double, Int) -> Int
+
+pub fn alert_rule(name~ : String, threshold~ : Double, direction~ : Int, minimum_samples~ : Int, consecutive_windows~ : Int) -> AlertRule
+
+pub fn alert_rule_breached(AlertRule, Double, Int) -> Bool
+
+pub fn alert_severity(Double) -> String
+
+pub fn alert_severity_score(AlertDecision) -> Double
+
+pub fn alternating_renewal_availability(Double, Double) -> Double
+
+pub fn analyze_warranty(ReliabilityModel, WarrantyPolicy) -> WarrantyAnalysis
+
+pub fn arrhenius_acceleration(Double, Double, Double) -> Double
+
+pub fn autocorrelation(Array[Double], Int) -> Double
+
+pub fn autocorrelation_lag(Array[Double], Int) -> Double
+
+pub fn availability_from_incidents(Array[Double], Double) -> Double
+
+pub fn availability_point(time~ : Double, availability~ : Double, unavailability~ : Double, expected_failures~ : Double) -> AvailabilityPoint
+
+pub fn availability_slo_curve(ReliabilityModel, Array[Double]) -> Array[MetricEstimate]
+
+pub fn bathtub_hazard(early_rate~ : Double, random_rate~ : Double, wearout_scale~ : Double, wearout_shape~ : Double) -> BathtubHazard
+
+pub fn benchmark_dataset(Int) -> Array[LifeObservation]
+
+pub fn benchmark_distribution_kernel(ReliabilityModel, Array[Double], Int) -> Double
+
+pub fn benchmark_grid(Int) -> Array[Double]
+
+pub fn benchmark_markdown(Array[BenchmarkResult]) -> String
+
+pub fn benchmark_result(name~ : String, iterations~ : Int, elapsed_micros~ : Int64, checksum~ : Double, operations_per_second~ : Double) -> BenchmarkResult
+
+pub fn benchmark_result_from_measurement(String, Int, Int64, Double) -> BenchmarkResult
+
+pub fn benchmark_statistics_kernel(Array[Double], Int) -> Double
+
+pub fn benchmark_survival_kernel(Array[LifeObservation], Int) -> Double
+
+pub fn benchmark_system_kernel(Array[ReliabilityModel], Array[Double], Int) -> Double
+
+pub fn bic(Double, Int, Int) -> Double
+
+pub fn bootstrap_mean(Array[Double], Int, Int, Double) -> BootstrapResult
+
+pub fn bootstrap_median(Array[Double], Int, Int, Double) -> BootstrapResult
+
+pub fn bootstrap_reliability(Array[LifeObservation], Double, Int, Int) -> BootstrapResult
+
+pub fn bootstrap_result(estimates~ : Array[Double], estimate~ : Double, bias~ : Double, standard_error~ : Double, lower~ : Double, upper~ : Double, confidence_level~ : Double) -> BootstrapResult
+
+pub fn bootstrap_standard_error(BootstrapResult) -> Double
+
+pub fn bootstrap_statistic(Array[Double], Int, Int, Double, (Array[Double]) -> Double) -> BootstrapResult
+
+pub fn bridge_component_reliability(Double, Double, Double) -> Double
+
+pub fn budget_burn_rate(ReliabilityBudget) -> Double
+
+pub fn budget_consumed(ReliabilityBudget) -> Double
+
+pub fn budget_is_exhausted(ReliabilityBudget) -> Bool
+
+pub fn budget_projection(ReliabilityBudget, Int) -> Double
+
+pub fn budget_recovery_needed(ReliabilityBudget) -> Double
+
+pub fn budget_remaining(ReliabilityBudget) -> Double
+
+pub fn budget_status(ReliabilityBudget) -> String
+
+pub fn build_reliability_system(String, SystemLogic, Array[Double]) -> ReliabilitySystem
+
+pub fn build_scorecard(ReliabilityModel, Double, Double, Double, Double) -> ReliabilityScorecard
+
+pub fn burn_rate(Double, Double, Double) -> Double
+
+pub fn calculate_outage_metrics(Array[OutageRecord], Int, Double) -> OutageMetrics
+
+pub fn calibration_intercept(Array[Double], Array[Double]) -> Double
+
+pub fn calibration_slope(Array[Double], Array[Double]) -> Double
+
+pub fn capability_indices(Array[Double], Double, Double) -> (Double, Double, Double)
+
+pub fn capacity_breach(CapacityPlan) -> Bool
+
+pub fn capacity_forecast(Array[Double], Int, Double, Double) -> Array[Double]
+
+pub fn capacity_headroom(CapacityPlan) -> Double
+
+pub fn capacity_plan(Array[Double], Double, Double) -> CapacityPlan
+
+pub fn capacity_risk(CapacityPlan) -> Double
+
+pub fn capacity_scale_factor(CapacityPlan) -> Double
+
+pub fn cause_specific_hazard(Array[LifeObservation], Int) -> Array[MetricEstimate]
+
+pub fn censored_log_likelihood(ReliabilityModel, Array[LifeObservation]) -> Double
+
+pub fn central_composite_design(Int, Double) -> Array[DesignPoint]
+
+pub fn central_moment(Array[Double], Int) -> Double
+
+pub fn change_direction(Double) -> Int
+
+pub fn change_directions(Array[Double]) -> Array[Int]
+
+pub fn change_magnitudes(Array[Double]) -> Array[Double]
+
+pub fn change_points(Array[Double], Double) -> Array[Int]
+
+pub fn choose(Int, Int) -> Double
+
+pub fn clamp_probability(Double) -> Double
+
+pub fn code_factor(Double, Double, Double) -> Double
+
+pub fn cold_standby_reliability(ReliabilityModel, ReliabilityModel, Double, Double) -> Double
+
+pub fn combine_estimates(Array[Double], Array[Double]) -> MetricEstimate
+
+pub fn common_cause_adjustment(Double, Double) -> Double
+
+pub fn compare_fits(Array[FitResult]) -> ModelComparison
+
+pub fn compensated_sum(Array[Double]) -> Double
+
+pub fn competing_risk_curve(points~ : Array[CumulativeIncidencePoint], causes~ : Int, final_incidence~ : Array[Double]) -> CompetingRiskCurve
+
+pub fn component_importance(SystemLogic, Array[Double]) -> Array[Double]
+
+pub fn conditional_exceedance_mean(Array[Double], Double) -> Double
+
+pub fn confidence_interval(Double, Double, Double) -> ConfidenceInterval
+
+pub fn confidence_to_standard_error(Double, Double, Double) -> Double
+
+pub fn contract_summary(Array[RequirementResult]) -> String
+
+pub fn control_limits(center~ : Double, upper~ : Double, lower~ : Double, sigma~ : Double, violations~ : Array[Int]) -> ControlLimits
+
+pub fn coordinate_descent(Array[Double], (Array[Double]) -> Double, Double, Int) -> Array[Double]
+
+pub fn correlation(Array[Double], Array[Double]) -> Double
+
+pub fn covariance(Array[Double], Array[Double]) -> Double
+
+pub fn cross_entropy(ReliabilityModel, Array[LifeObservation]) -> Double
+
+pub fn cumulative_exposure(Array[LifeObservation], Array[Double]) -> Array[Double]
+
+pub fn cumulative_incidence(Array[LifeObservation], Int) -> CompetingRiskCurve
+
+pub fn cumulative_incidence_point(time~ : Double, at_risk~ : Int, events_by_cause~ : Array[Int], survival~ : Double, incidence_by_cause~ : Array[Double]) -> CumulativeIncidencePoint
+
+pub fn cusum(Array[Double], Double, Double) -> (Array[Double], Array[Double])
+
+pub fn data_quality_report(input_count~ : Int, valid_count~ : Int, invalid_count~ : Int, duplicate_count~ : Int, negative_count~ : Int, zero_count~ : Int, warnings~ : Array[String]) -> DataQualityReport
+
+pub fn decide_policy(Double, Double, Double, Double, Double) -> PolicyDecision
+
+pub fn decode_factor(Double, Double, Double) -> Double
+
+pub fn defect_rate(Int, Int) -> MetricEstimate
+
+pub fn delta_method(Double, Double, (Double) -> Double) -> MetricEstimate
+
+pub fn demonstrate_reliability(ReliabilityModel, Array[Double]) -> Array[MetricEstimate]
+
+pub fn design_correlation(Array[DesignPoint], Int, Int) -> Double
+
+pub fn design_point(id~ : Int, factors~ : Array[Double], replicate~ : Int, center~ : Bool) -> DesignPoint
+
+pub fn detect_level_shift(Array[Double], Int) -> Int?
+
+pub fn diagnostic_result(statistic~ : Double, p_value~ : Double, passed~ : Bool, residuals~ : Array[Double], message~ : String) -> DiagnosticResult
+
+pub fn digamma(Double) -> Double
+
+pub fn distribution_sensitivity(ReliabilityModel, Double, String, Double) -> SensitivityPoint
+
+pub fn dot(Array[Double], Array[Double]) -> Double
+
+pub fn double_exponential_smoothing(Array[Double], Double, Double) -> Array[Double]
+
+pub fn downtime_budget_from_availability(Double, Double) -> Double
+
+pub fn duane_average_failure_rate(Array[Double]) -> Array[Double]
+
+pub fn durbin_watson(Array[Double]) -> Double
+
+pub fn empirical_distribution(Array[LifeObservation]) -> EmpiricalDistribution
+
+pub fn empirical_hazard(Array[LifeObservation]) -> Array[MetricEstimate]
+
+pub fn empirical_tail_mean(Array[Double], Double) -> Double
+
+pub fn empty_sample_summary() -> SampleSummary
+
+pub fn erf(Double) -> Double
+
+pub fn erfinv(Double) -> Double
+
+pub fn evaluate_alert(AlertRule, Array[Double]) -> AlertDecision
+
+pub fn evaluate_availability_alert(TelemetryWindow, Double, Int) -> AlertDecision
+
+pub fn evaluate_burn_rate_alert(TelemetryWindow, Double, Double) -> AlertDecision
+
+pub fn evaluate_mission(ReliabilityModel, Array[MissionSegment]) -> MissionResult
+
+pub fn evaluate_requirement(ReliabilityModel, ReliabilityRequirement) -> RequirementResult
+
+pub fn evaluate_requirements(ReliabilityModel, Array[ReliabilityRequirement]) -> Array[RequirementResult]
+
+pub fn evaluate_sla(Array[Double], SlaPolicy, Double) -> SlaResult
+
+pub fn ewma(Array[Double], Double, Double) -> Array[Double]
+
+pub fn exceedance_probability(Array[Double], Double) -> Double
+
+pub fn excess_kurtosis(Array[Double]) -> Double
+
+pub fn expected_downtime(ReliabilityModel, Double) -> Double
+
+pub fn expected_failures_in_window(ReliabilityModel, Double, Double) -> Double
+
+pub fn expected_fleet_failures(ReliabilityModel, Int, Double) -> Double
+
+pub fn expected_queue_wait(Double, Double, Int) -> Double
+
+pub fn expected_remaining_life(ReliabilityModel, Double, Double) -> Double
+
+pub fn expected_repair_queue_length(Double, Double) -> Double
+
+pub fn expected_risk_after_mitigation(Array[FailureModeContribution], Array[Double]) -> Double
+
+pub fn expected_state_time(TransitionMatrix, Int, Double, Double, Int) -> Double
+
+pub fn expected_warranty_claims(ReliabilityModel, WarrantyPolicy) -> Double
+
+pub fn expected_warranty_cost(ReliabilityModel, WarrantyPolicy) -> Double
+
+pub fn exponential_fit_censored(Array[LifeObservation]) -> FitResult
+
+pub fn exponential_smoothing(Array[Double], Double) -> Array[Double]
+
+pub fn exposure_time(Array[LifeObservation], Double) -> Double
+
+pub fn extreme_quantile(Pareto, Double) -> Double
+
+pub fn factorial(Int) -> Double
+
+pub fn failure(Double) -> LifeObservation
+
+pub fn failure_fraction(Array[LifeObservation]) -> Double
+
+pub fn failure_mode_contribution(name~ : String, probability~ : Double, cost~ : Double) -> FailureModeContribution
+
+pub fn failure_rate_estimate(Array[LifeObservation], Double) -> MetricEstimate
+
+pub fn failure_rate_trend(Array[Double]) -> Double
+
+pub fn fault_tree_and(Array[Double]) -> FaultTreeResult
+
+pub fn fault_tree_or(Array[Double]) -> FaultTreeResult
+
+pub fn fault_tree_result(top_event_probability~ : Double, minimal_cut_sets~ : Array[Array[Int]], dominant_component~ : Int?) -> FaultTreeResult
+
+pub fn finite_difference_sensitivity(String, Double, Double, Double, (Double) -> Double) -> SensitivityPoint
+
+pub fn finite_gradient(Array[Double], (Array[Double]) -> Double, Double) -> Array[Double]
+
+pub fn finite_or(Double, fallback~ : Double) -> Double
+
+pub fn first_difference(Array[Double]) -> Array[Double]
+
+pub fn fit_arrhenius(Array[Double], Array[Double], Double) -> AcceleratedLifeModel
+
+pub fn fit_bathtub_hazard(Array[LifeObservation]) -> BathtubHazard
+
+pub fn fit_crow_amsaa(Array[Double]) -> ReliabilityGrowthModel
+
+pub fn fit_eyring(Array[Double], Array[Double], Array[Double], Double) -> AcceleratedLifeModel
+
+pub fn fit_inverse_power(Array[Double], Array[Double], Double) -> AcceleratedLifeModel
+
+pub fn fit_report(Array[FitResult]) -> String
+
+pub fn fit_result(distribution~ : String, parameters~ : Array[Double], log_likelihood~ : Double, aic~ : Double, bic~ : Double, iterations~ : Int, converged~ : Bool, standard_errors~ : Array[Double]) -> FitResult
+
+pub fn fit_scale_by_mle(Array[LifeObservation], Double) -> OptimizationResult
+
+pub fn fleet_plan(fleet_size~ : Int, horizon~ : Double, expected_failures~ : Double, spare_units~ : Int, stockout_probability~ : Double, expected_downtime~ : Double) -> FleetPlan
+
+pub fn fleet_reliability(ReliabilityModel, Int, Double, Int) -> Double
+
+pub fn forecast_accuracy(Array[Double], Array[Double]) -> MetricEstimate
+
+pub fn forecast_endpoint(ForecastSeries) -> Double
+
+pub fn forecast_linear(Array[Double], Int) -> ForecastSeries
+
+pub fn forecast_lower(ForecastSeries) -> Array[Double]
+
+pub fn forecast_result(points~ : Array[TimeSeriesPoint], algorithm~ : String, residual_scale~ : Double) -> ForecastResult
+
+pub fn forecast_risk_score(ForecastSeries, Double) -> Double
+
+pub fn forecast_trend(ForecastSeries) -> String
+
+pub fn forecast_upper(ForecastSeries) -> Array[Double]
+
+pub fn forecast_values(ForecastSeries) -> Array[Double]
+
+pub fn format_double(Double, Int) -> String
+
+pub fn format_fit(FitResult) -> String
+
+pub fn format_metric(MetricEstimate) -> String
+
+pub fn full_factorial(Array[Array[Double]]) -> Array[DesignPoint]
+
+pub fn gamma(Double) -> Double
+
+pub fn gamma_fit(Array[Double]) -> FitResult
+
+pub fn gamma_log(Double) -> Double
+
+pub fn geometric_mean(Array[Double]) -> Double
+
+pub fn golden_section_minimize(Double, Double, (Double) -> Double, Double) -> OptimizationResult
+
+pub fn gompertz_fit(Array[Double]) -> FitResult
+
+pub fn grid_minimize(Array[Double], (Double) -> Double) -> OptimizationResult
+
+pub fn growth_phase(ReliabilityGrowthModel) -> String
+
+pub fn harmonic_mean(Array[Double]) -> Double
+
+pub fn hazard_curve(ReliabilityModel, Array[Double]) -> Array[Double]
+
+pub fn health_gap(HealthSnapshot, Double) -> Double
+
+pub fn health_is_actionable(HealthSnapshot) -> Bool
+
+pub fn health_risk_index(HealthSnapshot) -> Double
+
+pub fn health_score(HealthSnapshot) -> Double
+
+pub fn health_snapshot(TelemetryWindow, Double) -> HealthSnapshot
+
+pub fn health_status(HealthSnapshot) -> String
+
+pub fn holt_linear_trend(Array[Double], Double, Double) -> Array[Double]
+
+pub fn impute_right_censoring(Array[Double], Double) -> Array[LifeObservation]
+
+pub fn incident_availability(Array[IncidentRecord], Double) -> Double
+
+pub fn incident_burden(Array[IncidentRecord], Double) -> Double
+
+pub fn incident_count_by_cause(Array[IncidentRecord], Int) -> Int
+
+pub fn incident_count_by_severity(Array[IncidentRecord], Int) -> Int
+
+pub fn incident_duration(IncidentRecord) -> Double
+
+pub fn incident_is_open_at(IncidentRecord, Double) -> Bool
+
+pub fn incident_max_duration(Array[IncidentRecord]) -> Double
+
+pub fn incident_mean_duration(Array[IncidentRecord]) -> Double
+
+pub fn incident_mtbf(Array[IncidentRecord], Double) -> Double
+
+pub fn incident_mttr(Array[IncidentRecord]) -> Double
+
+pub fn incident_overlaps(IncidentRecord, IncidentRecord) -> Bool
+
+pub fn incident_rate(Array[IncidentRecord], Double) -> Double
+
+pub fn incident_record(start~ : Double, end~ : Double, severity~ : Int, cause~ : Int) -> IncidentRecord
+
+pub fn incident_severity_weight(Array[IncidentRecord]) -> Double
+
+pub fn incident_total_duration(Array[IncidentRecord]) -> Double
+
+pub fn incident_union_duration(Array[IncidentRecord]) -> Double
+
+pub fn indicator_weighted_score(Array[Double], Array[Double]) -> Double
+
+pub fn inspect_times(Array[Double]) -> DataQualityReport
+
+pub fn inspection_interval(ReliabilityModel, Double, Double, Double) -> Double
+
+pub fn integrated_brier_score(ReliabilityModel, Array[LifeObservation], Double, Double, Int) -> Double
+
+pub fn interval_censored(Double, Double) -> LifeObservation
+
+pub fn interval_event_counts(Array[LifeObservation], Array[Double]) -> Array[Int]
+
+pub fn interval_record(Double, Double) -> IntervalRecord
+
+pub fn inverse_gaussian_fit(Array[Double]) -> FitResult
+
+pub fn inverse_gaussian_mean_residual(InverseGaussian, Double) -> Double
+
+pub fn inverse_gaussian_reliability_margin(InverseGaussian, Double, Double) -> Double
+
+pub fn inverse_power_acceleration(Double, Double, Double) -> Double
+
+pub fn is_improving(ReliabilityGrowthModel) -> Bool
+
+pub fn jackknife(Array[Double], (Array[Double]) -> Double) -> BootstrapResult
+
+pub fn k_out_of_n_components(Int, Array[Double]) -> Double
+
+pub fn k_out_of_n_reliability(Int, Double, Int) -> Double
+
+pub fn kaplan_meier(Array[LifeObservation]) -> SurvivalCurve
+
+pub fn kolmogorov_smirnov_d(Array[Double]) -> Double
+
+pub fn ks_normal_diagnostic(Array[Double], Double) -> DiagnosticResult
+
+pub fn lag(Array[Double], Int) -> (Array[Double], Array[Double])
+
+pub fn latin_hypercube(Int, Int, Int) -> Array[DesignPoint]
+
+pub fn left_censored(Double) -> LifeObservation
+
+pub fn life_ratio(ReliabilityModel, Double, Double) -> Double
+
+pub fn life_table(intervals~ : Array[LifeTableInterval], total_failures~ : Int, restricted_mean~ : Double, final_survival~ : Double) -> LifeTable
+
+pub fn life_table_csv(LifeTable) -> String
+
+pub fn life_table_interval(lower~ : Double, upper~ : Double, exposed~ : Double, failures~ : Int, withdrawals~ : Int, failure_probability~ : Double, survival_probability~ : Double, hazard~ : Double) -> LifeTableInterval
+
+pub fn likelihood_ratio(FitResult, FitResult) -> Double
+
+pub fn line_search(Double, Double, (Double) -> Double) -> Double
+
+pub fn linear_regression(Array[Double], Array[Double]) -> RegressionResult
+
+pub fn linspace(Double, Double, Int) -> Array[Double]
+
+pub fn log_factorial(Int) -> Double
+
+pub fn loglogistic_fit(Array[Double]) -> FitResult
+
+pub fn lognormal_fit_censored(Array[LifeObservation]) -> FitResult
+
+pub fn lognormal_mean_uncertainty(Double, Double, Double, Double) -> MetricEstimate
+
+pub fn longest_outage(Array[OutageRecord]) -> OutageRecord
+
+pub fn maintenance_schedule(ages~ : Array[Double], actions~ : Array[MaintenanceAction], expected_costs~ : Array[Double], expected_availability~ : Array[Double], selected_age~ : Double) -> MaintenanceSchedule
+
+pub fn markov_availability(Double, Double, Double) -> Double
+
+pub fn markov_availability_curve(Double, Double, Double, Int) -> Array[AvailabilityPoint]
+
+pub fn max_value(Array[Double]) -> Double
+
+pub fn mean(Array[Double]) -> Double
+
+pub fn mean_absolute_percentage_error(Array[Double], Array[Double]) -> Double
+
+pub fn mean_residual_life(Array[LifeObservation], Array[Double]) -> Array[Double]
+
+pub fn median_absolute_deviation(Array[Double]) -> Double
+
+pub fn merge_observations(Array[LifeObservation], Array[LifeObservation]) -> Array[LifeObservation]
+
+pub fn metric_estimate(estimate~ : Double, lower~ : Double, upper~ : Double, confidence_level~ : Double) -> MetricEstimate
+
+pub fn min_value(Array[Double]) -> Double
+
+pub fn minimal_cut_set_probability(Array[Int], Array[Double]) -> Double
+
+pub fn mission_margin(MissionResult, Double) -> Double
+
+pub fn mission_profile_grid(Double, Double, Int, Double) -> Array[MissionSegment]
+
+pub fn mission_profile_requirement(String, ReliabilityModel, Array[Double], Double, Double, Double) -> Array[ReliabilityRequirement]
+
+pub fn mission_reliability_with_derating(ReliabilityModel, Array[MissionSegment], Double) -> Double
+
+pub fn mission_result(survival~ : Double, cumulative_hazard~ : Double, segment_hazards~ : Array[Double], expected_failures~ : Double) -> MissionResult
+
+pub fn mission_segment(start~ : Double, duration~ : Double, stress_multiplier~ : Double) -> MissionSegment
+
+pub fn mission_stress_sensitivity(ReliabilityModel, Array[MissionSegment], Double) -> SensitivityPoint
+
+pub fn mission_success_probability(Array[ReliabilityModel], Double) -> Double
+
+pub fn mixture_cdf(Array[ReliabilityModel], Array[Double], Double) -> Double
+
+pub fn mixture_quantile(Array[ReliabilityModel], Array[Double], Double, Double) -> Double
+
+pub fn mixture_survival(Array[ReliabilityModel], Array[Double], Double) -> Double
+
+pub fn mode_risk_share(FailureModeContribution, Array[FailureModeContribution]) -> Double
+
+pub fn model_brier_score(ReliabilityModel, Array[LifeObservation], Double) -> Double
+
+pub fn model_calibration_error(ReliabilityModel, Array[LifeObservation], Int) -> Double
+
+pub fn model_comparison(names~ : Array[String], log_likelihoods~ : Array[Double], aic~ : Array[Double], bic~ : Array[Double], preferred_aic~ : Int, preferred_bic~ : Int) -> ModelComparison
+
+pub fn model_from_fit(FitResult) -> ReliabilityModel
+
+pub fn model_hazard(ReliabilityModel, Double) -> Double
+
+pub fn model_mean(ReliabilityModel) -> Double
+
+pub fn model_metric(ReliabilityModel, Double, Double) -> MetricEstimate
+
+pub fn model_quantile(ReliabilityModel, Double) -> Double
+
+pub fn monitoring_interval(Double, Double) -> Double
+
+pub fn monte_carlo_reliability(Int, ReliabilityModel, Double, Int) -> MetricEstimate
+
+pub fn monte_carlo_series(Int, Array[ReliabilityModel], Double, Int) -> MetricEstimate
+
+pub fn monthly_downtime_budget(Double, Double) -> Double
+
+pub fn moving_average(Array[Double], Int) -> Array[Double]
+
+pub fn moving_standard_deviation(Array[Double], Int) -> Array[Double]
+
+pub fn mtbf_from_events(Array[Double]) -> Double
+
+pub fn mttf(Array[LifeObservation]) -> Double
+
+pub fn negative_change_fraction(Array[Double]) -> Double
+
+pub fn nelson_aalen(Array[LifeObservation]) -> SurvivalCurve
+
+pub fn network_component_importance(NetworkReliability, Array[Double]) -> Array[Double]
+
+pub fn network_failure_probability(NetworkReliability) -> Double
+
+pub fn network_min_cut(Array[Array[Int]]) -> Array[Array[Int]]
+
+pub fn network_redundancy_gain(NetworkReliability, NetworkReliability) -> Double
+
+pub fn network_reliability(component_count~ : Int, paths~ : Array[Array[Int]], reliability~ : Double, path_contributions~ : Array[Double]) -> NetworkReliability
+
+pub fn network_reliability_from_paths(Int, Array[Array[Int]], Array[Double]) -> NetworkReliability
+
+pub fn newton_solve(Double, (Double) -> Double, (Double) -> Double, Double, Double, Int) -> (Double, Int, Bool)
+
+pub fn normal_fit(Array[Double]) -> FitResult
+
+pub fn normal_log_likelihood(Normal, Array[Double]) -> Double
+
+pub fn observability_exponential_smoothing(Array[Double], Double) -> Array[Double]
+
+pub fn observation_summary_markdown(SampleSummary) -> String
+
+pub fn observed_event_count(Array[LifeObservation]) -> Int
+
+pub fn one_at_a_time(Array[String], Array[Double], (Array[Double]) -> Double, Double) -> Array[SensitivityPoint]
+
+pub fn optimization_result(parameter~ : Double, objective~ : Double, iterations~ : Int, converged~ : Bool) -> OptimizationResult
+
+pub fn optimize_replacement_age(ReliabilityModel, Double, Double, Int, Double) -> Double
+
+pub fn optimum_renewal_age(ReliabilityModel, Double, Double, Double, Double, Int) -> Double
+
+pub fn outage_cause_counts(Array[OutageRecord]) -> Map[Int, Int]
+
+pub fn outage_metrics(saidi~ : Double, saifi~ : Double, caidi~ : Double, asai~ : Double, maifi~ : Double, total_customer_interruptions~ : Int) -> OutageMetrics
+
+pub fn outage_quantiles(Array[OutageRecord], Array[Double]) -> Array[Double]
+
+pub fn outage_rate(Array[OutageRecord], Double) -> Double
+
+pub fn outage_record(customer~ : Int, start~ : Double, duration~ : Double, customers_affected~ : Int, cause~ : Int) -> OutageRecord
+
+pub fn parallel_hazard(Array[ReliabilityModel], Double) -> Double
+
+pub fn parallel_reliability(Array[Double]) -> Double
+
+pub fn pareto_fit(Array[Double]) -> FitResult
+
+pub fn path_reliability(Array[Int], Array[Double]) -> Double
+
+pub fn percentile_exceedance(Array[Double], Double, Double) -> Double
+
+pub fn percentile_life(ReliabilityModel, Array[Double]) -> Array[MetricEstimate]
+
+pub fn percentile_rank(Array[Double], Double) -> Double
+
+pub fn plan_fleet(ReliabilityModel, Int, Double, Double, Double) -> FleetPlan
+
+pub fn poisson_confidence(Int, Double, Double) -> MetricEstimate
+
+pub fn poisson_rate(Int, Double) -> MetricEstimate
+
+pub fn policy_action_label(PolicyAction) -> String
+
+pub fn policy_breach_count(Array[Double], Double) -> Int
+
+pub fn policy_compliance(Array[PolicyDecision]) -> Double
+
+pub fn policy_decision(action~ : PolicyAction, score~ : Double, reason~ : String, urgency_hours~ : Double) -> PolicyDecision
+
+pub fn policy_decisions_for_curve(ReliabilityModel, Array[Double], Double, Double) -> Array[PolicyDecision]
+
+pub fn policy_report(Array[PolicyDecision]) -> String
+
+pub fn policy_risk_score(ReliabilityModel, Double, Double, Double) -> Double
+
+pub fn policy_score_curve(ReliabilityModel, Array[Double], Double, Double) -> Array[Double]
+
+pub fn polynomial_regression(Array[Double], Array[Double], Int) -> RegressionResult
+
+pub fn positive_change_fraction(Array[Double]) -> Double
+
+pub fn predict_regression(RegressionResult, Double) -> Double
+
+pub fn preventive_replacement_cost(ReliabilityModel, Double, Double) -> Double
+
+pub fn probability_integral_residuals(ReliabilityModel, Array[LifeObservation]) -> Array[Double]
+
+pub fn propagate_independent_uncertainty(Array[Double], Array[Double], (Array[Double]) -> Double) -> MetricEstimate
+
+pub fn proportional_hazards_score(Array[LifeObservation], Array[Double]) -> RegressionResult
+
+pub fn quantile(Array[Double], Double) -> Double
+
+pub fn quantile_quantile_pairs(ReliabilityModel, Array[Double]) -> Array[(Double, Double)]
+
+pub fn quantile_rank(Array[Double], Double) -> Double
+
+pub fn quantile_sorted(Array[Double], Double) -> Double
+
+pub fn quantile_spacing(ReliabilityModel, Array[Double]) -> Array[Double]
+
+pub fn rank_failure_modes(Array[FailureModeContribution]) -> Array[FailureModeContribution]
+
+pub fn rank_risks(Array[RiskItem]) -> Array[RiskItem]
+
+pub fn rank_values(Array[Double]) -> Array[Double]
+
+pub fn recommendation_count(ReliabilityScorecard) -> Int
+
+pub fn reduce_mode_probability(FailureModeContribution, Double) -> FailureModeContribution
+
+pub fn regression_markdown(RegressionResult) -> String
+
+pub fn regression_result(coefficients~ : Array[Double], standard_errors~ : Array[Double], fitted~ : Array[Double], residuals~ : Array[Double], r_squared~ : Double, adjusted_r_squared~ : Double, residual_sum_squares~ : Double, observations~ : Int) -> RegressionResult
+
+pub fn regularized_gamma_p(Double, Double) -> Double
+
+pub fn regularized_gamma_q(Double, Double) -> Double
+
+pub fn reliability_at(ReliabilityModel, Array[Double]) -> Array[Double]
+
+pub fn reliability_budget(TelemetryWindow, Double) -> ReliabilityBudget
+
+pub fn reliability_growth_model(intercept~ : Double, shape~ : Double, scale~ : Double, fit~ : RegressionResult) -> ReliabilityGrowthModel
+
+pub fn reliability_margin(ReliabilityModel, Double, Double) -> Double
+
+pub fn reliability_requirement(name~ : String, mission_time~ : Double, minimum_survival~ : Double, confidence_level~ : Double, penalty~ : Double) -> ReliabilityRequirement
+
+pub fn reliability_scorecard(reliability_score~ : Double, availability_score~ : Double, quality_score~ : Double, maintenance_score~ : Double, overall_score~ : Double, grade~ : String, recommendations~ : Array[String]) -> ReliabilityScorecard
+
+pub fn reliability_snapshot(ReliabilityModel, Double, Int) -> ReliabilitySnapshot
+
+pub fn reliability_system(name~ : String, logic~ : SystemLogic, component_reliabilities~ : Array[Double], reliability~ : Double, importance~ : Array[Double]) -> ReliabilitySystem
+
+pub fn remove_nonpositive(Array[Double]) -> Array[Double]
+
+pub fn renewal_reward_rate(ReliabilityModel, Double, Double, Double) -> Double
+
+pub fn repair_queue_utilization(Double, Double) -> Double
+
+pub fn repairable_availability(Double, Double) -> Double
+
+pub fn replicate_design(Array[DesignPoint], Int) -> Array[DesignPoint]
+
+pub fn required_sample_size(Double, Double, Double) -> Int
+
+pub fn required_scale_for_mission(Double, Double, Double) -> Double
+
+pub fn requirement_breach_time(ReliabilityModel, Double, Double, Double, Double, Int) -> Double?
+
+pub fn requirement_pass_rate(Array[RequirementResult]) -> Double
+
+pub fn requirement_result(requirement~ : String, estimate~ : Double, lower_bound~ : Double, margin~ : Double, passed~ : Bool, penalty~ : Double, explanation~ : String) -> RequirementResult
+
+pub fn residual_standard_error(RegressionResult) -> Double
+
+pub fn residual_summary(DiagnosticResult) -> SampleSummary
+
+pub fn restoration_curve(Array[OutageRecord], Array[Double]) -> Array[Double]
+
+pub fn right_censored(Double) -> LifeObservation
+
+pub fn risk_item(name~ : String, severity~ : Int, occurrence~ : Int, detection~ : Int, recommended_action~ : String) -> RiskItem
+
+pub fn risk_level(Int) -> String
+
+pub fn risk_matrix_score(Int, Int, Int) -> Int
+
+pub fn risk_reduction(RiskItem, Int) -> Double
+
+pub fn rolling_autocorrelation(Array[Double], Int, Int) -> Array[Double]
+
+pub fn rolling_availability(Array[TelemetryPoint], Int, Int) -> Array[Double]
+
+pub fn rolling_burn_rates(Array[TelemetryPoint], Int, Int, Double) -> Array[Double]
+
+pub fn rolling_failure_rates(Array[TelemetryPoint], Int, Int) -> Array[Double]
+
+pub fn rolling_health(Array[TelemetryPoint], Int, Int, Double) -> Array[Double]
+
+pub fn rolling_means(Array[TelemetryPoint], Int, Int) -> Array[Double]
+
+pub fn rolling_quantile(Array[Double], Int, Double) -> Array[Double]
+
+pub fn rolling_standard_deviations(Array[TelemetryPoint], Int, Int) -> Array[Double]
+
+pub fn rolling_windows(Array[TelemetryPoint], Int, Int) -> Array[TelemetryWindow]
+
+pub fn root_mean_square_error(Array[Double], Array[Double]) -> Double
+
+pub fn run_rules(Array[Double], ControlLimits) -> Array[String]
+
+pub fn safe_log_probability(Double) -> Double
+
+pub fn safety_integrity_level(Double) -> String
+
+pub fn sample_exponential(Int, Double, Int) -> Array[Double]
+
+pub fn sample_lognormal(Int, Double, Double, Int) -> Array[Double]
+
+pub fn sample_weibull(Int, Double, Double, Int) -> Array[Double]
+
+pub fn scale_vector(Array[Double], Double) -> Array[Double]
+
+pub fn score_checksum(Array[Double]) -> Double
+
+pub fn score_gap(Double, Double) -> Double
+
+pub fn score_grade(Double) -> String
+
+pub fn score_is_passing(Double, Double) -> Bool
+
+pub fn score_label(Double) -> String
+
+pub fn score_to_percent(Double) -> Double
+
+pub fn score_trend(ReliabilityScorecard, ReliabilityScorecard) -> Double
+
+pub fn scorecard_risk_flag(ReliabilityScorecard, Double) -> Bool
+
+pub fn seasonal_difference(Array[Double], Int) -> Array[Double]
+
+pub fn seasonal_index(Array[Double], Int) -> Array[Double]
+
+pub fn segment_failure_times(Array[Double], Int) -> Array[Array[Double]]
+
+pub fn semi_markov_cycle_time(Double, Double) -> Double
+
+pub fn sensitivity_point(parameter~ : String, baseline~ : Double, perturbed~ : Double, absolute_change~ : Double, relative_change~ : Double, elasticity~ : Double) -> SensitivityPoint
+
+pub fn series_hazard(Array[ReliabilityModel], Double) -> Double
+
+pub fn series_reliability(Array[Double]) -> Double
+
+pub fn service_capacity(Double, Double, Double) -> Int
+
+pub fn service_level(ReliabilityModel, Double, Double) -> MetricEstimate
+
+pub fn shewhart_limits(Array[Double], Double) -> ControlLimits
+
+pub fn simple_forecast(Array[Double], Int, Double, Double) -> ForecastResult
+
+pub fn simulate_exponential_records(Int, Double, Int, Double) -> Array[LifeObservation]
+
+pub fn simulate_weibull_records(Int, Double, Double, Int, Double) -> Array[LifeObservation]
+
+pub fn skewness(Array[Double]) -> Double
+
+pub fn sla_policy(window~ : Double, promised_availability~ : Double, credit_rate~ : Double, maximum_credit~ : Double) -> SlaPolicy
+
+pub fn sla_result(observed_availability~ : Double, downtime~ : Double, breach~ : Bool, credit~ : Double, error_budget_remaining~ : Double, confidence~ : MetricEstimate) -> SlaResult
+
+pub fn smoothing_mae(Array[Double], Array[Double]) -> Double
+
+pub fn smoothing_residuals(Array[Double], Array[Double]) -> Array[Double]
+
+pub fn smoothing_rmse(Array[Double], Array[Double]) -> Double
+
+pub fn snapshot_checksum(Array[ReliabilitySnapshot]) -> Double
+
+pub fn snapshot_expected_failures(ReliabilitySnapshot, Int) -> Double
+
+pub fn snapshot_failure_probability(ReliabilitySnapshot) -> Double
+
+pub fn snapshot_margin(ReliabilitySnapshot, Double) -> Double
+
+pub fn snapshot_series(ReliabilityModel, Array[Double], Int) -> Array[ReliabilitySnapshot]
+
+pub fn snapshot_target_time(ReliabilityModel, Double) -> Double
+
+pub fn solve_linear_system(Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn sort_observations(Array[LifeObservation]) -> Array[LifeObservation]
+
+pub fn spare_stockout_probability(Double, Int) -> Double
+
+pub fn standard_normal_cdf(Double) -> Double
+
+pub fn standard_normal_inv(Double) -> Double
+
+pub fn state_occupancy(TransitionMatrix, Int, Double, Double) -> Array[Double]
+
+pub fn steady_state_distribution(TransitionMatrix, Double, Int) -> Array[Double]
+
+pub fn steady_state_unavailability(Double, Double) -> Double
+
+pub fn stratify_observations(Array[LifeObservation], Array[Int]) -> Map[Int, Array[LifeObservation]]
+
+pub fn summarize(Array[LifeObservation]) -> SampleSummary
+
+pub fn summarize_incidents(Array[IncidentRecord], Double) -> IncidentSummary
+
+pub fn survival_confidence_interval(SurvivalPoint, Double) -> MetricEstimate
+
+pub fn survival_curve_csv(SurvivalCurve) -> String
+
+pub fn survival_point(time~ : Double, at_risk~ : Int, events~ : Int, censored~ : Int, survival~ : Double, standard_error~ : Double, cumulative_hazard~ : Double) -> SurvivalPoint
+
+pub fn tail_probability(Pareto, Double) -> Double
+
+pub fn telemetry_point(timestamp~ : Double, value~ : Double, healthy~ : Bool, weight~ : Double) -> TelemetryPoint
+
+pub fn telemetry_window(Array[TelemetryPoint], start~ : Double, end~ : Double, interval~ : Double) -> TelemetryWindow
+
+pub fn telemetry_window_above(TelemetryWindow, Double) -> Int
+
+pub fn telemetry_window_availability(TelemetryWindow) -> Double
+
+pub fn telemetry_window_below(TelemetryWindow, Double) -> Int
+
+pub fn telemetry_window_burn_rate(TelemetryWindow, Double) -> Double
+
+pub fn telemetry_window_coefficient_of_variation(TelemetryWindow) -> Double
+
+pub fn telemetry_window_count(TelemetryWindow) -> Int
+
+pub fn telemetry_window_coverage(TelemetryWindow) -> Double
+
+pub fn telemetry_window_downtime(TelemetryWindow) -> Double
+
+pub fn telemetry_window_duration(TelemetryWindow) -> Double
+
+pub fn telemetry_window_error_budget(TelemetryWindow, Double) -> Double
+
+pub fn telemetry_window_event_count(TelemetryWindow) -> Int
+
+pub fn telemetry_window_failure_rate(TelemetryWindow) -> Double
+
+pub fn telemetry_window_first(TelemetryWindow) -> Double
+
+pub fn telemetry_window_gap(TelemetryWindow) -> Double
+
+pub fn telemetry_window_healthy_count(TelemetryWindow) -> Int
+
+pub fn telemetry_window_last(TelemetryWindow) -> Double
+
+pub fn telemetry_window_maximum(TelemetryWindow) -> Double
+
+pub fn telemetry_window_mean(TelemetryWindow) -> Double
+
+pub fn telemetry_window_minimum(TelemetryWindow) -> Double
+
+pub fn telemetry_window_normalized(TelemetryWindow) -> Array[Double]
+
+pub fn telemetry_window_range(TelemetryWindow) -> Double
+
+pub fn telemetry_window_standard_deviation(TelemetryWindow) -> Double
+
+pub fn telemetry_window_threshold_count(TelemetryWindow, Double, Double) -> Int
+
+pub fn telemetry_window_unhealthy_count(TelemetryWindow) -> Int
+
+pub fn telemetry_window_values(TelemetryWindow) -> Array[Double]
+
+pub fn telemetry_window_variance(TelemetryWindow) -> Double
+
+pub fn telemetry_window_weight(TelemetryWindow) -> Double
+
+pub fn thermal_stress_grid(Double, Double, Int) -> Array[Double]
+
+pub fn threshold_crossing(ReliabilityModel, Double, Double, Double, Int) -> Double?
+
+pub fn time_series_point(time~ : Double, value~ : Double, lower~ : Double, upper~ : Double) -> TimeSeriesPoint
+
+pub fn tornado_order(Array[SensitivityPoint]) -> Array[SensitivityPoint]
+
+pub fn total_absolute_change(Array[Double]) -> Double
+
+pub fn total_contract_penalty(Array[RequirementResult]) -> Double
+
+pub fn total_exposure(Array[LifeObservation]) -> Double
+
+pub fn total_failure_mode_risk(Array[FailureModeContribution]) -> Double
+
+pub fn transform_interval(MetricEstimate, (Double) -> Double) -> MetricEstimate
+
+pub fn transition_matrix(Array[Array[Double]]) -> TransitionMatrix
+
+pub fn trigamma(Double) -> Double
+
+pub fn trimmed_mean(Array[Double], Double) -> Double
+
+pub fn truncated_model(base~ : ReliabilityModel, lower~ : Double, upper~ : Double) -> TruncatedModel
+
+pub fn two_state_transition(Double, Double, Double) -> TransitionMatrix
+
+pub fn validate_dataset(Array[LifeObservation]) -> Array[String]
+
+pub fn validate_observation(LifeObservation) -> String?
+
+pub fn validation_split(Array[Double], Double) -> (Array[Double], Array[Double])
+
+pub fn variance(Array[Double], unbiased? : Bool) -> Double
+
+pub fn warm_standby_reliability(ReliabilityModel, ReliabilityModel, Double) -> Double
+
+pub fn warranty_analysis(claims~ : Double, expected_cost~ : Double, cost_per_unit_time~ : Double, claim_probability~ : Double, renewal_cycles~ : Double) -> WarrantyAnalysis
+
+pub fn warranty_policy(duration~ : Double, replacement_cost~ : Double, service_cost~ : Double, salvage_value~ : Double, renewal~ : Bool) -> WarrantyPolicy
+
+pub fn warranty_replacement_threshold(WarrantyPolicy, Double) -> Double
+
+pub fn weibull_fit_censored(Array[LifeObservation]) -> FitResult
+
+pub fn weibull_probability_plot(Array[LifeObservation]) -> RegressionResult
+
+pub fn weighted_linear_regression(Array[Double], Array[Double], Array[Double]) -> RegressionResult
+
+pub fn weighted_mean(Array[Double], Array[Double]) -> Double
+
+pub fn weighted_quantile(Array[Double], Array[Double], Double) -> Double
+
+pub fn weighted_reliability_score(Double, Double, Double, Double) -> Double
+
+pub fn weighted_sum(Array[Double], Array[Double]) -> Double
+
+pub fn weighted_variance(Array[Double], Array[Double]) -> Double
+
+pub fn winsorize(Array[Double], Double, Double) -> Array[Double]
+
+// Errors
+
+// Types and methods
+pub struct AcceleratedLifeModel {
+  law : String
+  coefficients : Array[Double]
+  reference_stress : Double
+  unit : String
+  fit : RegressionResult
+}
+pub fn AcceleratedLifeModel::acceleration_factor(Self, Double) -> Double
+pub fn AcceleratedLifeModel::confidence_band(Self, Double, Double) -> MetricEstimate
+pub fn AcceleratedLifeModel::predict_life(Self, Double) -> Double
+pub fn AcceleratedLifeModel::predict_log_life(Self, Double) -> Double
+
+pub struct AlertDecision {
+  rule_name : String
+  triggered : Bool
+  value : Double
+  threshold : Double
+  consecutive : Int
+  severity : Int
+}
+
+pub struct AlertRule {
+  name : String
+  threshold : Double
+  direction : Int
+  minimum_samples : Int
+  consecutive_windows : Int
+}
+
+pub struct AvailabilityPoint {
+  time : Double
+  availability : Double
+  unavailability : Double
+  expected_failures : Double
+}
+
+pub struct BathtubHazard {
+  early_rate : Double
+  random_rate : Double
+  wearout_scale : Double
+  wearout_shape : Double
+}
+pub fn BathtubHazard::cdf(Self, Double) -> Double
+pub fn BathtubHazard::cumulative_hazard(Self, Double) -> Double
+pub fn BathtubHazard::early_component(Self, Double) -> Double
+pub fn BathtubHazard::hazard(Self, Double) -> Double
+pub fn BathtubHazard::mean(Self) -> Double
+pub fn BathtubHazard::pdf(Self, Double) -> Double
+pub fn BathtubHazard::phase(Self, Double) -> String
+pub fn BathtubHazard::quantile(Self, Double) -> Double
+pub fn BathtubHazard::survival(Self, Double) -> Double
+pub fn BathtubHazard::wearout_component(Self, Double) -> Double
+
+pub struct BenchmarkResult {
+  name : String
+  iterations : Int
+  elapsed_micros : Int64
+  checksum : Double
+  operations_per_second : Double
+}
+
+pub struct BootstrapResult {
+  estimates : Array[Double]
+  estimate : Double
+  bias : Double
+  standard_error : Double
+  lower : Double
+  upper : Double
+  confidence_level : Double
+}
+
+pub struct CapacityPlan {
+  baseline : Double
+  peak : Double
+  headroom : Double
+  target : Double
+  required_capacity : Double
+  utilization : Double
+  breach : Bool
+}
+
+pub struct CompetingRiskCurve {
+  points : Array[CumulativeIncidencePoint]
+  causes : Int
+  final_incidence : Array[Double]
+}
+pub fn CompetingRiskCurve::incidence_at(Self, Int, Double) -> Double
+
+pub struct ConfidenceInterval {
+  lower : Double
+  upper : Double
+}
+
+pub struct ControlLimits {
+  center : Double
+  upper : Double
+  lower : Double
+  sigma : Double
+  violations : Array[Int]
+}
+
+pub struct CumulativeIncidencePoint {
+  time : Double
+  at_risk : Int
+  events_by_cause : Array[Int]
+  survival : Double
+  incidence_by_cause : Array[Double]
+}
+
+pub struct DataQualityReport {
+  input_count : Int
+  valid_count : Int
+  invalid_count : Int
+  duplicate_count : Int
+  negative_count : Int
+  zero_count : Int
+  warnings : Array[String]
+}
+
+pub struct DesignPoint {
+  id : Int
+  factors : Array[Double]
+  replicate : Int
+  center : Bool
+}
+
+pub struct DiagnosticResult {
+  statistic : Double
+  p_value : Double
+  passed : Bool
+  residuals : Array[Double]
+  message : String
+}
+
+pub struct EmpiricalDistribution {
+  sorted_times : Array[Double]
+  failure_counts : Array[Int]
+  cumulative_failures : Array[Int]
+  total : Int
+}
+pub fn EmpiricalDistribution::cdf(Self, Double) -> Double
+pub fn EmpiricalDistribution::probability_mass(Self) -> Array[Double]
+pub fn EmpiricalDistribution::quantile(Self, Double) -> Double
+pub fn EmpiricalDistribution::support(Self) -> Array[Double]
+pub fn EmpiricalDistribution::survival(Self, Double) -> Double
+
+pub struct Exponential {
+  lambda : Double
+}
+pub fn Exponential::cdf(Self, Double) -> Double
+pub fn Exponential::failure_rate(Self, Double) -> Double
+pub fn Exponential::mtbf(Self) -> Double
+pub fn Exponential::new(Double) -> Self
+pub fn Exponential::pdf(Self, Double) -> Double
+pub fn Exponential::quantile(Self, Double) -> Double
+pub fn Exponential::reliability(Self, Double) -> Double
+
+pub struct FailureModeContribution {
+  name : String
+  probability : Double
+  cost : Double
+  risk_contribution : Double
+}
+
+pub struct FaultTreeResult {
+  top_event_probability : Double
+  minimal_cut_sets : Array[Array[Int]]
+  dominant_component : Int?
+}
+
+pub struct FitResult {
+  distribution : String
+  parameters : Array[Double]
+  log_likelihood : Double
+  aic : Double
+  bic : Double
+  iterations : Int
+  converged : Bool
+  standard_errors : Array[Double]
+}
+
+pub struct FleetPlan {
+  fleet_size : Int
+  horizon : Double
+  expected_failures : Double
+  spare_units : Int
+  stockout_probability : Double
+  expected_downtime : Double
+}
+
+pub struct ForecastPoint {
+  horizon : Int
+  value : Double
+  lower : Double
+  upper : Double
+}
+
+pub struct ForecastResult {
+  points : Array[TimeSeriesPoint]
+  algorithm : String
+  residual_scale : Double
+}
+
+pub struct ForecastSeries {
+  points : Array[ForecastPoint]
+  slope : Double
+  intercept : Double
+  residual_scale : Double
+}
+
+pub struct GammaDistribution {
+  shape : Double
+  rate : Double
+}
+pub fn GammaDistribution::cdf(Self, Double) -> Double
+pub fn GammaDistribution::failure_rate(Self, Double) -> Double
+pub fn GammaDistribution::log_pdf(Self, Double) -> Double
+pub fn GammaDistribution::mean(Self) -> Double
+pub fn GammaDistribution::new(Double, Double) -> Self
+pub fn GammaDistribution::pdf(Self, Double) -> Double
+pub fn GammaDistribution::quantile(Self, Double) -> Double
+pub fn GammaDistribution::reliability(Self, Double) -> Double
+pub fn GammaDistribution::variance(Self) -> Double
+
+pub struct Gompertz {
+  scale : Double
+  growth : Double
+}
+pub fn Gompertz::cdf(Self, Double) -> Double
+pub fn Gompertz::cum_hazard(Self, Double) -> Double
+pub fn Gompertz::hazard(Self, Double) -> Double
+pub fn Gompertz::mean(Self) -> Double
+pub fn Gompertz::new(Double, Double) -> Self
+pub fn Gompertz::pdf(Self, Double) -> Double
+pub fn Gompertz::quantile(Self, Double) -> Double
+pub fn Gompertz::reliability(Self, Double) -> Double
+
+pub struct HealthSnapshot {
+  availability : Double
+  stability : Double
+  coverage : Double
+  freshness : Double
+  health_score : Double
+  status : String
+}
+
+pub struct IncidentRecord {
+  start : Double
+  end : Double
+  severity : Int
+  cause : Int
+}
+
+pub struct IncidentSummary {
+  count : Int
+  total_duration : Double
+  union_duration : Double
+  mean_duration : Double
+  maximum_duration : Double
+  severity_weight : Double
+  rate : Double
+}
+
+pub struct IntervalRecord {
+  lower : Double
+  upper : Double
+  status : ObservationStatus
+  weight : Double
+}
+
+pub struct InverseGaussian {
+  mean : Double
+  shape : Double
+}
+pub fn InverseGaussian::cdf(Self, Double) -> Double
+pub fn InverseGaussian::hazard(Self, Double) -> Double
+pub fn InverseGaussian::mean(Self) -> Double
+pub fn InverseGaussian::new(Double, Double) -> Self
+pub fn InverseGaussian::pdf(Self, Double) -> Double
+pub fn InverseGaussian::quantile(Self, Double) -> Double
+pub fn InverseGaussian::survival(Self, Double) -> Double
+pub fn InverseGaussian::variance(Self) -> Double
+
+pub struct LifeObservation {
+  time : Double
+  status : ObservationStatus
+  cause : Int
+  weight : Double
+}
+pub fn LifeObservation::is_censored(Self) -> Bool
+pub fn LifeObservation::is_failure(Self) -> Bool
+pub fn LifeObservation::with_metadata(Self, cause~ : Int, weight~ : Double) -> Self
+
+pub struct LifeTable {
+  intervals : Array[LifeTableInterval]
+  total_failures : Int
+  restricted_mean : Double
+  final_survival : Double
+}
+pub fn LifeTable::hazard_at(Self, Double) -> Double
+pub fn LifeTable::intervals(Self) -> Array[LifeTableInterval]
+pub fn LifeTable::survival_at(Self, Double) -> Double
+
+pub struct LifeTableInterval {
+  lower : Double
+  upper : Double
+  exposed : Double
+  failures : Int
+  withdrawals : Int
+  failure_probability : Double
+  survival_probability : Double
+  hazard : Double
+}
+
+pub struct LogLogistic {
+  scale : Double
+  shape : Double
+}
+pub fn LogLogistic::cdf(Self, Double) -> Double
+pub fn LogLogistic::hazard(Self, Double) -> Double
+pub fn LogLogistic::mean(Self) -> Double
+pub fn LogLogistic::new(Double, Double) -> Self
+pub fn LogLogistic::pdf(Self, Double) -> Double
+pub fn LogLogistic::quantile(Self, Double) -> Double
+pub fn LogLogistic::reliability(Self, Double) -> Double
+pub fn LogLogistic::variance(Self) -> Double
+
+pub struct Lognormal {
+  mu : Double
+  sigma : Double
+}
+pub fn Lognormal::cdf(Self, Double) -> Double
+pub fn Lognormal::mtbf(Self) -> Double
+pub fn Lognormal::new(Double, Double) -> Self
+pub fn Lognormal::pdf(Self, Double) -> Double
+pub fn Lognormal::quantile(Self, Double) -> Double
+pub fn Lognormal::reliability(Self, Double) -> Double
+
+pub(all) enum MaintenanceAction {
+  Inspect
+  PreventiveReplace
+  CorrectiveRepair
+  NoAction
+} derive(Eq, @debug.Debug)
+
+pub struct MaintenanceSchedule {
+  ages : Array[Double]
+  actions : Array[MaintenanceAction]
+  expected_costs : Array[Double]
+  expected_availability : Array[Double]
+  selected_age : Double
+}
+
+pub struct MetricEstimate {
+  estimate : Double
+  lower : Double
+  upper : Double
+  confidence_level : Double
+}
+
+pub struct MissionResult {
+  survival : Double
+  cumulative_hazard : Double
+  segment_hazards : Array[Double]
+  expected_failures : Double
+}
+
+pub struct MissionSegment {
+  start : Double
+  duration : Double
+  stress_multiplier : Double
+}
+
+pub struct ModelComparison {
+  names : Array[String]
+  log_likelihoods : Array[Double]
+  aic : Array[Double]
+  bic : Array[Double]
+  preferred_aic : Int
+  preferred_bic : Int
+}
+
+pub struct NetworkReliability {
+  component_count : Int
+  paths : Array[Array[Int]]
+  reliability : Double
+  path_contributions : Array[Double]
+}
+
+pub struct Normal {
+  mean : Double
+  standard_deviation : Double
+}
+pub fn Normal::cdf(Self, Double) -> Double
+pub fn Normal::entropy(Self) -> Double
+pub fn Normal::hazard(Self, Double) -> Double
+pub fn Normal::log_pdf(Self, Double) -> Double
+pub fn Normal::new(Double, Double) -> Self
+pub fn Normal::pdf(Self, Double) -> Double
+pub fn Normal::quantile(Self, Double) -> Double
+pub fn Normal::reliability(Self, Double) -> Double
+pub fn Normal::standardize(Self, Double) -> Double
+pub fn Normal::variance(Self) -> Double
+
+pub(all) enum ObservationStatus {
+  Failed
+  RightCensored
+  LeftCensored
+  IntervalCensored
+} derive(Eq, @debug.Debug)
+
+pub struct OptimizationResult {
+  parameter : Double
+  objective : Double
+  iterations : Int
+  converged : Bool
+}
+
+pub struct OutageMetrics {
+  saidi : Double
+  saifi : Double
+  caidi : Double
+  asai : Double
+  maifi : Double
+  total_customer_interruptions : Int
+}
+
+pub struct OutageRecord {
+  customer : Int
+  start : Double
+  duration : Double
+  customers_affected : Int
+  cause : Int
+}
+
+pub struct Pareto {
+  scale : Double
+  shape : Double
+}
+pub fn Pareto::cdf(Self, Double) -> Double
+pub fn Pareto::conditional_mean(Self, Double) -> Double
+pub fn Pareto::hazard(Self, Double) -> Double
+pub fn Pareto::mean(Self) -> Double
+pub fn Pareto::new(Double, Double) -> Self
+pub fn Pareto::pdf(Self, Double) -> Double
+pub fn Pareto::quantile(Self, Double) -> Double
+pub fn Pareto::survival(Self, Double) -> Double
+pub fn Pareto::variance(Self) -> Double
+
+pub(all) enum PolicyAction {
+  ContinueMonitoring
+  InspectSoon
+  ScheduleMaintenance
+  RemoveFromService
+} derive(Eq, @debug.Debug)
+
+pub struct PolicyDecision {
+  action : PolicyAction
+  score : Double
+  reason : String
+  urgency_hours : Double
+}
+
+pub struct RandomState {
+  mut state : Int
+}
+pub fn RandomState::exponential(Self, Double) -> Double
+pub fn RandomState::lognormal(Self, Double, Double) -> Double
+pub fn RandomState::new(Int) -> Self
+pub fn RandomState::next_int(Self) -> Int
+pub fn RandomState::normal(Self) -> Double
+pub fn RandomState::uniform(Self) -> Double
+pub fn RandomState::weibull(Self, Double, Double) -> Double
+
+pub struct RegressionResult {
+  coefficients : Array[Double]
+  standard_errors : Array[Double]
+  fitted : Array[Double]
+  residuals : Array[Double]
+  r_squared : Double
+  adjusted_r_squared : Double
+  residual_sum_squares : Double
+  observations : Int
+}
+
+pub struct ReliabilityBudget {
+  target : Double
+  observed : Double
+  remaining : Double
+  burn_rate : Double
+  consumed_fraction : Double
+  status : String
+}
+
+pub struct ReliabilityGrowthModel {
+  intercept : Double
+  shape : Double
+  scale : Double
+  fit : RegressionResult
+}
+pub fn ReliabilityGrowthModel::expected_failures(Self, Double) -> Double
+pub fn ReliabilityGrowthModel::failure_intensity(Self, Double) -> Double
+pub fn ReliabilityGrowthModel::improvement_factor(Self, Double, Double) -> Double
+pub fn ReliabilityGrowthModel::mtbf(Self, Double) -> Double
+pub fn ReliabilityGrowthModel::predict_time_for_failures(Self, Double) -> Double
+pub fn ReliabilityGrowthModel::reliability_growth_confidence(Self, Double, Double) -> MetricEstimate
+
+pub(all) enum ReliabilityModel {
+  ExponentialModel(Exponential)
+  WeibullModel(Weibull)
+  LognormalModel(Lognormal)
+  GammaModel(GammaDistribution)
+  LogLogisticModel(LogLogistic)
+}
+pub fn ReliabilityModel::cdf(Self, Double) -> Double
+pub fn ReliabilityModel::log_likelihood(Self, Array[LifeObservation]) -> Double
+pub fn ReliabilityModel::pdf(Self, Double) -> Double
+pub fn ReliabilityModel::survival(Self, Double) -> Double
+
+pub struct ReliabilityRequirement {
+  name : String
+  mission_time : Double
+  minimum_survival : Double
+  confidence_level : Double
+  penalty : Double
+}
+
+pub struct ReliabilityScorecard {
+  reliability_score : Double
+  availability_score : Double
+  quality_score : Double
+  maintenance_score : Double
+  overall_score : Double
+  grade : String
+  recommendations : Array[String]
+}
+
+pub struct ReliabilitySnapshot {
+  time : Double
+  reliability : Double
+  hazard : Double
+  cumulative_hazard : Double
+  mission_success : Double
+}
+
+pub struct ReliabilitySystem {
+  name : String
+  logic : SystemLogic
+  component_reliabilities : Array[Double]
+  reliability : Double
+  importance : Array[Double]
+}
+
+pub struct RequirementResult {
+  requirement : String
+  estimate : Double
+  lower_bound : Double
+  margin : Double
+  passed : Bool
+  penalty : Double
+  explanation : String
+}
+
+pub struct RiskItem {
+  name : String
+  severity : Int
+  occurrence : Int
+  detection : Int
+  risk_priority_number : Int
+  recommended_action : String
+}
+
+pub struct SampleSummary {
+  count : Int
+  failures : Int
+  censored : Int
+  total_weight : Double
+  mean : Double
+  variance : Double
+  standard_deviation : Double
+  minimum : Double
+  maximum : Double
+  median : Double
+}
+
+pub struct SensitivityPoint {
+  parameter : String
+  baseline : Double
+  perturbed : Double
+  absolute_change : Double
+  relative_change : Double
+  elasticity : Double
+}
+
+pub struct SlaPolicy {
+  window : Double
+  promised_availability : Double
+  credit_rate : Double
+  maximum_credit : Double
+}
+
+pub struct SlaResult {
+  observed_availability : Double
+  downtime : Double
+  breach : Bool
+  credit : Double
+  error_budget_remaining : Double
+  confidence : MetricEstimate
+}
+
+pub struct SurvivalCurve {
+  points : Array[SurvivalPoint]
+  median : Double?
+  restricted_mean : Double
+  total_events : Int
+}
+pub fn SurvivalCurve::hazard_at(Self, Double) -> Double
+pub fn SurvivalCurve::median_life(Self) -> Double?
+pub fn SurvivalCurve::points(Self) -> Array[SurvivalPoint]
+pub fn SurvivalCurve::survival_at(Self, Double) -> Double
+
+pub struct SurvivalPoint {
+  time : Double
+  at_risk : Int
+  events : Int
+  censored : Int
+  survival : Double
+  standard_error : Double
+  cumulative_hazard : Double
+}
+
+pub(all) enum SystemLogic {
+  Series
+  Parallel
+  KOutOfN(Int)
+}
+pub fn SystemLogic::evaluate(Self, Array[Double]) -> Double
+
+pub struct TelemetryPoint {
+  timestamp : Double
+  value : Double
+  healthy : Bool
+  weight : Double
+}
+
+pub struct TelemetryWindow {
+  points : Array[TelemetryPoint]
+  start : Double
+  end : Double
+  interval : Double
+}
+
+pub struct TimeSeriesPoint {
+  time : Double
+  value : Double
+  lower : Double
+  upper : Double
+}
+
+pub struct TransitionMatrix {
+  states : Int
+  values : Array[Array[Double]]
+}
+pub fn TransitionMatrix::power(Self, Array[Double], Int) -> Array[Double]
+pub fn TransitionMatrix::step(Self, Array[Double]) -> Array[Double]
+
+pub struct TruncatedModel {
+  base : ReliabilityModel
+  lower : Double
+  upper : Double
+  normalization : Double
+}
+pub fn TruncatedModel::cdf(Self, Double) -> Double
+pub fn TruncatedModel::pdf(Self, Double) -> Double
+pub fn TruncatedModel::quantile(Self, Double) -> Double
+pub fn TruncatedModel::reliability(Self, Double) -> Double
+
+pub struct WarrantyAnalysis {
+  claims : Double
+  expected_cost : Double
+  cost_per_unit_time : Double
+  claim_probability : Double
+  renewal_cycles : Double
+}
+
+pub struct WarrantyPolicy {
+  duration : Double
+  replacement_cost : Double
+  service_cost : Double
+  salvage_value : Double
+  renewal : Bool
+}
+
+pub struct Weibull {
+  scale : Double
+  shape : Double
+}
+pub fn Weibull::cdf(Self, Double) -> Double
+pub fn Weibull::failure_rate(Self, Double) -> Double
+pub fn Weibull::mtbf(Self) -> Double
+pub fn Weibull::new(Double, Double) -> Self
+pub fn Weibull::pdf(Self, Double) -> Double
+pub fn Weibull::quantile(Self, Double) -> Double
+pub fn Weibull::reliability(Self, Double) -> Double
+
+// Type aliases
+
+// Traits

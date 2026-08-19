@@ -1,6 +1,6 @@
 name = "wcx789ll/moon-reliability"
 
-version = "0.2.0"
+version = "0.2.1"
 
 readme = "README.md"
 

@@ -6,14 +6,14 @@ This checklist adapts the repository-oriented checks from the OSC 2026 guide to 
 
 | Area | Result | Evidence |
 | --- | --- | --- |
-| Module metadata | Pass | `moon.mod`, version `0.2.0`, Apache-2.0 license, repository URL |
-| Source scale | Pass | 54 non-test MoonBit files and 8,915 implementation lines; 69 source `.mbt` files and 9,608 total lines; 8,083 non-comment implementation lines |
-| Boundary tests | Pass | Censoring, ties, empty/singleton data, invalid parameters, zero/large values, degenerate systems, telemetry windows, alerts, and forecasting are covered in the test suites |
+| Module metadata | Pass | `moon.mod`, version `0.3.0`, Apache-2.0 license, repository URL |
+| Source scale | Pass | 72 non-test MoonBit implementation files; 22,065 implementation lines and 20,058 non-comment/nonblank implementation lines, excluding tests, `cmd/benchmark`, and build/cache directories |
+| Boundary tests | Pass | Censoring, ties, empty/singleton data, invalid parameters, zero/large values, degenerate systems, telemetry windows, fleet and degradation edges, service SLA, risk governance, and forecasting are covered in the test suites |
 | Toolchain | Pass | Local stable MoonBit `0.1.20260807`; Moonc `0.10.7+bc794d341` |
 | Formatting and warnings | Pass | `moon fmt --check`, `moon check --target all --deny-warn` |
-| Cross-target tests | Pass | `moon test --target all --deny-warn`: wasm 64/64, wasm-gc 64/64, JS 64/64, native 64/64 |
+| Cross-target tests | Pass | `moon test --target all --deny-warn`: wasm 72/72, wasm-gc 72/72, JS 72/72, native 72/72 |
 | Benchmark | Pass | `cmd/benchmark`, deterministic checksums and five real local timing samples in `BENCHMARK.md` |
-| Documentation | Pass | README explains use, scope, structure, benchmark, originality, and license |
+| Documentation | Pass | README explains positioning, capabilities, quick start, CLI, architecture, benchmark, tests, CI, and license |
 | CI | Pass locally configured | `.github/workflows/test.yml` and manual `.github/workflows/publish.yml`; remote run is intentionally pending |
 
 ## Items requiring remote confirmation

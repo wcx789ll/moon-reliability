@@ -13,8 +13,10 @@ MoonBit 可靠性工程与寿命数据分析库，面向寿命试验、设备健
 - **生存分析**：右删失、左删失、区间删失、Kaplan–Meier、Nelson–Aalen、生命表和竞争风险。
 - **参数估计**：删失数据 MLE、观测权重、置信区间、AIC/BIC、模型比较和残差诊断。
 - **工程模型**：Arrhenius、逆幂律、Eyring 加速寿命模型，串并联系统、网络可靠性和马尔可夫状态模型。
-- **运维决策**：保修、预防性维护、SLA、可靠性增长、FMEA、故障树、控制图和敏感性分析。
-- **不确定性与观测**：Bootstrap、Jackknife、Delta 方法、随机模拟、运行时窗口、告警预算和健康评分。
+- **工程决策**：可靠性分配、试验计划、软件可靠性增长、贝叶斯更新、极值风险和可修复系统分析。
+- **运维闭环**：车队健康、退化建模、维修资源、现场服务、保修精算、SLA、可靠性增长和维护策略。
+- **风险与质量**：安全论证、风险登记、供应链质量、数据质量、模型治理、控制图和敏感性分析。
+- **不确定性与观测**：Bootstrap、Jackknife、Delta 方法、随机模拟、时序窗口、告警预算和健康评分。
 
 ## 快速开始
 
@@ -68,6 +70,11 @@ moon run --target native cmd/benchmark
 | `system_reliability.mbt`、`network_reliability.mbt`、`markov_chain.mbt` | 系统、网络和状态转移模型 |
 | `simulation.mbt`、`bootstrap.mbt`、`uncertainty.mbt` | 仿真、重采样和不确定性传播 |
 | `maintenance.mbt`、`warranty.mbt`、`sla_analysis.mbt` | 维护、保修和服务等级分析 |
+| `fleet_analysis.mbt`、`degradation_models.mbt`、`repairable_systems.mbt` | 车队、退化和可修复系统 |
+| `maintenance_resources.mbt`、`field_service_operations.mbt`、`condition_monitoring.mbt` | 资源调度、现场服务和状态监测 |
+| `test_planning.mbt`、`reliability_allocation.mbt`、`bayesian_reliability.mbt` | 试验设计、指标分配和贝叶斯推断 |
+| `extreme_value_models.mbt`、`supply_chain_quality.mbt`、`warranty_analytics.mbt` | 极值、供应链和质保精算 |
+| `safety_case.mbt`、`risk_register.mbt`、`reliability_governance.mbt` | 安全论证、风险治理和模型发布 |
 | `observability.mbt`、`quality_control.mbt`、`reporting.mbt` | 运行时观测、质量控制和结果汇总 |
 | `cmd/benchmark` | native 基准 CLI |
 | `*_test.mbt` | 单元、边界和集成测试 |
@@ -95,7 +102,7 @@ moon info
 git diff --exit-code
 ```
 
-测试覆盖分布边界、空数据和单条数据、删失和同一时刻事件、参数估计、系统退化情形、随机模拟、告警阈值和端到端工程流程。
+当前测试覆盖 72 个跨目标用例，包括分布边界、空数据和单条数据、删失和同一时刻事件、参数估计、系统退化情形、维修与服务 SLA、数据质量、风险治理、随机模拟、告警阈值和端到端工程流程。
 
 ## CI
 

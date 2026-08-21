@@ -32,6 +32,124 @@ pub fn alert_severity(Double) -> String
 
 pub fn alert_severity_score(AlertDecision) -> Double
 
+pub fn allocation_best_scenario(Array[AllocationScenario]) -> AllocationScenario
+
+pub fn allocation_budget_remaining(ReliabilityAllocationPlan) -> Double
+
+pub fn allocation_budget_select(Array[AllocationComponent], Double) -> Array[AllocationComponent]
+
+pub fn allocation_budget_utilization(Array[AllocationComponent], Double) -> Double
+
+pub fn allocation_component(Int, String, Double, Double, Double, Double, Double, Double) -> AllocationComponent
+
+pub fn allocation_component_contribution(AllocationComponent, String) -> Double
+
+pub fn allocation_component_count(ReliabilityAllocationPlan) -> Int
+
+pub fn allocation_component_delta_score(AllocationComponent, String) -> Double
+
+pub fn allocation_component_target_contribution(AllocationComponent, String) -> Double
+
+pub fn allocation_cost_per_reliability(AllocationComponent) -> Double
+
+pub fn allocation_cost_rank(Array[AllocationComponent]) -> Array[AllocationComponent]
+
+pub fn allocation_criticality(AllocationComponent) -> Double
+
+pub fn allocation_delta_rank(Array[AllocationComponent], String) -> Array[AllocationComponent]
+
+pub fn allocation_delta_scores(Array[AllocationComponent], String) -> Array[Double]
+
+pub fn allocation_failure_probability(AllocationComponent) -> Double
+
+pub fn allocation_gap(AllocationComponent) -> Double
+
+pub fn allocation_importance_factors(Array[Double], String) -> Array[Double]
+
+pub fn allocation_importance_rank(Array[Double], String) -> Array[Int]
+
+pub fn allocation_improvement_needed(AllocationComponent) -> Double
+
+pub fn allocation_is_feasible(ReliabilityAllocationPlan) -> Bool
+
+pub fn allocation_k_out_of_n_failure(Double, Int, Int) -> Double
+
+pub fn allocation_k_out_of_n_reliability(Double, Int, Int) -> Double
+
+pub fn allocation_marginal_reliability(Array[Double], Int, String) -> Double
+
+pub fn allocation_parallel_availability(Array[Double]) -> Double
+
+pub fn allocation_parallel_failure_rate(Array[Double], Double) -> Double
+
+pub fn allocation_parallel_reliability(Array[Double]) -> Double
+
+pub fn allocation_parallel_target(Double, Int) -> Double
+
+pub fn allocation_parallel_targets(Double, Int) -> Array[Double]
+
+pub fn allocation_priority_scores(Array[AllocationComponent]) -> Array[Double]
+
+pub fn allocation_redundancy_availability(Double, Int, Int) -> Double
+
+pub fn allocation_redundancy_cost(Double, Double, Double, Int) -> Double
+
+pub fn allocation_redundancy_count(Double, Double, Int) -> Int
+
+pub fn allocation_redundancy_gain(Double, Int) -> Double
+
+pub fn allocation_reliability_checksum(Array[AllocationComponent]) -> Double
+
+pub fn allocation_repairable_parallel_availability(Array[Double], Array[Double]) -> Double
+
+pub fn allocation_repairable_series_availability(Array[Double], Array[Double]) -> Double
+
+pub fn allocation_risk_priority(AllocationComponent) -> Double
+
+pub fn allocation_risk_rank(Array[AllocationComponent]) -> Array[AllocationComponent]
+
+pub fn allocation_scenario(String, Double, Double, Double, Double) -> AllocationScenario
+
+pub fn allocation_scenario_checksum(Array[AllocationScenario]) -> Double
+
+pub fn allocation_scenario_feasible(AllocationScenario, Double, Double) -> Bool
+
+pub fn allocation_scenario_filter(Array[AllocationScenario], Double, Double) -> Array[AllocationScenario]
+
+pub fn allocation_scenario_rank(Array[AllocationScenario]) -> Array[AllocationScenario]
+
+pub fn allocation_scenario_score(AllocationScenario) -> Double
+
+pub fn allocation_selection_budget_remaining(Array[AllocationComponent], Double) -> Double
+
+pub fn allocation_series_availability(Array[Double]) -> Double
+
+pub fn allocation_series_failure_rate(Array[Double], Double) -> Double
+
+pub fn allocation_series_reliability(Array[Double]) -> Double
+
+pub fn allocation_series_target(Double, Int) -> Double
+
+pub fn allocation_series_targets(Double, Int) -> Array[Double]
+
+pub fn allocation_system_margin(ReliabilityAllocationPlan) -> Double
+
+pub fn allocation_system_reliability(ReliabilityAllocationPlan) -> Double
+
+pub fn allocation_system_target_met(Array[Double], Double, String) -> Bool
+
+pub fn allocation_target_adjustment(Array[Double], Double, String) -> Array[Double]
+
+pub fn allocation_target_failure_probability(AllocationComponent) -> Double
+
+pub fn allocation_target_sensitivity(Array[Double], Double, String) -> Array[Double]
+
+pub fn allocation_total_cost(Array[AllocationComponent]) -> Double
+
+pub fn allocation_total_improvement(Array[AllocationComponent]) -> Double
+
+pub fn allocation_total_risk(Array[AllocationComponent]) -> Double
+
 pub fn alternating_renewal_availability(Double, Double) -> Double
 
 pub fn analyze_warranty(ReliabilityModel, WarrantyPolicy) -> WarrantyAnalysis
@@ -49,6 +167,44 @@ pub fn availability_point(time~ : Double, availability~ : Double, unavailability
 pub fn availability_slo_curve(ReliabilityModel, Array[Double]) -> Array[MetricEstimate]
 
 pub fn bathtub_hazard(early_rate~ : Double, random_rate~ : Double, wearout_scale~ : Double, wearout_shape~ : Double) -> BathtubHazard
+
+pub fn bayesian_beta_checksum(ReliabilityBetaPosterior) -> Double
+
+pub fn bayesian_beta_to_metric(ReliabilityBetaPosterior, Double) -> MetricEstimate
+
+pub fn bayesian_curve_checksum(Array[BayesianReliabilityCurvePoint]) -> Double
+
+pub fn bayesian_gamma_checksum(ReliabilityGammaPosterior) -> Double
+
+pub fn bayesian_gamma_to_metric(ReliabilityGammaPosterior, Double) -> MetricEstimate
+
+pub fn bayesian_mean_sequence(Array[ReliabilityBetaPosterior]) -> Array[Double]
+
+pub fn bayesian_posterior_decision(ReliabilityBetaPosterior, Double, Double) -> String
+
+pub fn bayesian_posterior_loss(ReliabilityBetaPosterior, Double, Double, Double) -> Double
+
+pub fn bayesian_posterior_probability_above(ReliabilityBetaPosterior, Double) -> Double
+
+pub fn bayesian_posterior_probability_below(ReliabilityBetaPosterior, Double) -> Double
+
+pub fn bayesian_posterior_value_of_data(ReliabilityBetaPosterior, ReliabilityBetaPosterior) -> Double
+
+pub fn bayesian_prior_from_mean_strength(Double, Double, String) -> ReliabilityBetaPosterior
+
+pub fn bayesian_rate_prior_from_mean_strength(Double, Double, String) -> ReliabilityGammaPosterior
+
+pub fn bayesian_reliability_curve(ReliabilityGammaPosterior, Array[Double], Double) -> Array[BayesianReliabilityCurvePoint]
+
+pub fn bayesian_reliability_target_horizon(ReliabilityGammaPosterior, Double, Double) -> Double
+
+pub fn bayesian_reliability_target_probability(ReliabilityGammaPosterior, Double, Double) -> Double
+
+pub fn bayesian_sequence_checksum(Array[ReliabilityBetaPosterior]) -> Double
+
+pub fn bayesian_uncertainty_sequence(Array[ReliabilityBetaPosterior]) -> Array[Double]
+
+pub fn bayesian_update_sequence(ReliabilityBetaPosterior, Array[Int], Array[Int]) -> Array[ReliabilityBetaPosterior]
 
 pub fn benchmark_dataset(Int) -> Array[LifeObservation]
 
@@ -162,6 +318,8 @@ pub fn component_importance(SystemLogic, Array[Double]) -> Array[Double]
 
 pub fn conditional_exceedance_mean(Array[Double], Double) -> Double
 
+pub fn confidence_from_zero_failures(Double, Int) -> Double
+
 pub fn confidence_interval(Double, Double, Double) -> ConfidenceInterval
 
 pub fn confidence_to_standard_error(Double, Double, Double) -> Double
@@ -194,9 +352,185 @@ pub fn decode_factor(Double, Double, Double) -> Double
 
 pub fn defect_rate(Int, Int) -> MetricEstimate
 
+pub fn degradation_absolute_rate(DegradationTrack) -> Double
+
+pub fn degradation_alert_level(DegradationTrack) -> Int
+
+pub fn degradation_change_points(DegradationTrack, Double) -> Array[Int]
+
+pub fn degradation_count(DegradationTrack) -> Int
+
+pub fn degradation_directional_rate(DegradationTrack) -> Double
+
+pub fn degradation_duration(DegradationTrack) -> Double
+
+pub fn degradation_features(DegradationTrack) -> DegradationFeatureSet
+
+pub fn degradation_first_time(DegradationTrack) -> Double
+
+pub fn degradation_first_value(DegradationTrack) -> Double
+
+pub fn degradation_fit(DegradationLaw, Array[Double], Array[Double], Double, Double, Bool, Int) -> DegradationFit
+
+pub fn degradation_fit_acceleration(DegradationFit, Double) -> Double
+
+pub fn degradation_fit_best(DegradationTrack) -> DegradationFit
+
+pub fn degradation_fit_checksum(DegradationFit) -> Double
+
+pub fn degradation_fit_confidence_scale(DegradationFit, Double) -> Double
+
+pub fn degradation_fit_crossing_time(DegradationFit, Double, Double, Double) -> Double
+
+pub fn degradation_fit_derivative(DegradationFit, Double) -> Double
+
+pub fn degradation_fit_derivative_grid(DegradationFit, Array[Double]) -> Array[Double]
+
+pub fn degradation_fit_exponential(DegradationTrack) -> DegradationFit
+
+pub fn degradation_fit_grid(DegradationFit, Array[Double]) -> Array[Double]
+
+pub fn degradation_fit_interval(DegradationFit, Double, Double) -> MetricEstimate
+
+pub fn degradation_fit_is_adequate(DegradationFit, Double, Double) -> Bool
+
+pub fn degradation_fit_linear(DegradationTrack) -> DegradationFit
+
+pub fn degradation_fit_power(DegradationTrack) -> DegradationFit
+
+pub fn degradation_fit_predict(DegradationFit, Double) -> Double
+
+pub fn degradation_fit_rank(Array[DegradationFit]) -> Array[DegradationFit]
+
+pub fn degradation_fit_score(DegradationFit) -> Double
+
+pub fn degradation_fleet_checksum(Array[DegradationTrack]) -> Double
+
+pub fn degradation_fleet_health(Array[DegradationTrack]) -> Array[Double]
+
+pub fn degradation_fleet_priorities(Array[DegradationTrack], Int) -> Array[DegradationTrack]
+
+pub fn degradation_fleet_rank(Array[DegradationTrack]) -> Array[DegradationTrack]
+
+pub fn degradation_fleet_risk(Array[DegradationTrack]) -> Array[Double]
+
+pub fn degradation_fleet_summary(Array[DegradationTrack], Double) -> DegradationFleetSummary
+
+pub fn degradation_health_gap(DegradationTrack, Double) -> Double
+
+pub fn degradation_health_index(DegradationTrack) -> Double
+
+pub fn degradation_health_label(Double) -> String
+
+pub fn degradation_is_beyond_limit(DegradationTrack, Double) -> Bool
+
+pub fn degradation_is_warning(DegradationTrack, Double, Double) -> Bool
+
+pub fn degradation_last_time(DegradationTrack) -> Double
+
+pub fn degradation_last_value(DegradationTrack) -> Double
+
+pub fn degradation_limit(DegradationTrack) -> Double
+
+pub fn degradation_margin(DegradationTrack, Double) -> Double
+
+pub fn degradation_maximum(DegradationTrack) -> Double
+
+pub fn degradation_mean(DegradationTrack) -> Double
+
+pub fn degradation_minimum(DegradationTrack) -> Double
+
+pub fn degradation_monotonicity(DegradationTrack) -> Double
+
+pub fn degradation_normalized_margin(DegradationTrack, Double) -> Double
+
+pub fn degradation_observation(Double, Double, Double) -> DegradationObservation
+
+pub fn degradation_out_of_bounds_count(DegradationTrack) -> Int
+
+pub fn degradation_out_of_bounds_fraction(DegradationTrack) -> Double
+
+pub fn degradation_range(DegradationTrack) -> Double
+
+pub fn degradation_rate(DegradationTrack) -> Double
+
+pub fn degradation_recent_rate(DegradationTrack, Int) -> Double
+
+pub fn degradation_remaining_life(DegradationTrack, DegradationFit, Double) -> Double
+
+pub fn degradation_residual_abs_mean(DegradationFit) -> Double
+
+pub fn degradation_residual_autocorrelation(DegradationTrack, DegradationFit, Int) -> Double
+
+pub fn degradation_residual_bias(DegradationFit) -> Double
+
+pub fn degradation_residual_max(DegradationFit) -> Double
+
+pub fn degradation_residual_normalized(DegradationFit) -> Array[Double]
+
+pub fn degradation_rul_interval(DegradationTrack, DegradationFit, Double, Double) -> MetricEstimate
+
+pub fn degradation_standard_deviation(DegradationTrack) -> Double
+
+pub fn degradation_times(DegradationTrack) -> Array[Double]
+
+pub fn degradation_total_change(DegradationTrack) -> Double
+
+pub fn degradation_track(String, Array[DegradationObservation], Double, Double, Int) -> DegradationTrack
+
+pub fn degradation_track_append(DegradationTrack, DegradationObservation) -> DegradationTrack
+
+pub fn degradation_track_checksum(DegradationTrack) -> Double
+
+pub fn degradation_track_difference(DegradationTrack, DegradationTrack) -> DegradationTrack
+
+pub fn degradation_track_merge(DegradationTrack, DegradationTrack) -> DegradationTrack
+
+pub fn degradation_track_ratio(DegradationTrack, DegradationTrack) -> DegradationTrack
+
+pub fn degradation_track_resample(DegradationTrack, Double) -> DegradationTrack
+
+pub fn degradation_track_scale(DegradationTrack, Double) -> DegradationTrack
+
+pub fn degradation_track_shift(DegradationTrack, Double, Double) -> DegradationTrack
+
+pub fn degradation_track_window(DegradationTrack, Double, Double) -> DegradationTrack
+
+pub fn degradation_values(DegradationTrack) -> Array[Double]
+
+pub fn degradation_variance(DegradationTrack) -> Double
+
+pub fn degradation_warning_score(DegradationTrack, Double) -> Double
+
+pub fn degradation_weight(DegradationTrack) -> Double
+
+pub fn degradation_weights(DegradationTrack) -> Array[Double]
+
 pub fn delta_method(Double, Double, (Double) -> Double) -> MetricEstimate
 
 pub fn demonstrate_reliability(ReliabilityModel, Array[Double]) -> Array[MetricEstimate]
+
+pub fn demonstration_duration_for_units(Double, Double, Int, Double) -> Double
+
+pub fn demonstration_pass_probability(Double, Int, Int) -> Double
+
+pub fn demonstration_plan_checksum(DemonstrationTestPlan) -> Double
+
+pub fn demonstration_plan_cost(DemonstrationTestPlan, Double) -> Double
+
+pub fn demonstration_plan_evidence_fraction(DemonstrationTestPlan, Double) -> Double
+
+pub fn demonstration_plan_margin(DemonstrationTestPlan, Int) -> Int
+
+pub fn demonstration_plan_passes(DemonstrationTestPlan, Int) -> Bool
+
+pub fn demonstration_plan_progress(DemonstrationTestPlan, Double, Int) -> Double
+
+pub fn demonstration_plan_status(DemonstrationTestPlan, Double, Int) -> String
+
+pub fn demonstration_sample_size(Double, Double, Int) -> Int
+
+pub fn demonstration_test_plan(Double, Double, Int, Double, Int, Double, String) -> DemonstrationTestPlan
 
 pub fn design_correlation(Array[DesignPoint], Int, Int) -> Double
 
@@ -246,6 +580,20 @@ pub fn evaluate_requirements(ReliabilityModel, Array[ReliabilityRequirement]) ->
 
 pub fn evaluate_sla(Array[Double], SlaPolicy, Double) -> SlaResult
 
+pub fn evidence_checksum(ReliabilityTestEvidence) -> Double
+
+pub fn evidence_is_complete(ReliabilityTestEvidence) -> Bool
+
+pub fn evidence_is_pass(ReliabilityTestEvidence) -> Bool
+
+pub fn evidence_margin(ReliabilityTestEvidence) -> Double
+
+pub fn evidence_quality_score(ReliabilityTestEvidence) -> Double
+
+pub fn evidence_remaining_exposure(ReliabilityTestEvidence) -> Double
+
+pub fn evidence_remaining_failures(ReliabilityTestEvidence) -> Int
+
 pub fn ewma(Array[Double], Double, Double) -> Array[Double]
 
 pub fn exceedance_probability(Array[Double], Double) -> Double
@@ -278,7 +626,93 @@ pub fn exponential_smoothing(Array[Double], Double) -> Array[Double]
 
 pub fn exposure_time(Array[LifeObservation], Double) -> Double
 
+pub fn extreme_block(Int, Array[Double]) -> ExtremeBlock
+
+pub fn extreme_block_excess(ExtremeBlock, Double) -> Double
+
+pub fn extreme_block_is_exceedance(ExtremeBlock, Double) -> Bool
+
+pub fn extreme_block_range(ExtremeBlock) -> Double
+
+pub fn extreme_block_score(ExtremeBlock, Double) -> Double
+
+pub fn extreme_blocks_exceedance_count(Array[ExtremeBlock], Double) -> Int
+
+pub fn extreme_blocks_exceedance_fraction(Array[ExtremeBlock], Double) -> Double
+
+pub fn extreme_blocks_maxima(Array[ExtremeBlock]) -> Array[Double]
+
+pub fn extreme_blocks_mean_excess(Array[ExtremeBlock], Double) -> Double
+
+pub fn extreme_blocks_means(Array[ExtremeBlock]) -> Array[Double]
+
+pub fn extreme_blocks_minima(Array[ExtremeBlock]) -> Array[Double]
+
+pub fn extreme_blocks_rank(Array[ExtremeBlock]) -> Array[ExtremeBlock]
+
+pub fn extreme_cdf(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_curve_checksum(Array[Double]) -> Double
+
+pub fn extreme_design_level(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_exceedance_rate(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_expected_exceedances(ExtremeValueModel, Double, Int) -> Double
+
+pub fn extreme_expected_loss(ExtremeValueModel, Double, Double, Double) -> Double
+
+pub fn extreme_expected_loss_curve(ExtremeValueModel, Array[Double], Double, Double) -> Array[Double]
+
+pub fn extreme_fit_best(Array[Double]) -> ExtremeValueModel
+
+pub fn extreme_fit_error(ExtremeValueModel, Array[Double]) -> Double
+
+pub fn extreme_fit_frechet(Array[Double]) -> ExtremeValueModel
+
+pub fn extreme_fit_gumbel(Array[Double]) -> ExtremeValueModel
+
+pub fn extreme_fit_weibull(Array[Double]) -> ExtremeValueModel
+
+pub fn extreme_hazard(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_hazard_curve(ExtremeValueModel, Array[Double]) -> Array[Double]
+
+pub fn extreme_mean_excess(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_model_checksum(ExtremeValueModel) -> Double
+
+pub fn extreme_model_score(ExtremeValueModel, Array[Double]) -> Double
+
+pub fn extreme_pdf(ExtremeValueModel, Double) -> Double
+
 pub fn extreme_quantile(Pareto, Double) -> Double
+
+pub fn extreme_quantile_curve(ExtremeValueModel, Array[Double]) -> Array[Double]
+
+pub fn extreme_return_level(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_return_probability(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_risk_budget(ExtremeValueModel, Double, Double) -> Bool
+
+pub fn extreme_risk_ratio(ExtremeValueModel, Double, Double) -> Double
+
+pub fn extreme_standardize(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_support_lower(ExtremeValueModel) -> Double
+
+pub fn extreme_support_upper(ExtremeValueModel) -> Double
+
+pub fn extreme_survival(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_survival_curve(ExtremeValueModel, Array[Double]) -> Array[Double]
+
+pub fn extreme_tail_mean(ExtremeValueModel, Double) -> Double
+
+pub fn extreme_value_model(ExtremeValueLaw, Double, Double, Double, Double, String) -> ExtremeValueModel
+
+pub fn extreme_value_quantile(ExtremeValueModel, Double) -> Double
 
 pub fn factorial(Int) -> Double
 
@@ -322,9 +756,207 @@ pub fn fit_result(distribution~ : String, parameters~ : Array[Double], log_likel
 
 pub fn fit_scale_by_mle(Array[LifeObservation], Double) -> OptimizationResult
 
+pub fn fleet_action_budget(FleetObservation, Double, Int) -> Array[FleetAsset]
+
+pub fn fleet_action_priorities(FleetObservation, Double) -> Array[Double]
+
+pub fn fleet_action_priority(FleetAsset, Double) -> Double
+
+pub fn fleet_action_rank(FleetObservation, Double) -> Array[FleetAsset]
+
+pub fn fleet_active_count(FleetObservation) -> Int
+
+pub fn fleet_age_quantile(FleetObservation, Double) -> Double
+
+pub fn fleet_asset(Int, String, Int, Double, Double, FleetAssetState, Double, Int, Double, Double, Double) -> FleetAsset
+
+pub fn fleet_asset_age(FleetAsset) -> Double
+
+pub fn fleet_asset_age_bands(FleetObservation, Array[Double]) -> Array[Int]
+
+pub fn fleet_asset_by_id(FleetObservation, Int) -> FleetAsset?
+
+pub fn fleet_asset_count(FleetObservation) -> Int
+
+pub fn fleet_asset_exposure(FleetAsset) -> Double
+
+pub fn fleet_asset_failure_rate(FleetAsset) -> Double
+
+pub fn fleet_asset_inherent_availability(FleetAsset) -> Double
+
+pub fn fleet_asset_is_operational(FleetAsset) -> Bool
+
+pub fn fleet_asset_is_unavailable(FleetAsset) -> Bool
+
+pub fn fleet_asset_mtbf(FleetAsset) -> Double
+
+pub fn fleet_asset_mttr(FleetAsset) -> Double
+
+pub fn fleet_asset_repair_rate(FleetAsset) -> Double
+
+pub fn fleet_asset_weight(FleetAsset) -> Double
+
+pub fn fleet_availability_at(FleetObservation, Double) -> Double
+
+pub fn fleet_availability_change(FleetObservation, FleetObservation) -> Double
+
+pub fn fleet_availability_projection(FleetObservation, Array[Double]) -> Array[Double]
+
+pub fn fleet_average_age(FleetObservation) -> Double
+
+pub fn fleet_batch_availability(Array[FleetObservation]) -> Array[Double]
+
+pub fn fleet_batch_checksum(Array[FleetObservation]) -> Double
+
+pub fn fleet_batch_expected_failures(Array[FleetObservation], Array[Double]) -> Array[Double]
+
+pub fn fleet_batch_health(Array[FleetObservation]) -> Array[Double]
+
+pub fn fleet_capacity(FleetObservation) -> Double
+
+pub fn fleet_capacity_utilization(FleetObservation) -> Double
+
+pub fn fleet_change_rate(FleetObservation, FleetObservation) -> Double
+
+pub fn fleet_cohort_comparison(FleetObservation) -> Array[Double]
+
+pub fn fleet_critical_assets(FleetObservation, Double) -> Array[FleetAsset]
+
+pub fn fleet_criticality_bands(FleetObservation, Array[Double]) -> Array[Int]
+
+pub fn fleet_curve_checksum(Array[FleetReliabilityPoint]) -> Double
+
+pub fn fleet_expected_downtime(FleetObservation, Double) -> Double
+
+pub fn fleet_expected_failures(FleetObservation, Double) -> Double
+
+pub fn fleet_expected_loss(FleetObservation, Double, Double, Double) -> Double
+
+pub fn fleet_exposure_by_cohort(FleetObservation) -> Array[Double]
+
+pub fn fleet_failed_count(FleetObservation) -> Int
+
+pub fn fleet_failure_count_by_state(FleetObservation) -> Array[Int]
+
+pub fn fleet_failure_rate(FleetObservation) -> Double
+
+pub fn fleet_failure_rate_by_cohort(FleetObservation) -> Array[Double]
+
+pub fn fleet_failure_share_by_state(FleetObservation) -> Array[Double]
+
+pub fn fleet_failures_by_cohort(FleetObservation) -> Array[Int]
+
+pub fn fleet_filter_cohort(FleetObservation, Int) -> FleetObservation
+
+pub fn fleet_filter_model(FleetObservation, String) -> FleetObservation
+
+pub fn fleet_group_ids(FleetObservation) -> Array[Int]
+
+pub fn fleet_group_summary(FleetObservation, Int) -> FleetSummary
+
+pub fn fleet_health_gap(FleetObservation, Double) -> Double
+
+pub fn fleet_health_index(FleetObservation) -> Double
+
+pub fn fleet_health_label(Double) -> String
+
+pub fn fleet_high_risk_assets(FleetObservation, Double, Double) -> Array[FleetAsset]
+
+pub fn fleet_ids(FleetObservation) -> Array[Int]
+
+pub fn fleet_inherent_availability(FleetObservation) -> Double
+
+pub fn fleet_load_headroom(FleetObservation, Double) -> Double
+
+pub fn fleet_maintenance_candidates(FleetObservation, Double) -> Array[FleetAsset]
+
+pub fn fleet_maintenance_count(FleetObservation) -> Int
+
+pub fn fleet_merge_observations(FleetObservation, FleetObservation) -> FleetObservation
+
+pub fn fleet_model_availability(FleetObservation) -> Array[Double]
+
+pub fn fleet_model_codes(FleetObservation) -> Array[String]
+
+pub fn fleet_model_failure_rates(FleetObservation) -> Array[Double]
+
+pub fn fleet_model_risk_rank(FleetObservation) -> Array[String]
+
+pub fn fleet_mtbf(FleetObservation) -> Double
+
+pub fn fleet_mttr(FleetObservation) -> Double
+
+pub fn fleet_observation(Array[FleetAsset], Double, Double, String) -> FleetObservation
+
+pub fn fleet_observation_duration(FleetObservation) -> Double
+
 pub fn fleet_plan(fleet_size~ : Int, horizon~ : Double, expected_failures~ : Double, spare_units~ : Int, stockout_probability~ : Double, expected_downtime~ : Double) -> FleetPlan
 
+pub fn fleet_preventive_value(FleetObservation, Double, Double, Double, Double) -> Double
+
+pub fn fleet_rank_by_risk(FleetObservation) -> Array[FleetAsset]
+
 pub fn fleet_reliability(ReliabilityModel, Int, Double, Int) -> Double
+
+pub fn fleet_reliability_at(FleetObservation, Double) -> Double
+
+pub fn fleet_reliability_curve(FleetObservation, Array[Double]) -> Array[FleetReliabilityPoint]
+
+pub fn fleet_reliability_point(Double, Double, Double, Double, Double) -> FleetReliabilityPoint
+
+pub fn fleet_reliability_projection(FleetObservation, Array[Double]) -> Array[Double]
+
+pub fn fleet_repair_rate(FleetObservation) -> Double
+
+pub fn fleet_replacement_candidates(FleetObservation, Double, Double) -> Array[FleetAsset]
+
+pub fn fleet_replacement_value(FleetAsset, Double, Double, Double, Double) -> Double
+
+pub fn fleet_retired_count(FleetObservation) -> Int
+
+pub fn fleet_retirement_candidates(FleetObservation, Double, Double) -> Array[FleetAsset]
+
+pub fn fleet_risk_concentration(FleetObservation, Int) -> Double
+
+pub fn fleet_risk_score(FleetAsset) -> Double
+
+pub fn fleet_risk_scores(FleetObservation) -> Array[Double]
+
+pub fn fleet_service_level(FleetObservation, Double) -> Double
+
+pub fn fleet_service_level_label(Double) -> String
+
+pub fn fleet_snapshot_checksum(FleetObservation) -> Double
+
+pub fn fleet_state_fraction(FleetObservation, FleetAssetState) -> Double
+
+pub fn fleet_summaries_by_cohort(FleetObservation) -> Array[FleetSummary]
+
+pub fn fleet_summaries_by_model(FleetObservation) -> Array[FleetSummary]
+
+pub fn fleet_summary(FleetObservation) -> FleetSummary
+
+pub fn fleet_target_failures(FleetObservation, Double, Double) -> Bool
+
+pub fn fleet_target_gap(FleetObservation, Double) -> Double
+
+pub fn fleet_target_horizon(FleetObservation, Double) -> Double
+
+pub fn fleet_total_criticality(FleetObservation) -> Double
+
+pub fn fleet_total_failure_count(FleetObservation) -> Int
+
+pub fn fleet_total_operating_hours(FleetObservation) -> Double
+
+pub fn fleet_total_repair_hours(FleetObservation) -> Double
+
+pub fn fleet_unavailable_fraction(FleetObservation) -> Double
+
+pub fn fleet_used_capacity(FleetObservation) -> Double
+
+pub fn fleet_utilization_bands(FleetObservation, Array[Double]) -> Array[Int]
+
+pub fn fleet_weighted_availability(FleetObservation) -> Double
 
 pub fn forecast_accuracy(Array[Double], Array[Double]) -> MetricEstimate
 
@@ -357,6 +989,26 @@ pub fn gamma(Double) -> Double
 pub fn gamma_fit(Array[Double]) -> FitResult
 
 pub fn gamma_log(Double) -> Double
+
+pub fn generalized_pareto_cdf(Double, Double, Double) -> Double
+
+pub fn generalized_pareto_checksum(GeneralizedParetoFit) -> Double
+
+pub fn generalized_pareto_density(Double, Double, Double) -> Double
+
+pub fn generalized_pareto_exceedance_rate(GeneralizedParetoFit, Double) -> Double
+
+pub fn generalized_pareto_fit(Array[Double], Double) -> GeneralizedParetoFit
+
+pub fn generalized_pareto_probability_above(GeneralizedParetoFit, Double) -> Double
+
+pub fn generalized_pareto_quantile(Double, Double, Double) -> Double
+
+pub fn generalized_pareto_return_level(GeneralizedParetoFit, Double) -> Double
+
+pub fn generalized_pareto_survival(Double, Double, Double) -> Double
+
+pub fn generalized_pareto_tail_mean(GeneralizedParetoFit) -> Double
 
 pub fn geometric_mean(Array[Double]) -> Double
 
@@ -630,9 +1282,27 @@ pub fn percentile_rank(Array[Double], Double) -> Double
 
 pub fn plan_fleet(ReliabilityModel, Int, Double, Double, Double) -> FleetPlan
 
+pub fn poisson_cdf(Int, Double) -> Double
+
 pub fn poisson_confidence(Int, Double, Double) -> MetricEstimate
 
+pub fn poisson_expected_events(PoissonTestPlan) -> Double
+
+pub fn poisson_lower_rate_bound(Int, Double, Double) -> Double
+
+pub fn poisson_plan_margin(PoissonTestPlan, Int) -> Int
+
+pub fn poisson_plan_passes(PoissonTestPlan, Int) -> Bool
+
+pub fn poisson_probability(Int, Double) -> Double
+
 pub fn poisson_rate(Int, Double) -> MetricEstimate
+
+pub fn poisson_survival(Int, Double) -> Double
+
+pub fn poisson_test_plan(Double, Double, Double, Int, Double, String) -> PoissonTestPlan
+
+pub fn poisson_upper_rate_bound(Int, Double, Double) -> Double
 
 pub fn policy_action_label(PolicyAction) -> String
 
@@ -692,29 +1362,913 @@ pub fn regularized_gamma_p(Double, Double) -> Double
 
 pub fn regularized_gamma_q(Double, Double) -> Double
 
+pub fn reliability_alarm_decision(ReliabilityConditionAssessment, Int, ReliabilityHealthPolicy) -> ReliabilityAlarmDecision
+
+pub fn reliability_alarm_needs_dispatch(ReliabilityAlarmDecision) -> Bool
+
+pub fn reliability_alarm_priority(ReliabilityAlarmDecision) -> Int
+
+pub fn reliability_allocation_plan(Array[AllocationComponent], Double, String, Double) -> ReliabilityAllocationPlan
+
+pub fn reliability_anova(Array[ReliabilityTreatmentCell]) -> ReliabilityAnova
+
+pub fn reliability_anova_is_informative(ReliabilityAnova, Double) -> Bool
+
+pub fn reliability_anova_residual_standard_error(ReliabilityAnova) -> Double
+
+pub fn reliability_assessment_is_healthy(ReliabilityConditionAssessment) -> Bool
+
+pub fn reliability_assessment_risk(ReliabilityConditionAssessment) -> Double
+
+pub fn reliability_assessment_top_feature(ReliabilityConditionAssessment) -> String
+
 pub fn reliability_at(ReliabilityModel, Array[Double]) -> Array[Double]
+
+pub fn reliability_beta_cdf(ReliabilityBetaPosterior, Double) -> Double
+
+pub fn reliability_beta_data_weight(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_density(ReliabilityBetaPosterior, Double) -> Double
+
+pub fn reliability_beta_information(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_interval(ReliabilityBetaPosterior, Double) -> MetricEstimate
+
+pub fn reliability_beta_log_evidence(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_mean(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_mode(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_posterior_strength(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_predictive_cdf(ReliabilityBetaPosterior, Int, Int) -> Double
+
+pub fn reliability_beta_predictive_failure(ReliabilityBetaPosterior, Int) -> Double
+
+pub fn reliability_beta_predictive_probability(ReliabilityBetaPosterior, Int, Int) -> Double
+
+pub fn reliability_beta_predictive_success(ReliabilityBetaPosterior, Int) -> Double
+
+pub fn reliability_beta_prior(Double, Double, String) -> ReliabilityBetaPosterior
+
+pub fn reliability_beta_prior_weight(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_quantile(ReliabilityBetaPosterior, Double) -> Double
+
+pub fn reliability_beta_shrinkage(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_standard_deviation(ReliabilityBetaPosterior) -> Double
+
+pub fn reliability_beta_update(ReliabilityBetaPosterior, Int, Int) -> ReliabilityBetaPosterior
+
+pub fn reliability_beta_update_exposure(ReliabilityBetaPosterior, Int, Int) -> ReliabilityBetaPosterior
+
+pub fn reliability_beta_variance(ReliabilityBetaPosterior) -> Double
 
 pub fn reliability_budget(TelemetryWindow, Double) -> ReliabilityBudget
 
+pub fn reliability_cell_failure_rate(ReliabilityTreatmentCell) -> Double
+
+pub fn reliability_cell_is_balanced(ReliabilityTreatmentCell) -> Bool
+
+pub fn reliability_cell_response_mean(ReliabilityTreatmentCell) -> Double
+
+pub fn reliability_cell_response_variance(ReliabilityTreatmentCell) -> Double
+
+pub fn reliability_cell_total_exposure(ReliabilityTreatmentCell) -> Double
+
+pub fn reliability_cell_total_failures(ReliabilityTreatmentCell) -> Int
+
+pub fn reliability_cell_trial_count(ReliabilityTreatmentCell) -> Int
+
+pub fn reliability_change_is_overdue(ReliabilityChangeRequest, Double) -> Bool
+
+pub fn reliability_change_is_releasable(ReliabilityChangeRequest) -> Bool
+
+pub fn reliability_change_priority(ReliabilityChangeRequest) -> Double
+
+pub fn reliability_change_request(String, String, String, String, Double, Double, Double, Double, Bool, Bool, Bool) -> ReliabilityChangeRequest
+
+pub fn reliability_condition_actionable_assets(Array[ReliabilityConditionAssessment]) -> Array[Int]
+
+pub fn reliability_condition_assessment(Int, Double, Array[ReliabilityHealthFeature], Double, ReliabilityHealthPolicy) -> ReliabilityConditionAssessment
+
+pub fn reliability_condition_batch_risk(Array[ReliabilityConditionAssessment]) -> Double
+
+pub fn reliability_condition_checksum(Array[ReliabilityConditionAssessment]) -> Double
+
+pub fn reliability_condition_coverage(Array[ReliabilityConditionAssessment], Int) -> Double
+
+pub fn reliability_condition_ranked_assets(Array[ReliabilityConditionAssessment]) -> Array[ReliabilityConditionAssessment]
+
+pub fn reliability_control_coverage(Array[ReliabilityRiskControl], String) -> Double
+
+pub fn reliability_control_effectiveness(ReliabilityRiskControl) -> Double
+
+pub fn reliability_control_is_evidence_backed(ReliabilityRiskControl) -> Bool
+
+pub fn reliability_control_test_due(ReliabilityRiskControl, Double) -> Bool
+
+pub fn reliability_control_untested_ids(Array[ReliabilityRiskControl], Double) -> Array[String]
+
+pub fn reliability_control_weak_ids(Array[ReliabilityRiskControl], Double) -> Array[String]
+
+pub fn reliability_data_column(String, ReliabilityDataKind, Int, Int, Int, Int, Double, Double, Double, Double, Int) -> ReliabilityDataColumn
+
+pub fn reliability_data_column_coefficient_of_variation(ReliabilityDataColumn) -> Double
+
+pub fn reliability_data_column_duplicate_rate(ReliabilityDataColumn) -> Double
+
+pub fn reliability_data_column_invalid_rate(ReliabilityDataColumn) -> Double
+
+pub fn reliability_data_column_is_usable(ReliabilityDataColumn, Double) -> Bool
+
+pub fn reliability_data_column_missing_rate(ReliabilityDataColumn) -> Double
+
+pub fn reliability_data_column_name(ReliabilityDataColumn) -> String
+
+pub fn reliability_data_column_quality(ReliabilityDataColumn) -> Double
+
+pub fn reliability_data_column_range(ReliabilityDataColumn) -> Double
+
+pub fn reliability_data_column_valid_count(ReliabilityDataColumn) -> Int
+
+pub fn reliability_data_event_rate(Array[ReliabilityDataRow], Double) -> Double
+
+pub fn reliability_data_exponential_smoothing(Array[Double], Double) -> Array[Double]
+
+pub fn reliability_data_first_difference(Array[Double]) -> Array[Double]
+
+pub fn reliability_data_interpolate(Double, Double, Double, Double, Double) -> Double
+
+pub fn reliability_data_moving_average(Array[Double], Int) -> Array[Double]
+
+pub fn reliability_data_normalize(Array[Double], Double, Double) -> Array[Double]
+
+pub fn reliability_data_outlier_flags(Array[Double], Double) -> Array[Bool]
+
+pub fn reliability_data_quality_checksum(ReliabilityDataSet) -> Double
+
+pub fn reliability_data_quality_report(ReliabilityDataSet, Array[ReliabilityDataRuleResult], Double) -> ReliabilityDataQualityReport
+
+pub fn reliability_data_report_failure_fraction(ReliabilityDataQualityReport) -> Double
+
+pub fn reliability_data_report_has_blocker(ReliabilityDataQualityReport) -> Bool
+
+pub fn reliability_data_resample(Array[ReliabilityDataRow], Array[Double]) -> Array[ReliabilityDataRow]
+
+pub fn reliability_data_row(Double, Int, Double, Int, Bool, Bool, Double) -> ReliabilityDataRow
+
+pub fn reliability_data_row_adjusted_value(ReliabilityDataRow, Double, Double) -> Double
+
+pub fn reliability_data_row_age(ReliabilityDataRow, Double) -> Double
+
+pub fn reliability_data_row_is_observed(ReliabilityDataRow) -> Bool
+
+pub fn reliability_data_row_weight(ReliabilityDataRow) -> Double
+
+pub fn reliability_data_rule(String, String, Double, Double, Bool) -> ReliabilityDataRule
+
+pub fn reliability_data_rule_passes(ReliabilityDataRule, Double) -> Bool
+
+pub fn reliability_data_rule_result(ReliabilityDataRule, Double) -> ReliabilityDataRuleResult
+
+pub fn reliability_data_rule_results_failed(Array[ReliabilityDataRuleResult]) -> Array[String]
+
+pub fn reliability_data_rule_results_score(Array[ReliabilityDataRuleResult]) -> Double
+
+pub fn reliability_data_rule_weighted_score(ReliabilityDataRule, Double) -> Double
+
+pub fn reliability_data_set(String, String, Array[ReliabilityDataRow], Array[ReliabilityDataColumn], Double, Double, Int) -> ReliabilityDataSet
+
+pub fn reliability_data_set_asset_count(ReliabilityDataSet) -> Int
+
+pub fn reliability_data_set_asset_rows(ReliabilityDataSet, Int) -> Array[ReliabilityDataRow]
+
+pub fn reliability_data_set_censored_count(ReliabilityDataSet) -> Int
+
+pub fn reliability_data_set_column_count(ReliabilityDataSet) -> Int
+
+pub fn reliability_data_set_duration(ReliabilityDataSet) -> Double
+
+pub fn reliability_data_set_failure_count(ReliabilityDataSet) -> Int
+
+pub fn reliability_data_set_failure_rows(ReliabilityDataSet) -> Array[ReliabilityDataRow]
+
+pub fn reliability_data_set_has_time_regression(ReliabilityDataSet) -> Bool
+
+pub fn reliability_data_set_mean_quality(ReliabilityDataSet) -> Double
+
+pub fn reliability_data_set_observed_rows(ReliabilityDataSet) -> Array[ReliabilityDataRow]
+
+pub fn reliability_data_set_quality(ReliabilityDataSet) -> Double
+
+pub fn reliability_data_set_row_count(ReliabilityDataSet) -> Int
+
+pub fn reliability_data_set_sorted_rows(ReliabilityDataSet) -> Array[ReliabilityDataRow]
+
+pub fn reliability_data_set_time_slice(ReliabilityDataSet, Double, Double) -> Array[ReliabilityDataRow]
+
+pub fn reliability_data_standardize(Array[Double]) -> Array[Double]
+
+pub fn reliability_data_window_count(Double, Double, Double, Double) -> Int
+
+pub fn reliability_data_window_means(Array[ReliabilityDataRow], Double, Double, Double, Double) -> Array[Double]
+
+pub fn reliability_evidence(String, String, String, String, Double, Double, Double, Bool) -> ReliabilityEvidence
+
+pub fn reliability_evidence_is_acceptable(ReliabilityEvidence, Double) -> Bool
+
+pub fn reliability_evidence_score(ReliabilityEvidence) -> Double
+
+pub fn reliability_evidence_subject_score(Array[ReliabilityEvidence], String) -> Double
+
+pub fn reliability_evidence_unverified_ids(Array[ReliabilityEvidence]) -> Array[String]
+
+pub fn reliability_experiment_checksum(Array[ReliabilityTrial], ReliabilityAnova) -> Double
+
+pub fn reliability_factor(String, Double, Double, Double) -> ReliabilityFactor
+
+pub fn reliability_factor_effect(String, Double, Double, Double, Int) -> ReliabilityFactorEffect
+
+pub fn reliability_factor_effect_is_material(ReliabilityFactorEffect, Double) -> Bool
+
+pub fn reliability_factor_effect_signal(ReliabilityFactorEffect) -> Double
+
+pub fn reliability_factor_is_high(ReliabilityFactor) -> Bool
+
+pub fn reliability_factor_is_low(ReliabilityFactor) -> Bool
+
+pub fn reliability_factor_normalized(ReliabilityFactor) -> Double
+
+pub fn reliability_gamma_cdf(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_density(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_failure_probability(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_interval(ReliabilityGammaPosterior, Double) -> MetricEstimate
+
+pub fn reliability_gamma_mean(ReliabilityGammaPosterior) -> Double
+
+pub fn reliability_gamma_mode(ReliabilityGammaPosterior) -> Double
+
+pub fn reliability_gamma_predictive_failures(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_predictive_probability_at_most(ReliabilityGammaPosterior, Int, Double) -> Double
+
+pub fn reliability_gamma_predictive_probability_zero(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_prior(Double, Double, String) -> ReliabilityGammaPosterior
+
+pub fn reliability_gamma_quantile(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_rate_lower_bound(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_rate_upper_bound(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_standard_deviation(ReliabilityGammaPosterior) -> Double
+
+pub fn reliability_gamma_survival_probability(ReliabilityGammaPosterior, Double) -> Double
+
+pub fn reliability_gamma_update(ReliabilityGammaPosterior, Int, Double) -> ReliabilityGammaPosterior
+
+pub fn reliability_gamma_variance(ReliabilityGammaPosterior) -> Double
+
+pub fn reliability_governance_blockers(ReliabilityGovernanceSnapshot) -> Array[String]
+
+pub fn reliability_governance_checksum(ReliabilityGovernanceSnapshot, Array[ReliabilityModelRecord]) -> Double
+
+pub fn reliability_governance_is_ready(ReliabilityGovernanceSnapshot) -> Bool
+
+pub fn reliability_governance_snapshot(Double, Array[ReliabilityModelRecord], Array[ReliabilityValidationRun], Array[ReliabilityEvidence], Array[ReliabilityChangeRequest]) -> ReliabilityGovernanceSnapshot
+
 pub fn reliability_growth_model(intercept~ : Double, shape~ : Double, scale~ : Double, fit~ : RegressionResult) -> ReliabilityGrowthModel
+
+pub fn reliability_health_feature(String, Double, Double, Double, Double, Double) -> ReliabilityHealthFeature
+
+pub fn reliability_health_feature_contribution(ReliabilityHealthFeature) -> Double
+
+pub fn reliability_health_feature_risk(ReliabilityHealthFeature) -> Double
+
+pub fn reliability_health_feature_score(ReliabilityHealthFeature) -> Double
+
+pub fn reliability_health_index(Array[ReliabilityHealthFeature]) -> Double
+
+pub fn reliability_health_policy(Double, Double, Double, Double, Int) -> ReliabilityHealthPolicy
+
+pub fn reliability_health_risk_index(Array[ReliabilityHealthFeature]) -> Double
+
+pub fn reliability_health_state(ReliabilityHealthPolicy, Double, Double) -> ReliabilityHealthState
+
+pub fn reliability_health_state_is_actionable(ReliabilityHealthState) -> Bool
+
+pub fn reliability_health_state_rank(ReliabilityHealthState) -> Int
+
+pub fn reliability_incoming_cost_per_unit(ReliabilityIncomingInspection) -> Double
+
+pub fn reliability_incoming_critical_rate(ReliabilityIncomingInspection) -> Double
+
+pub fn reliability_incoming_defect_rate(ReliabilityIncomingInspection) -> Double
+
+pub fn reliability_incoming_inspection(Int, String, Int, Int, Int, Double, Bool, Double) -> ReliabilityIncomingInspection
+
+pub fn reliability_incoming_plan(Int, ReliabilitySupplier, Double) -> ReliabilityIncomingPlan
+
+pub fn reliability_incoming_plan_expected_cost(ReliabilityIncomingPlan, Double, Double, Double, Int) -> Double
+
+pub fn reliability_incoming_plan_is_full_inspection(ReliabilityIncomingPlan) -> Bool
+
+pub fn reliability_incoming_yield(ReliabilityIncomingInspection) -> Double
+
+pub fn reliability_lower_bound_failures(Int, Int, Double) -> Double
+
+pub fn reliability_lower_bound_zero_failures(Int, Double) -> Double
+
+pub fn reliability_main_effect(Array[ReliabilityTrial], String) -> ReliabilityFactorEffect
 
 pub fn reliability_margin(ReliabilityModel, Double, Double) -> Double
 
+pub fn reliability_model_approval(String, ReliabilityModelStage, ReliabilityModelStage, String, Double, String, String, Double) -> ReliabilityModelApproval
+
+pub fn reliability_model_approval_is_current(ReliabilityModelApproval, Double) -> Bool
+
+pub fn reliability_model_approval_is_promotion(ReliabilityModelApproval) -> Bool
+
+pub fn reliability_model_checksum(ReliabilityModelRecord) -> Double
+
+pub fn reliability_model_failure_fraction(ReliabilityModelRecord) -> Double
+
+pub fn reliability_model_is_deployable(ReliabilityModelRecord, Double) -> Bool
+
+pub fn reliability_model_is_expired(ReliabilityModelRecord, Double) -> Bool
+
+pub fn reliability_model_metric(String, Double, Double, Double, Bool, Double) -> ReliabilityModelMetric
+
+pub fn reliability_model_metric_gap(ReliabilityModelMetric) -> Double
+
+pub fn reliability_model_metric_passes(ReliabilityModelMetric) -> Bool
+
+pub fn reliability_model_metric_score(ReliabilityModelMetric) -> Double
+
+pub fn reliability_model_metric_status(ReliabilityModelMetric) -> ReliabilityValidationStatus
+
+pub fn reliability_model_metric_weighted_score(ReliabilityModelMetric) -> Double
+
+pub fn reliability_model_record(String, String, String, String, String, ReliabilityModelStage, Int, Int, Double, Double, Double, Double) -> ReliabilityModelRecord
+
+pub fn reliability_model_stage_label(ReliabilityModelStage) -> String
+
+pub fn reliability_power_plan(Double, Double, Double, Double) -> ReliabilityPowerPlan
+
+pub fn reliability_power_plan_is_sufficient(ReliabilityPowerPlan) -> Bool
+
+pub fn reliability_power_plan_total_sample(ReliabilityPowerPlan) -> Int
+
+pub fn reliability_reading(ReliabilitySensor, Double, Double, Double, Int) -> ReliabilityReading
+
+pub fn reliability_reading_gap(ReliabilityReading, ReliabilityReading) -> Double
+
+pub fn reliability_reading_is_usable(ReliabilityReading) -> Bool
+
+pub fn reliability_reading_rate(ReliabilityReading, ReliabilityReading) -> Double
+
+pub fn reliability_reading_weighted_value(ReliabilityReading) -> Double
+
+pub fn reliability_readings_mean(Array[ReliabilityReading]) -> Double
+
+pub fn reliability_readings_missing_fraction(Array[ReliabilityReading], Double, Double, Double) -> Double
+
+pub fn reliability_readings_range(Array[ReliabilityReading]) -> Double
+
+pub fn reliability_readings_slope(Array[ReliabilityReading]) -> Double
+
+pub fn reliability_readings_sorted(Array[ReliabilityReading]) -> Array[ReliabilityReading]
+
+pub fn reliability_readings_values(Array[ReliabilityReading]) -> Array[Double]
+
+pub fn reliability_readings_variance(Array[ReliabilityReading]) -> Double
+
 pub fn reliability_requirement(name~ : String, mission_time~ : Double, minimum_survival~ : Double, confidence_level~ : Double, penalty~ : Double) -> ReliabilityRequirement
+
+pub fn reliability_residual_bias(Array[Double]) -> Double
+
+pub fn reliability_residual_root_mean_square(Array[Double]) -> Double
+
+pub fn reliability_residual_within_limits(Array[Double], Double) -> Bool
+
+pub fn reliability_response_surface(Double, Array[Double], Double, Double) -> ReliabilityResponseSurface
+
+pub fn reliability_response_surface_bounds(ReliabilityResponseSurface, Array[Double], Double) -> (Double, Double)
+
+pub fn reliability_response_surface_grid(ReliabilityResponseSurface, Double, Double, Int) -> Array[Double]
+
+pub fn reliability_response_surface_is_stable(ReliabilityResponseSurface, Double) -> Bool
+
+pub fn reliability_response_surface_predict(ReliabilityResponseSurface, Array[Double]) -> Double
+
+pub fn reliability_response_surface_sensitivity(ReliabilityResponseSurface) -> Double
+
+pub fn reliability_risk_action(String, String, String, String, Double, Double, Double, Double, Bool, Bool) -> ReliabilityRiskAction
+
+pub fn reliability_risk_action_is_late(ReliabilityRiskAction, Double) -> Bool
+
+pub fn reliability_risk_action_owner_load(Array[ReliabilityRiskAction], String) -> Double
+
+pub fn reliability_risk_action_plan_score(Array[ReliabilityRiskAction]) -> Double
+
+pub fn reliability_risk_action_realized_reduction(ReliabilityRiskAction) -> Double
+
+pub fn reliability_risk_action_value(ReliabilityRiskAction) -> Double
+
+pub fn reliability_risk_category_score(Array[ReliabilityRiskRecord], String) -> Double
+
+pub fn reliability_risk_control(String, String, String, String, String, Double, Double, Double, Double, Int, Bool) -> ReliabilityRiskControl
+
+pub fn reliability_risk_due_review_ids(Array[ReliabilityRiskRecord], Double) -> Array[String]
+
+pub fn reliability_risk_is_open(ReliabilityRiskRecord) -> Bool
+
+pub fn reliability_risk_is_overdue(ReliabilityRiskRecord, Double) -> Bool
+
+pub fn reliability_risk_next_review(ReliabilityRiskRecord) -> Double
+
+pub fn reliability_risk_overdue_ids(Array[ReliabilityRiskRecord], Double) -> Array[String]
+
+pub fn reliability_risk_owner_load(Array[ReliabilityRiskRecord], String) -> Int
+
+pub fn reliability_risk_portfolio_benefit(Array[ReliabilityRiskRecord], Array[ReliabilityRiskAction]) -> Double
+
+pub fn reliability_risk_portfolio_loss(Array[ReliabilityRiskRecord], Array[ReliabilityRiskControl]) -> Double
+
+pub fn reliability_risk_priority(ReliabilityRiskRecord) -> Int
+
+pub fn reliability_risk_ranked(Array[ReliabilityRiskRecord]) -> Array[ReliabilityRiskRecord]
+
+pub fn reliability_risk_record(String, String, String, String, Double, Double, Double, Double, ReliabilityRiskStatus, ReliabilityRiskTreatment, Double, Double, Double) -> ReliabilityRiskRecord
+
+pub fn reliability_risk_register_checksum(ReliabilityRiskReview, Array[ReliabilityRiskRecord]) -> Double
+
+pub fn reliability_risk_residual_score(ReliabilityRiskRecord, Double) -> Double
+
+pub fn reliability_risk_review(Double, Array[ReliabilityRiskRecord], Array[ReliabilityRiskControl], Array[ReliabilityRiskAction]) -> ReliabilityRiskReview
+
+pub fn reliability_risk_review_due(ReliabilityRiskRecord, Double) -> Bool
+
+pub fn reliability_risk_review_has_blocker(ReliabilityRiskReview) -> Bool
+
+pub fn reliability_risk_review_open_fraction(ReliabilityRiskReview) -> Double
+
+pub fn reliability_risk_review_readiness(ReliabilityRiskReview) -> Double
+
+pub fn reliability_risk_score(ReliabilityRiskRecord) -> Double
+
+pub fn reliability_risk_select_actions(Array[ReliabilityRiskAction], Double) -> Array[String]
+
+pub fn reliability_risk_status_label(ReliabilityRiskStatus) -> String
+
+pub fn reliability_risk_treatment_label(ReliabilityRiskTreatment) -> String
+
+pub fn reliability_rul_conservative(ReliabilityRulEstimate) -> Double
+
+pub fn reliability_rul_estimate(Int, Double, Double, Double, Double, Double, Double) -> ReliabilityRulEstimate
+
+pub fn reliability_rul_from_linear_health(Int, Double, Double, Double, Double, Double) -> ReliabilityRulEstimate
+
+pub fn reliability_rul_is_due(ReliabilityRulEstimate, Double) -> Bool
+
+pub fn reliability_rul_margin(ReliabilityRulEstimate) -> Double
 
 pub fn reliability_scorecard(reliability_score~ : Double, availability_score~ : Double, quality_score~ : Double, maintenance_score~ : Double, overall_score~ : Double, grade~ : String, recommendations~ : Array[String]) -> ReliabilityScorecard
 
+pub fn reliability_scorecard_defect_rate(ReliabilitySupplierScorecard) -> Double
+
+pub fn reliability_scorecard_delivery_rate(ReliabilitySupplierScorecard) -> Double
+
+pub fn reliability_scorecard_quality_score(ReliabilitySupplierScorecard) -> Double
+
+pub fn reliability_scorecard_recommendation(ReliabilitySupplierScorecard) -> SupplierRiskTier
+
+pub fn reliability_scorecard_rejection_rate(ReliabilitySupplierScorecard) -> Double
+
+pub fn reliability_sensor(String, Int, ReliabilitySignalKind, String, Double, Double, Double, Double, Double, Bool) -> ReliabilitySensor
+
+pub fn reliability_sensor_calibrate(ReliabilitySensor, Double) -> Double
+
+pub fn reliability_sensor_expected_samples(ReliabilitySensor, Double) -> Int
+
+pub fn reliability_sensor_is_in_limit(ReliabilitySensor, Double) -> Bool
+
+pub fn reliability_sensor_limit_fraction(ReliabilitySensor, Double) -> Double
+
+pub fn reliability_sensor_margin(ReliabilitySensor, Double) -> Double
+
+pub fn reliability_sequential_boundary(Int, Double, Double, Double) -> ReliabilitySequentialBoundary
+
+pub fn reliability_sequential_can_stop(ReliabilitySequentialBoundary, Double) -> Bool
+
+pub fn reliability_sequential_decision(ReliabilitySequentialBoundary, Double) -> String
+
+pub fn reliability_sequential_operating_characteristic(ReliabilitySequentialBoundary, Array[Double]) -> (Int, Int, Int)
+
+pub fn reliability_service_asset_case_count(Array[ReliabilityServiceCase], Int) -> Int
+
+pub fn reliability_service_case(String, Int, Double, Double, ReliabilityServiceCaseState, ReliabilityServiceUrgency, String, Double, Double, Bool, Bool) -> ReliabilityServiceCase
+
+pub fn reliability_service_case_age(ReliabilityServiceCase, Double) -> Double
+
+pub fn reliability_service_case_is_late(ReliabilityServiceCase, Double) -> Bool
+
+pub fn reliability_service_case_is_open(ReliabilityServiceCase) -> Bool
+
+pub fn reliability_service_case_parts_cost(Array[ReliabilityServicePartUse], String) -> Double
+
+pub fn reliability_service_case_priority(ReliabilityServiceCase, Double) -> Double
+
+pub fn reliability_service_case_ranked(Array[ReliabilityServiceCase], Double) -> Array[ReliabilityServiceCase]
+
+pub fn reliability_service_case_slack(ReliabilityServiceCase, Double) -> Double
+
+pub fn reliability_service_case_state_label(ReliabilityServiceCaseState) -> String
+
+pub fn reliability_service_case_with_state(ReliabilityServiceCase, ReliabilityServiceCaseState) -> ReliabilityServiceCase
+
+pub fn reliability_service_checksum(ReliabilityServiceSummary) -> Double
+
+pub fn reliability_service_critical_count(Array[ReliabilityServiceCase]) -> Int
+
+pub fn reliability_service_customer_satisfaction(Array[ReliabilityServiceOutcome]) -> Double
+
+pub fn reliability_service_dispatch_capacity(Array[ReliabilityTechnician]) -> Double
+
+pub fn reliability_service_dispatch_match(ReliabilityServiceCase, Array[ReliabilityTechnician], String) -> Int
+
+pub fn reliability_service_outcome(String, String, String, Bool, Bool, Bool, Double, Double, Double) -> ReliabilityServiceOutcome
+
+pub fn reliability_service_outcome_cost_per_downtime_hour(ReliabilityServiceOutcome) -> Double
+
+pub fn reliability_service_outcome_effective(ReliabilityServiceOutcome) -> Bool
+
+pub fn reliability_service_outcome_quality(ReliabilityServiceOutcome) -> Double
+
+pub fn reliability_service_part_cost(ReliabilityServicePartUse) -> Double
+
+pub fn reliability_service_part_is_shortage(ReliabilityServicePartUse) -> Bool
+
+pub fn reliability_service_part_net_quantity(ReliabilityServicePartUse) -> Int
+
+pub fn reliability_service_part_use(String, Int, Int, Double, Int, Bool) -> ReliabilityServicePartUse
+
+pub fn reliability_service_repeat_fraction(Array[ReliabilityServiceCase]) -> Double
+
+pub fn reliability_service_sla(String, Double, Double, Double, Double, Double) -> ReliabilityServiceSla
+
+pub fn reliability_service_sla_compliant_fraction(ReliabilityServiceSla, Array[ReliabilityServiceVisit]) -> Double
+
+pub fn reliability_service_sla_is_met(ReliabilityServiceSla, Array[ReliabilityServiceVisit]) -> Bool
+
+pub fn reliability_service_sla_penalty(ReliabilityServiceSla, ReliabilityServiceVisit, Bool) -> Double
+
+pub fn reliability_service_sla_response_passes(ReliabilityServiceSla, ReliabilityServiceVisit) -> Bool
+
+pub fn reliability_service_sla_restoration_passes(ReliabilityServiceSla, ReliabilityServiceVisit) -> Bool
+
+pub fn reliability_service_summary(Double, Array[ReliabilityServiceCase], Array[ReliabilityServiceVisit], Array[ReliabilityServiceOutcome], ReliabilityServiceSla) -> ReliabilityServiceSummary
+
+pub fn reliability_service_summary_cost_per_case(ReliabilityServiceSummary) -> Double
+
+pub fn reliability_service_summary_late_fraction(ReliabilityServiceSummary) -> Double
+
+pub fn reliability_service_summary_readiness(ReliabilityServiceSummary) -> Double
+
+pub fn reliability_service_summary_repeat_fraction(ReliabilityServiceSummary) -> Double
+
+pub fn reliability_service_symptom_count(Array[ReliabilityServiceCase], String) -> Int
+
+pub fn reliability_service_total_visit_cost(Array[ReliabilityServiceVisit], Array[ReliabilityTechnician], Double) -> Double
+
+pub fn reliability_service_urgency_weight(ReliabilityServiceUrgency) -> Double
+
+pub fn reliability_service_verified_fraction(Array[ReliabilityServiceOutcome]) -> Double
+
+pub fn reliability_service_visit(String, String, String, Double, Double, Double, Double, Double, Double, Bool, Double) -> ReliabilityServiceVisit
+
+pub fn reliability_service_visit_cost(ReliabilityServiceVisit, ReliabilityTechnician, Double) -> Double
+
+pub fn reliability_service_visit_cycle_time(ReliabilityServiceVisit) -> Double
+
+pub fn reliability_service_visit_distance_per_hour(ReliabilityServiceVisit) -> Double
+
+pub fn reliability_service_visit_duration(ReliabilityServiceVisit) -> Double
+
+pub fn reliability_service_visit_is_late(ReliabilityServiceVisit, Double) -> Bool
+
+pub fn reliability_service_visit_productivity(ReliabilityServiceVisit) -> Double
+
+pub fn reliability_service_visit_response_time(ReliabilityServiceVisit) -> Double
+
+pub fn reliability_service_visit_success_fraction(Array[ReliabilityServiceVisit]) -> Double
+
+pub fn reliability_service_warranty_fraction(Array[ReliabilityServiceCase]) -> Double
+
 pub fn reliability_snapshot(ReliabilityModel, Double, Int) -> ReliabilitySnapshot
 
+pub fn reliability_supplier(String, String, SupplierRiskTier, Double, Double, Double, Double, Double, Double, Bool) -> ReliabilitySupplier
+
+pub fn reliability_supplier_concentration(Array[ReliabilitySupplier]) -> Double
+
+pub fn reliability_supplier_continuity_score(ReliabilitySupplier) -> Double
+
+pub fn reliability_supplier_delivery_score(ReliabilitySupplier) -> Double
+
+pub fn reliability_supplier_diversification_score(Array[ReliabilitySupplier]) -> Double
+
+pub fn reliability_supplier_lot(String, String, Int, Int, Double, Double, Double, Double, Bool) -> ReliabilitySupplierLot
+
+pub fn reliability_supplier_lot_delay(ReliabilitySupplierLot) -> Double
+
+pub fn reliability_supplier_lot_is_late(ReliabilitySupplierLot) -> Bool
+
+pub fn reliability_supplier_lot_risk(ReliabilitySupplierLot, ReliabilitySupplier) -> Double
+
+pub fn reliability_supplier_lot_total_value(ReliabilitySupplierLot) -> Double
+
+pub fn reliability_supplier_portfolio_risk(Array[ReliabilitySupplier]) -> Double
+
+pub fn reliability_supplier_portfolio_score(Array[ReliabilitySupplier]) -> Double
+
+pub fn reliability_supplier_quality_rate(ReliabilitySupplier) -> Double
+
+pub fn reliability_supplier_recommended_sample_fraction(ReliabilitySupplier) -> Double
+
+pub fn reliability_supplier_resilience_actions(Array[ReliabilitySupplier]) -> Array[String]
+
+pub fn reliability_supplier_restricted_ids(Array[ReliabilitySupplier], Double) -> Array[String]
+
+pub fn reliability_supplier_risk_score(ReliabilitySupplier) -> Double
+
+pub fn reliability_supplier_scorecard(String, Int, Int, Int, Int, Double, Int, Int, Double) -> ReliabilitySupplierScorecard
+
+pub fn reliability_supplier_should_escalate(ReliabilitySupplier, Double) -> Bool
+
+pub fn reliability_supply_chain_checksum(Array[ReliabilitySupplier], Array[ReliabilitySupplierScorecard]) -> Double
+
 pub fn reliability_system(name~ : String, logic~ : SystemLogic, component_reliabilities~ : Array[Double], reliability~ : Double, importance~ : Array[Double]) -> ReliabilitySystem
+
+pub fn reliability_technician(String, String, String, Double, Double, Double, Double, Double, Double, Bool) -> ReliabilityTechnician
+
+pub fn reliability_technician_after_assignment(ReliabilityTechnician, Double) -> ReliabilityTechnician
+
+pub fn reliability_technician_can_take(ReliabilityTechnician, String, Double) -> Bool
+
+pub fn reliability_technician_shift_hours(ReliabilityTechnician) -> Double
+
+pub fn reliability_technician_utilization(ReliabilityTechnician, Double) -> Double
+
+pub fn reliability_test_evidence(Double, Double, Int, Int, Double, Double) -> ReliabilityTestEvidence
+
+pub fn reliability_treatment_cell(Int, Array[ReliabilityFactor], Array[ReliabilityTrial]) -> ReliabilityTreatmentCell
+
+pub fn reliability_trial(Int, Array[ReliabilityFactor], Double, Double, Int, Bool, Int) -> ReliabilityTrial
+
+pub fn reliability_trial_factor_count(ReliabilityTrial) -> Int
+
+pub fn reliability_trial_factor_level(ReliabilityTrial, String) -> Double
+
+pub fn reliability_trial_failure_free(ReliabilityTrial) -> Bool
+
+pub fn reliability_trial_failure_rate(ReliabilityTrial) -> Double
+
+pub fn reliability_trial_id(ReliabilityTrial) -> Int
+
+pub fn reliability_trial_residuals(Array[ReliabilityTrial], Array[Double]) -> Array[Double]
+
+pub fn reliability_upper_bound_failures(Int, Int, Double) -> Double
+
+pub fn reliability_validation_duration(ReliabilityValidationRun) -> Double
+
+pub fn reliability_validation_failed_metrics(ReliabilityValidationRun) -> Array[String]
+
+pub fn reliability_validation_is_release_ready(ReliabilityValidationRun) -> Bool
+
+pub fn reliability_validation_run(String, String, Double, Double, String, Array[ReliabilityModelMetric], String, Bool) -> ReliabilityValidationRun
+
+pub fn reliability_validation_score(ReliabilityValidationRun) -> Double
+
+pub fn reliability_warranty(String, String, Double, Double, Double, Double, Double, Bool) -> ReliabilityWarranty
+
+pub fn reliability_warranty_age_band(Double, Double, Int, Int, Double, Double) -> ReliabilityWarrantyAgeBand
+
+pub fn reliability_warranty_age_band_cost_rate(ReliabilityWarrantyAgeBand) -> Double
+
+pub fn reliability_warranty_age_band_midpoint(ReliabilityWarrantyAgeBand) -> Double
+
+pub fn reliability_warranty_age_band_rate(ReliabilityWarrantyAgeBand) -> Double
+
+pub fn reliability_warranty_build_age_bands(ReliabilityWarranty, Array[ReliabilityWarrantyClaim], Double) -> Array[ReliabilityWarrantyAgeBand]
+
+pub fn reliability_warranty_claim(Int, Int, String, Double, Double, Double, Double, Double, Bool, Bool, Double) -> ReliabilityWarrantyClaim
+
+pub fn reliability_warranty_claim_checksum(ReliabilityWarrantyCohort, ReliabilityWarranty) -> Double
+
+pub fn reliability_warranty_claim_cost(ReliabilityWarranty, ReliabilityWarrantyClaim) -> Double
+
+pub fn reliability_warranty_claim_cost_quantiles(ReliabilityWarrantyHazardCurve, Double, Int, Array[Double]) -> Array[Double]
+
+pub fn reliability_warranty_claim_cycle_time(ReliabilityWarrantyClaim) -> Double
+
+pub fn reliability_warranty_claim_is_late(ReliabilityWarrantyClaim, Double) -> Bool
+
+pub fn reliability_warranty_claim_is_repeat(ReliabilityWarrantyClaim) -> Bool
+
+pub fn reliability_warranty_claim_probability(ReliabilityWarrantyHazardCurve, Double) -> Double
+
+pub fn reliability_warranty_cohort(Int, String, Int, Double, Array[ReliabilityWarrantyClaim], Double, Double) -> ReliabilityWarrantyCohort
+
+pub fn reliability_warranty_cohort_accepted_claims(ReliabilityWarrantyCohort) -> Int
+
+pub fn reliability_warranty_cohort_average_cycle_time(ReliabilityWarrantyCohort) -> Double
+
+pub fn reliability_warranty_cohort_claim_count(ReliabilityWarrantyCohort) -> Int
+
+pub fn reliability_warranty_cohort_claim_rate(ReliabilityWarrantyCohort) -> Double
+
+pub fn reliability_warranty_cohort_cost(ReliabilityWarrantyCohort, ReliabilityWarranty) -> Double
+
+pub fn reliability_warranty_cohort_cost_per_unit(ReliabilityWarrantyCohort, ReliabilityWarranty) -> Double
+
+pub fn reliability_warranty_cohort_expected_reserve(ReliabilityWarrantyCohort, ReliabilityWarranty) -> Double
+
+pub fn reliability_warranty_cohort_loss_ratio(ReliabilityWarrantyCohort, ReliabilityWarranty) -> Double
+
+pub fn reliability_warranty_cohort_repeat_claims(ReliabilityWarrantyCohort) -> Int
+
+pub fn reliability_warranty_cohort_repeat_rate(ReliabilityWarrantyCohort) -> Double
+
+pub fn reliability_warranty_cohort_severity(ReliabilityWarrantyCohort) -> Double
+
+pub fn reliability_warranty_coverage_fraction(ReliabilityWarranty, Double) -> Double
+
+pub fn reliability_warranty_cumulative_hazard_at(ReliabilityWarrantyHazardCurve, Double) -> Double
+
+pub fn reliability_warranty_expected_claim_cost(ReliabilityWarrantyHazardCurve, ReliabilityWarranty, Double, Int) -> Double
+
+pub fn reliability_warranty_forecast(Double, Double, Double, Double, Double, Double) -> ReliabilityWarrantyForecast
+
+pub fn reliability_warranty_forecast_margin(ReliabilityWarrantyForecast) -> Double
+
+pub fn reliability_warranty_forecast_reserve(ReliabilityWarrantyForecast, Double) -> Double
+
+pub fn reliability_warranty_hazard_at(ReliabilityWarrantyHazardCurve, Double) -> Double
+
+pub fn reliability_warranty_hazard_curve(Array[Double], Array[Double]) -> ReliabilityWarrantyHazardCurve
+
+pub fn reliability_warranty_is_active(ReliabilityWarranty, Double) -> Bool
+
+pub fn reliability_warranty_peak_age_band(Array[ReliabilityWarrantyAgeBand]) -> Int
+
+pub fn reliability_warranty_remaining(ReliabilityWarranty, Double) -> Double
+
+pub fn reliability_warranty_survival_probability(ReliabilityWarrantyHazardCurve, Double) -> Double
 
 pub fn remove_nonpositive(Array[Double]) -> Array[Double]
 
 pub fn renewal_reward_rate(ReliabilityModel, Double, Double, Double) -> Double
 
+pub fn repair_asset_downtime(Array[RepairEvent]) -> Array[Double]
+
+pub fn repair_asset_failure_counts(Array[RepairEvent]) -> Array[Int]
+
+pub fn repair_asset_rank(Array[RepairEvent]) -> Array[Int]
+
+pub fn repair_asset_risk(Array[RepairEvent]) -> Array[Double]
+
+pub fn repair_event(Int, Double, Double, Double, Int) -> RepairEvent
+
+pub fn repair_event_asset_ids(Array[RepairEvent]) -> Array[Int]
+
+pub fn repair_event_duration(RepairEvent) -> Double
+
+pub fn repair_event_rate(RepairEvent, Double) -> Double
+
+pub fn repair_event_total_outage(RepairEvent) -> Double
+
+pub fn repair_event_wait(RepairEvent) -> Double
+
+pub fn repair_event_weight(RepairEvent) -> Double
+
+pub fn repair_events_by_asset(Array[RepairEvent], Int) -> Array[RepairEvent]
+
+pub fn repair_history_availability(RepairHistorySummary, Double) -> Double
+
+pub fn repair_history_checksum(RepairHistorySummary) -> Double
+
+pub fn repair_history_failure_rate(RepairHistorySummary, Double) -> Double
+
+pub fn repair_history_summary(Array[RepairEvent], Double) -> RepairHistorySummary
+
+pub fn repair_history_weighted_availability(RepairHistorySummary, Double) -> Double
+
+pub fn repair_queue_expected_queue(RepairQueuePlan) -> Double
+
+pub fn repair_queue_expected_wait(RepairQueuePlan) -> Double
+
+pub fn repair_queue_headroom(RepairQueuePlan) -> Double
+
+pub fn repair_queue_is_stable(RepairQueuePlan) -> Bool
+
+pub fn repair_queue_overload(RepairQueuePlan) -> Double
+
+pub fn repair_queue_plan(Int, Double, Double) -> RepairQueuePlan
+
+pub fn repair_queue_plan_checksum(RepairQueuePlan) -> Double
+
+pub fn repair_queue_plan_utilization(RepairQueuePlan) -> Double
+
+pub fn repair_queue_required_repairers(Double, Double, Double) -> Int
+
 pub fn repair_queue_utilization(Double, Double) -> Double
 
+pub fn repairable_asset(Int, Double, Double, Double, Int, Double, Double) -> RepairableAsset
+
+pub fn repairable_asset_availability_curve(RepairableAsset, Array[Double]) -> Array[Double]
+
+pub fn repairable_asset_cost_curve(RepairableAsset, Array[Double]) -> Array[Double]
+
+pub fn repairable_asset_effective_availability(RepairableAsset) -> Double
+
+pub fn repairable_asset_effective_failure_rate(RepairableAsset) -> Double
+
+pub fn repairable_asset_expected_cost(RepairableAsset, Double) -> Double
+
+pub fn repairable_asset_expected_downtime(RepairableAsset, Double) -> Double
+
+pub fn repairable_asset_expected_failures(RepairableAsset, Double) -> Double
+
+pub fn repairable_asset_inherent_availability(RepairableAsset) -> Double
+
+pub fn repairable_asset_mtbf(RepairableAsset) -> Double
+
+pub fn repairable_asset_mttr(RepairableAsset) -> Double
+
+pub fn repairable_asset_rank(Array[RepairableAsset]) -> Array[RepairableAsset]
+
+pub fn repairable_asset_reliability(RepairableAsset, Double) -> Double
+
+pub fn repairable_asset_reliability_curve(RepairableAsset, Array[Double]) -> Array[Double]
+
+pub fn repairable_asset_risk_scores(Array[RepairableAsset]) -> Array[Double]
+
+pub fn repairable_asset_steady_failure_probability(RepairableAsset) -> Double
+
 pub fn repairable_availability(Double, Double) -> Double
+
+pub fn repairable_system(Array[RepairableAsset], String, Int, Int, String) -> RepairableSystem
+
+pub fn repairable_system_add_spares(RepairableSystem, Int) -> RepairableSystem
+
+pub fn repairable_system_asset_count(RepairableSystem) -> Int
+
+pub fn repairable_system_availability(RepairableSystem) -> Double
+
+pub fn repairable_system_availability_curve(RepairableSystem, Array[Double]) -> Array[Double]
+
+pub fn repairable_system_change_repair_capacity(RepairableSystem, Int) -> RepairableSystem
+
+pub fn repairable_system_checksum(RepairableSystem) -> Double
+
+pub fn repairable_system_checksum_curve(RepairableSystem, Array[Double]) -> Double
+
+pub fn repairable_system_cost_curve(RepairableSystem, Array[Double]) -> Array[Double]
+
+pub fn repairable_system_curve(RepairableSystem, Array[Double]) -> Array[Double]
+
+pub fn repairable_system_expected_cost(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_expected_downtime(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_expected_failures(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_failure_rates(RepairableSystem) -> Array[Double]
+
+pub fn repairable_system_queue_plan(RepairableSystem, Double, Double) -> RepairQueuePlan
+
+pub fn repairable_system_reliability(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_repair_rates(RepairableSystem) -> Array[Double]
+
+pub fn repairable_system_service_level(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_spare_coverage(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_spare_demand(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_spare_shortage(RepairableSystem, Double) -> Double
+
+pub fn repairable_system_stability(RepairableSystem, Double, Double) -> Bool
+
+pub fn repairable_system_target_spares(RepairableSystem, Double, Double) -> Int
 
 pub fn replicate_design(Array[DesignPoint], Int) -> Array[DesignPoint]
 
@@ -731,6 +2285,110 @@ pub fn requirement_result(requirement~ : String, estimate~ : Double, lower_bound
 pub fn residual_standard_error(RegressionResult) -> Double
 
 pub fn residual_summary(DiagnosticResult) -> SampleSummary
+
+pub fn resource_backlog_cost(Array[ResourceWorkOrder], Array[ResourceCrew], Double, Double) -> Double
+
+pub fn resource_crew(Int, String, String, Double, Double, Double, Double, Double, Double) -> ResourceCrew
+
+pub fn resource_crew_assign(ResourceCrew, ResourceWorkOrder) -> ResourceCrew
+
+pub fn resource_crew_available_hours(ResourceCrew) -> Double
+
+pub fn resource_crew_can_accept(ResourceCrew, ResourceWorkOrder, Double) -> Bool
+
+pub fn resource_crew_id(ResourceCrew) -> Int
+
+pub fn resource_crew_match(Array[ResourceWorkOrder], ResourceCrew, Double) -> Array[Int]
+
+pub fn resource_crew_release(ResourceCrew, Double) -> ResourceCrew
+
+pub fn resource_crew_shift_hours(ResourceCrew) -> Double
+
+pub fn resource_crew_utilization(ResourceCrew) -> Double
+
+pub fn resource_dispatch(Int, Int, Array[Int], Bool, String, Double, Double, Double) -> ResourceDispatch
+
+pub fn resource_dispatch_average_cost(Array[ResourceDispatch]) -> Double
+
+pub fn resource_dispatch_success_rate(Array[ResourceDispatch]) -> Double
+
+pub fn resource_dispatch_total_cost(ResourceDispatch) -> Double
+
+pub fn resource_late_order_ids(Array[ResourceWorkOrder], Double) -> Array[Int]
+
+pub fn resource_open_order_ids(Array[ResourceWorkOrder]) -> Array[Int]
+
+pub fn resource_orders_by_priority(Array[ResourceWorkOrder], Double) -> Array[ResourceWorkOrder]
+
+pub fn resource_part_demand(Array[ResourceWorkOrder], Int) -> Int
+
+pub fn resource_planning_checksum(ResourceSnapshot) -> Double
+
+pub fn resource_priority_weight(ResourceMaintenancePriority) -> Double
+
+pub fn resource_skill_demand(Array[ResourceWorkOrder], String) -> Double
+
+pub fn resource_sla_breach_count(Array[ResourceWorkOrder], Double) -> Int
+
+pub fn resource_sla_breach_fraction(Array[ResourceWorkOrder], Double) -> Double
+
+pub fn resource_snapshot(Double, Array[ResourceWorkOrder], Array[ResourceCrew], Array[ResourceSpare]) -> ResourceSnapshot
+
+pub fn resource_snapshot_capacity_ratio(ResourceSnapshot) -> Double
+
+pub fn resource_snapshot_health(ResourceSnapshot) -> Double
+
+pub fn resource_spare(Int, Int, Int, Int, Int, Int, Double, Double, Double) -> ResourceSpare
+
+pub fn resource_spare_available(ResourceSpare) -> Int
+
+pub fn resource_spare_consume(ResourceSpare, Int) -> ResourceSpare
+
+pub fn resource_spare_expected_stock_cost(ResourceSpare) -> Double
+
+pub fn resource_spare_id(ResourceSpare) -> Int
+
+pub fn resource_spare_inventory_position(ResourceSpare) -> Int
+
+pub fn resource_spare_needs_reorder(ResourceSpare) -> Bool
+
+pub fn resource_spare_order_quantity(ResourceSpare) -> Int
+
+pub fn resource_spare_receive(ResourceSpare, Int) -> ResourceSpare
+
+pub fn resource_spare_reserve(ResourceSpare, Int) -> ResourceSpare
+
+pub fn resource_spare_shortage(ResourceSpare, Int) -> Int
+
+pub fn resource_window(Int, Double, Double, Int, Array[Int], Double) -> ResourceWindow
+
+pub fn resource_window_add_order(ResourceWindow, ResourceWorkOrder) -> ResourceWindow
+
+pub fn resource_window_duration(ResourceWindow) -> Double
+
+pub fn resource_window_is_overloaded(ResourceWindow) -> Bool
+
+pub fn resource_window_slack(ResourceWindow) -> Double
+
+pub fn resource_window_utilization(ResourceWindow) -> Double
+
+pub fn resource_work_order(Int, Int, Double, Double, Double, ResourceMaintenancePriority, ResourceWorkOrderState, String, Array[Int], Double, Double) -> ResourceWorkOrder
+
+pub fn resource_work_order_age(ResourceWorkOrder, Double) -> Double
+
+pub fn resource_work_order_asset_id(ResourceWorkOrder) -> Int
+
+pub fn resource_work_order_id(ResourceWorkOrder) -> Int
+
+pub fn resource_work_order_is_late(ResourceWorkOrder, Double) -> Bool
+
+pub fn resource_work_order_is_open(ResourceWorkOrder) -> Bool
+
+pub fn resource_work_order_score(ResourceWorkOrder, Double) -> Double
+
+pub fn resource_work_order_slack(ResourceWorkOrder, Double) -> Double
+
+pub fn resource_work_order_with_state(ResourceWorkOrder, ResourceWorkOrderState) -> ResourceWorkOrder
 
 pub fn restoration_curve(Array[OutageRecord], Array[Double]) -> Array[Double]
 
@@ -768,7 +2426,121 @@ pub fn run_rules(Array[Double], ControlLimits) -> Array[String]
 
 pub fn safe_log_probability(Double) -> Double
 
+pub fn safety_barrier(Int, Int, String, Double, Double, Double, Double, Bool) -> SafetyBarrier
+
+pub fn safety_barrier_chain(Int, Array[SafetyBarrier], String) -> SafetyBarrierChain
+
+pub fn safety_barrier_chain_due_count(SafetyBarrierChain, Double) -> Int
+
+pub fn safety_barrier_chain_effectiveness(SafetyBarrierChain) -> Double
+
+pub fn safety_barrier_chain_failed_count(SafetyBarrierChain) -> Int
+
+pub fn safety_barrier_chain_failure_probability(SafetyBarrierChain) -> Double
+
+pub fn safety_barrier_chain_score(SafetyBarrierChain) -> Double
+
+pub fn safety_barrier_common_cause_factor(SafetyBarrier) -> Double
+
+pub fn safety_barrier_contribution(SafetyBarrier, Double) -> Double
+
+pub fn safety_barrier_due_fraction(Array[SafetyBarrier], Double) -> Double
+
+pub fn safety_barrier_effectiveness(SafetyBarrier) -> Double
+
+pub fn safety_barrier_effectiveness_curve(Array[SafetyBarrier]) -> Array[Double]
+
+pub fn safety_barrier_failure_fraction(Array[SafetyBarrier]) -> Double
+
+pub fn safety_barrier_failure_probability(SafetyBarrier) -> Double
+
+pub fn safety_barrier_is_due(SafetyBarrier, Double) -> Bool
+
+pub fn safety_barrier_retest(SafetyBarrier, Double, Bool) -> SafetyBarrier
+
+pub fn safety_case_checksum(SafetyCaseSummary) -> Double
+
+pub fn safety_case_evidence_score(SafetyCaseSummary) -> Double
+
+pub fn safety_case_gap(SafetyCaseSummary) -> Int
+
+pub fn safety_case_is_accepted(SafetyCaseSummary) -> Bool
+
+pub fn safety_case_label(SafetyCaseSummary) -> String
+
+pub fn safety_case_priority(SafetyCaseSummary) -> Double
+
+pub fn safety_case_readiness(SafetyCaseSummary) -> Double
+
+pub fn safety_case_readiness_label(SafetyCaseSummary) -> String
+
+pub fn safety_case_residual_risk(SafetyCaseSummary) -> Double
+
+pub fn safety_case_summary(Array[SafetyHazard], Array[SafetyBarrierChain], Array[SafetyRequirement], Array[SafetyVerification]) -> SafetyCaseSummary
+
+pub fn safety_hazard(Int, String, SafetySeverity, SafetyLikelihood, Double, Double, Bool, Int) -> SafetyHazard
+
+pub fn safety_hazard_expected_loss(SafetyHazard, Double) -> Double
+
+pub fn safety_hazard_is_actionable(SafetyHazard) -> Bool
+
+pub fn safety_hazard_rank(Array[SafetyHazard]) -> Array[SafetyHazard]
+
+pub fn safety_hazard_residual_score(SafetyHazard, Double) -> Double
+
+pub fn safety_hazard_residual_scores(Array[SafetyHazard], Double) -> Array[Double]
+
+pub fn safety_hazard_risk_class(SafetyHazard) -> String
+
+pub fn safety_hazard_score(SafetyHazard) -> Double
+
+pub fn safety_hazard_scores(Array[SafetyHazard]) -> Array[Double]
+
+pub fn safety_hazard_total_exposure(Array[SafetyHazard]) -> Double
+
+pub fn safety_hazard_total_loss(Array[SafetyHazard], Double) -> Double
+
+pub fn safety_hazard_unmitigated_count(Array[SafetyHazard]) -> Int
+
 pub fn safety_integrity_level(Double) -> String
+
+pub fn safety_likelihood_score(SafetyLikelihood) -> Int
+
+pub fn safety_owner_ids(Array[SafetyHazard]) -> Array[Int]
+
+pub fn safety_owner_rank(Array[SafetyHazard]) -> Array[Int]
+
+pub fn safety_owner_risk(Array[SafetyHazard], Int) -> Double
+
+pub fn safety_owner_risk_scores(Array[SafetyHazard]) -> Array[Double]
+
+pub fn safety_requirement(Int, String, Double, Bool, Double, Array[Int]) -> SafetyRequirement
+
+pub fn safety_requirement_checksum(SafetyRequirement) -> Double
+
+pub fn safety_requirement_completion(Array[SafetyRequirement]) -> Double
+
+pub fn safety_requirement_evidence_gap(SafetyRequirement) -> Double
+
+pub fn safety_requirement_gap(SafetyRequirement, Double) -> Double
+
+pub fn safety_requirement_hazard_count(SafetyRequirement) -> Int
+
+pub fn safety_requirement_passes(SafetyRequirement, Double) -> Bool
+
+pub fn safety_severity_score(SafetySeverity) -> Int
+
+pub fn safety_verification(Int, Int, Double, Double, Bool, String) -> SafetyVerification
+
+pub fn safety_verification_average_confidence(Array[SafetyVerification]) -> Double
+
+pub fn safety_verification_is_credible(SafetyVerification, Double) -> Bool
+
+pub fn safety_verification_pass_rate(Array[SafetyVerification]) -> Double
+
+pub fn safety_verification_risk(SafetyVerification) -> Double
+
+pub fn safety_verification_strength(SafetyVerification) -> Double
 
 pub fn sample_exponential(Int, Double, Int) -> Array[Double]
 
@@ -803,6 +2575,20 @@ pub fn segment_failure_times(Array[Double], Int) -> Array[Array[Double]]
 pub fn semi_markov_cycle_time(Double, Double) -> Double
 
 pub fn sensitivity_point(parameter~ : String, baseline~ : Double, perturbed~ : Double, absolute_change~ : Double, relative_change~ : Double, elasticity~ : Double) -> SensitivityPoint
+
+pub fn sequential_accepts(SequentialTestBoundary, Int, Double) -> Bool
+
+pub fn sequential_failure_rate(SequentialTestBoundary, Int, Double) -> Double
+
+pub fn sequential_operating_characteristic(SequentialTestBoundary, Double, Double) -> Double
+
+pub fn sequential_rate_margin(SequentialTestBoundary, Int, Double) -> Double
+
+pub fn sequential_rejects(SequentialTestBoundary, Int, Double) -> Bool
+
+pub fn sequential_test_boundary(Double, Double, Double, Double, Double, Double) -> SequentialTestBoundary
+
+pub fn sequential_test_status(SequentialTestBoundary, Int, Double) -> String
 
 pub fn series_hazard(Array[ReliabilityModel], Double) -> Double
 
@@ -843,6 +2629,118 @@ pub fn snapshot_margin(ReliabilitySnapshot, Double) -> Double
 pub fn snapshot_series(ReliabilityModel, Array[Double], Int) -> Array[ReliabilitySnapshot]
 
 pub fn snapshot_target_time(ReliabilityModel, Double) -> Double
+
+pub fn software_component_counts(Array[SoftwareFailureRecord]) -> Array[Int]
+
+pub fn software_component_ids(Array[SoftwareFailureRecord]) -> Array[Int]
+
+pub fn software_component_rank(Array[SoftwareFailureRecord]) -> Array[Int]
+
+pub fn software_component_risk(Array[SoftwareFailureRecord]) -> Array[Double]
+
+pub fn software_component_severity(Array[SoftwareFailureRecord]) -> Array[Int]
+
+pub fn software_cumulative_intensity(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_defect_density(SoftwareReliabilityModel, Double, Double) -> Double
+
+pub fn software_defects_removed(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_expected_failures(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_failure_intensity(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_failure_rate_per_hour(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_failure_record(Double, Int, Double, Bool, Int) -> SoftwareFailureRecord
+
+pub fn software_growth_efficiency(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_mean_time_between_failures(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_model_aic(SoftwareReliabilityModel, Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_model_best(Array[SoftwareReliabilityModel], Array[SoftwareFailureRecord]) -> SoftwareReliabilityModel
+
+pub fn software_model_bic(SoftwareReliabilityModel, Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_model_checksum(SoftwareReliabilityModel) -> Double
+
+pub fn software_model_compare(Array[SoftwareReliabilityModel], Array[SoftwareFailureRecord]) -> Array[Double]
+
+pub fn software_model_fit(SoftwareGrowthLaw, Array[SoftwareFailureRecord], Double, Double) -> SoftwareReliabilityModel
+
+pub fn software_model_rmse(SoftwareReliabilityModel, Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_record_corrected_count(Array[SoftwareFailureRecord]) -> Int
+
+pub fn software_record_correction_fraction(Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_record_count(Array[SoftwareFailureRecord]) -> Int
+
+pub fn software_record_failure_rate(Array[SoftwareFailureRecord], Double) -> Double
+
+pub fn software_record_mean_time(Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_record_median_time(Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_record_severity_rate(Array[SoftwareFailureRecord], Double) -> Double
+
+pub fn software_record_total_cost(Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_record_total_severity(Array[SoftwareFailureRecord]) -> Int
+
+pub fn software_records_by_component(Array[SoftwareFailureRecord], Int) -> Array[SoftwareFailureRecord]
+
+pub fn software_release_decision(SoftwareReleaseGate, SoftwareReliabilityModel, Double, Array[SoftwareFailureRecord]) -> String
+
+pub fn software_release_gate(Double, Double, Double, Int, Int, Double) -> SoftwareReleaseGate
+
+pub fn software_release_gate_intensity_passes(SoftwareReleaseGate, SoftwareReliabilityModel, Double) -> Bool
+
+pub fn software_release_gate_records_pass(SoftwareReleaseGate, Array[SoftwareFailureRecord]) -> Bool
+
+pub fn software_release_gate_reliability_passes(SoftwareReleaseGate, SoftwareReliabilityModel, Double) -> Bool
+
+pub fn software_release_label(Double) -> String
+
+pub fn software_release_score(SoftwareReleaseGate, SoftwareReliabilityModel, Double, Array[SoftwareFailureRecord]) -> Double
+
+pub fn software_reliability(SoftwareReliabilityModel, Double, Double) -> Double
+
+pub fn software_reliability_model(SoftwareGrowthLaw, Double, Double, Double, Double, String) -> SoftwareReliabilityModel
+
+pub fn software_remaining_defects(SoftwareReliabilityModel, Double) -> Double
+
+pub fn software_session_case_pass_rate(SoftwareTestSession) -> Double
+
+pub fn software_session_checksum(SoftwareTestSession) -> Double
+
+pub fn software_session_cost(SoftwareTestSession) -> Double
+
+pub fn software_session_duration(SoftwareTestSession) -> Double
+
+pub fn software_session_failure_density(SoftwareTestSession) -> Double
+
+pub fn software_session_failure_rate(SoftwareTestSession) -> Double
+
+pub fn software_session_is_stable(SoftwareTestSession, Double) -> Bool
+
+pub fn software_session_severity(SoftwareTestSession) -> Int
+
+pub fn software_sessions_checksum(Array[SoftwareTestSession]) -> Double
+
+pub fn software_sessions_duration(Array[SoftwareTestSession]) -> Double
+
+pub fn software_sessions_failure_rate(Array[SoftwareTestSession]) -> Double
+
+pub fn software_sessions_pass_rate(Array[SoftwareTestSession]) -> Double
+
+pub fn software_sessions_total_cases(Array[SoftwareTestSession]) -> Int
+
+pub fn software_sessions_total_failures(Array[SoftwareTestSession]) -> Int
+
+pub fn software_test_session(Int, Double, Double, Int, Int, Array[SoftwareFailureRecord]) -> SoftwareTestSession
 
 pub fn solve_linear_system(Array[Array[Double]], Array[Double]) -> Array[Double]
 
@@ -932,6 +2830,66 @@ pub fn telemetry_window_variance(TelemetryWindow) -> Double
 
 pub fn telemetry_window_weight(TelemetryWindow) -> Double
 
+pub fn test_cell(Int, Double, Int, Double, Double, Double, Int) -> TestCell
+
+pub fn test_cell_acceleration(TestCell, Double, Double) -> Double
+
+pub fn test_cell_cost(TestCell) -> Double
+
+pub fn test_cell_expected_failures(TestCell) -> Double
+
+pub fn test_cell_exposure(TestCell) -> Double
+
+pub fn test_cell_failure_rate(TestCell) -> Double
+
+pub fn test_cell_failure_residual(TestCell) -> Double
+
+pub fn test_cell_passes(TestCell, Int) -> Bool
+
+pub fn test_cell_stress_factor(TestCell, Double) -> Double
+
+pub fn test_matrix(Array[TestCell], String, Double, Double) -> TestMatrix
+
+pub fn test_matrix_best_cell(TestMatrix) -> TestCell
+
+pub fn test_matrix_cell_count(TestMatrix) -> Int
+
+pub fn test_matrix_checksum(TestMatrix) -> Double
+
+pub fn test_matrix_compliance(TestMatrix, Double) -> Bool
+
+pub fn test_matrix_cost_share(TestMatrix) -> Array[Double]
+
+pub fn test_matrix_expected_failures(TestMatrix) -> Double
+
+pub fn test_matrix_exposure_by_cell(TestMatrix) -> Array[Double]
+
+pub fn test_matrix_failure_rate(TestMatrix) -> Double
+
+pub fn test_matrix_failure_rates(TestMatrix) -> Array[Double]
+
+pub fn test_matrix_failure_share(TestMatrix) -> Array[Double]
+
+pub fn test_matrix_progress(TestMatrix, Double) -> Double
+
+pub fn test_matrix_rate_interval(TestMatrix) -> MetricEstimate
+
+pub fn test_matrix_stress_values(TestMatrix) -> Array[Double]
+
+pub fn test_matrix_total_cost(TestMatrix) -> Double
+
+pub fn test_matrix_total_exposure(TestMatrix) -> Double
+
+pub fn test_matrix_total_failures(TestMatrix) -> Int
+
+pub fn test_matrix_total_units(TestMatrix) -> Int
+
+pub fn test_matrix_worst_cell(TestMatrix) -> TestCell
+
+pub fn test_planning_cost_effectiveness(Double, Double) -> Double
+
+pub fn test_planning_information_gain(Double, Double) -> Double
+
 pub fn thermal_stress_grid(Double, Double, Int) -> Array[Double]
 
 pub fn threshold_crossing(ReliabilityModel, Double, Double, Double, Int) -> Double?
@@ -994,6 +2952,10 @@ pub fn weighted_variance(Array[Double], Array[Double]) -> Double
 
 pub fn winsorize(Array[Double], Double, Double) -> Array[Double]
 
+pub fn zero_failure_sample_size(Double, Double) -> Int
+
+pub fn zero_failure_test_time(Double, Double, Double) -> Double
+
 // Errors
 
 // Types and methods
@@ -1026,6 +2988,25 @@ pub struct AlertRule {
   consecutive_windows : Int
 }
 
+pub struct AllocationComponent {
+  component_id : Int
+  name : String
+  current_reliability : Double
+  target_reliability : Double
+  cost : Double
+  weight : Double
+  failure_rate : Double
+  repair_time : Double
+}
+
+pub struct AllocationScenario {
+  name : String
+  reliability : Double
+  cost : Double
+  risk : Double
+  score : Double
+}
+
 pub struct AvailabilityPoint {
   time : Double
   availability : Double
@@ -1049,6 +3030,14 @@ pub fn BathtubHazard::phase(Self, Double) -> String
 pub fn BathtubHazard::quantile(Self, Double) -> Double
 pub fn BathtubHazard::survival(Self, Double) -> Double
 pub fn BathtubHazard::wearout_component(Self, Double) -> Double
+
+pub struct BayesianReliabilityCurvePoint {
+  horizon : Double
+  mean_reliability : Double
+  lower_reliability : Double
+  upper_reliability : Double
+  failure_probability : Double
+}
 
 pub struct BenchmarkResult {
   name : String
@@ -1116,6 +3105,73 @@ pub struct DataQualityReport {
   warnings : Array[String]
 }
 
+pub struct DegradationFeatureSet {
+  mean : Double
+  standard_deviation : Double
+  slope : Double
+  acceleration : Double
+  monotonicity : Double
+  recent_slope : Double
+  threshold_margin : Double
+  out_of_bounds_fraction : Double
+  volatility : Double
+  health_index : Double
+}
+
+pub struct DegradationFit {
+  law : DegradationLaw
+  coefficients : Array[Double]
+  residuals : Array[Double]
+  rmse : Double
+  r_squared : Double
+  converged : Bool
+  iterations : Int
+}
+
+pub struct DegradationFleetSummary {
+  track_count : Int
+  healthy_count : Int
+  warning_count : Int
+  critical_count : Int
+  average_health : Double
+  minimum_health : Double
+  maximum_risk : Double
+}
+
+pub(all) enum DegradationLaw {
+  DegradationLinear
+  DegradationExponential
+  DegradationPower
+  DegradationLogistic
+} derive(Eq, @debug.Debug)
+
+pub struct DegradationObservation {
+  time : Double
+  value : Double
+  weight : Double
+}
+
+pub struct DegradationTrack {
+  name : String
+  observations : Array[DegradationObservation]
+  lower_limit : Double
+  upper_limit : Double
+  direction : Int
+}
+
+pub struct DemonstrationTestPlan {
+  target_reliability : Double
+  confidence : Double
+  units : Int
+  duration : Double
+  allowed_failures : Int
+  expected_failures : Double
+  total_test_hours : Double
+  test_cost : Double
+  pass_probability : Double
+  name : String
+}
+
 pub struct DesignPoint {
   id : Int
   factors : Array[Double]
@@ -1154,6 +3210,29 @@ pub fn Exponential::pdf(Self, Double) -> Double
 pub fn Exponential::quantile(Self, Double) -> Double
 pub fn Exponential::reliability(Self, Double) -> Double
 
+pub struct ExtremeBlock {
+  block_id : Int
+  maximum : Double
+  minimum : Double
+  mean : Double
+  count : Int
+}
+
+pub(all) enum ExtremeValueLaw {
+  ExtremeGumbel
+  ExtremeFrechet
+  ExtremeWeibull
+} derive(Eq, @debug.Debug)
+
+pub struct ExtremeValueModel {
+  law : ExtremeValueLaw
+  location : Double
+  scale : Double
+  shape : Double
+  threshold : Double
+  name : String
+}
+
 pub struct FailureModeContribution {
   name : String
   probability : Double
@@ -1178,6 +3257,34 @@ pub struct FitResult {
   standard_errors : Array[Double]
 }
 
+pub struct FleetAsset {
+  asset_id : Int
+  model_code : String
+  cohort : Int
+  commissioned_at : Double
+  as_of : Double
+  state : FleetAssetState
+  operating_hours : Double
+  failure_count : Int
+  repair_hours : Double
+  criticality : Double
+  utilization : Double
+}
+
+pub(all) enum FleetAssetState {
+  FleetActive
+  FleetFailed
+  FleetRetired
+  FleetMaintenance
+} derive(Eq, @debug.Debug)
+
+pub struct FleetObservation {
+  assets : Array[FleetAsset]
+  start : Double
+  end : Double
+  name : String
+}
+
 pub struct FleetPlan {
   fleet_size : Int
   horizon : Double
@@ -1185,6 +3292,31 @@ pub struct FleetPlan {
   spare_units : Int
   stockout_probability : Double
   expected_downtime : Double
+}
+
+pub struct FleetReliabilityPoint {
+  horizon : Double
+  reliability : Double
+  availability : Double
+  expected_failures : Double
+  expected_downtime : Double
+}
+
+pub struct FleetSummary {
+  asset_count : Int
+  active_count : Int
+  failed_count : Int
+  maintenance_count : Int
+  retired_count : Int
+  average_age : Double
+  total_exposure : Double
+  failure_rate : Double
+  mtbf : Double
+  mttr : Double
+  availability : Double
+  weighted_availability : Double
+  expected_failures : Double
+  criticality : Double
 }
 
 pub struct ForecastPoint {
@@ -1220,6 +3352,16 @@ pub fn GammaDistribution::pdf(Self, Double) -> Double
 pub fn GammaDistribution::quantile(Self, Double) -> Double
 pub fn GammaDistribution::reliability(Self, Double) -> Double
 pub fn GammaDistribution::variance(Self) -> Double
+
+pub struct GeneralizedParetoFit {
+  threshold : Double
+  scale : Double
+  shape : Double
+  exceedance_count : Int
+  total_count : Int
+  log_likelihood : Double
+  tail_fraction : Double
+}
 
 pub struct Gompertz {
   scale : Double
@@ -1446,6 +3588,16 @@ pub fn Pareto::quantile(Self, Double) -> Double
 pub fn Pareto::survival(Self, Double) -> Double
 pub fn Pareto::variance(Self) -> Double
 
+pub struct PoissonTestPlan {
+  target_rate : Double
+  confidence : Double
+  exposure : Double
+  allowed_events : Int
+  event_probability : Double
+  cost : Double
+  name : String
+}
+
 pub(all) enum PolicyAction {
   ContinueMonitoring
   InspectSoon
@@ -1482,6 +3634,46 @@ pub struct RegressionResult {
   observations : Int
 }
 
+pub struct ReliabilityAlarmDecision {
+  asset_id : Int
+  state : ReliabilityHealthState
+  consecutive_actionable : Int
+  escalated : Bool
+  reason : String
+}
+
+pub struct ReliabilityAllocationPlan {
+  components : Array[AllocationComponent]
+  system_target : Double
+  architecture : String
+  budget : Double
+  system_reliability : Double
+  total_cost : Double
+  total_risk : Double
+  feasible : Bool
+}
+
+pub struct ReliabilityAnova {
+  grand_mean : Double
+  between_sum_squares : Double
+  within_sum_squares : Double
+  between_degrees : Int
+  within_degrees : Int
+  f_statistic : Double
+  explained_fraction : Double
+}
+
+pub struct ReliabilityBetaPosterior {
+  alpha : Double
+  beta : Double
+  prior_alpha : Double
+  prior_beta : Double
+  successes : Int
+  failures : Int
+  exposure : Double
+  label : String
+}
+
 pub struct ReliabilityBudget {
   target : Double
   observed : Double
@@ -1489,6 +3681,150 @@ pub struct ReliabilityBudget {
   burn_rate : Double
   consumed_fraction : Double
   status : String
+}
+
+pub struct ReliabilityChangeRequest {
+  change_id : String
+  subject_id : String
+  requester : String
+  description : String
+  impact : Double
+  risk_score : Double
+  requested_at : Double
+  due_at : Double
+  approved : Bool
+  implemented : Bool
+  verified : Bool
+}
+
+pub struct ReliabilityConditionAssessment {
+  asset_id : Int
+  timestamp : Double
+  index : Double
+  risk : Double
+  quality : Double
+  state : ReliabilityHealthState
+  features : Array[ReliabilityHealthFeature]
+  evidence_count : Int
+}
+
+pub struct ReliabilityDataColumn {
+  name : String
+  kind : ReliabilityDataKind
+  row_count : Int
+  missing_count : Int
+  invalid_count : Int
+  duplicate_count : Int
+  minimum : Double
+  maximum : Double
+  mean : Double
+  standard_deviation : Double
+  monotonic_violations : Int
+}
+
+pub(all) enum ReliabilityDataKind {
+  ReliabilityContinuous
+  ReliabilityCount
+  ReliabilityTimestamp
+  ReliabilityCategory
+  ReliabilityBoolean
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityDataQualityReport {
+  dataset_id : String
+  quality_score : Double
+  usable : Bool
+  row_count : Int
+  failure_count : Int
+  censored_count : Int
+  failed_rules : Array[String]
+  warnings : Array[String]
+}
+
+pub struct ReliabilityDataRow {
+  timestamp : Double
+  asset_id : Int
+  value : Double
+  event_code : Int
+  is_failure : Bool
+  is_censored : Bool
+  source_quality : Double
+}
+
+pub struct ReliabilityDataRule {
+  rule_id : String
+  description : String
+  threshold : Double
+  weight : Double
+  hard_fail : Bool
+}
+
+pub struct ReliabilityDataRuleResult {
+  rule_id : String
+  observed : Double
+  passed : Bool
+  weighted_score : Double
+  hard_fail : Bool
+}
+
+pub struct ReliabilityDataSet {
+  dataset_id : String
+  version : String
+  rows : Array[ReliabilityDataRow]
+  columns : Array[ReliabilityDataColumn]
+  start_time : Double
+  end_time : Double
+  source_count : Int
+}
+
+pub struct ReliabilityEvidence {
+  evidence_id : String
+  subject_id : String
+  evidence_type : String
+  source : String
+  collected_at : Double
+  quality : Double
+  checksum : Double
+  verified : Bool
+}
+
+pub struct ReliabilityFactor {
+  factor_id : String
+  level : Double
+  lower : Double
+  upper : Double
+}
+
+pub struct ReliabilityFactorEffect {
+  factor_id : String
+  low_mean : Double
+  high_mean : Double
+  effect : Double
+  standard_error : Double
+  observations : Int
+}
+
+pub struct ReliabilityGammaPosterior {
+  shape : Double
+  rate : Double
+  prior_shape : Double
+  prior_rate : Double
+  events : Int
+  exposure : Double
+  label : String
+}
+
+pub struct ReliabilityGovernanceSnapshot {
+  as_of : Double
+  model_count : Int
+  deployable_models : Int
+  expired_models : Int
+  validation_count : Int
+  failed_validations : Int
+  evidence_score : Double
+  open_changes : Int
+  overdue_changes : Int
+  readiness : Double
 }
 
 pub struct ReliabilityGrowthModel {
@@ -1504,6 +3840,50 @@ pub fn ReliabilityGrowthModel::mtbf(Self, Double) -> Double
 pub fn ReliabilityGrowthModel::predict_time_for_failures(Self, Double) -> Double
 pub fn ReliabilityGrowthModel::reliability_growth_confidence(Self, Double, Double) -> MetricEstimate
 
+pub struct ReliabilityHealthFeature {
+  name : String
+  value : Double
+  baseline : Double
+  scale : Double
+  weight : Double
+  direction : Double
+}
+
+pub struct ReliabilityHealthPolicy {
+  watch_threshold : Double
+  alert_threshold : Double
+  critical_threshold : Double
+  minimum_quality : Double
+  persistence : Int
+}
+
+pub(all) enum ReliabilityHealthState {
+  ReliabilityHealthy
+  ReliabilityWatch
+  ReliabilityAlert
+  ReliabilityCritical
+  ReliabilityUnknown
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityIncomingInspection {
+  inspection_id : Int
+  lot_id : String
+  sample_size : Int
+  defect_count : Int
+  critical_defects : Int
+  inspected_value : Double
+  accepted : Bool
+  inspection_time : Double
+}
+
+pub struct ReliabilityIncomingPlan {
+  sample_size : Int
+  acceptance_number : Int
+  rejection_number : Int
+  inspection_fraction : Double
+  rationale : String
+}
+
 pub(all) enum ReliabilityModel {
   ExponentialModel(Exponential)
   WeibullModel(Weibull)
@@ -1516,12 +3896,160 @@ pub fn ReliabilityModel::log_likelihood(Self, Array[LifeObservation]) -> Double
 pub fn ReliabilityModel::pdf(Self, Double) -> Double
 pub fn ReliabilityModel::survival(Self, Double) -> Double
 
+pub struct ReliabilityModelApproval {
+  model_id : String
+  from_stage : ReliabilityModelStage
+  to_stage : ReliabilityModelStage
+  approver : String
+  approved_at : Double
+  validation_run_id : String
+  rationale : String
+  expires_at : Double
+}
+
+pub struct ReliabilityModelMetric {
+  metric_id : String
+  observed : Double
+  target : Double
+  tolerance : Double
+  higher_is_better : Bool
+  weight : Double
+}
+
+pub struct ReliabilityModelRecord {
+  model_id : String
+  name : String
+  version : String
+  owner : String
+  family : String
+  stage : ReliabilityModelStage
+  training_rows : Int
+  training_failures : Int
+  created_at : Double
+  expires_at : Double
+  data_checksum : Double
+  code_checksum : Double
+}
+
+pub(all) enum ReliabilityModelStage {
+  ReliabilityModelDraft
+  ReliabilityModelValidated
+  ReliabilityModelApproved
+  ReliabilityModelRetired
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityPowerPlan {
+  effect : Double
+  standard_deviation : Double
+  alpha : Double
+  target_power : Double
+  required_per_group : Int
+  achieved_power : Double
+}
+
+pub struct ReliabilityReading {
+  sensor_id : String
+  asset_id : Int
+  timestamp : Double
+  raw_value : Double
+  value : Double
+  quality : Double
+  sequence : Int
+}
+
 pub struct ReliabilityRequirement {
   name : String
   mission_time : Double
   minimum_survival : Double
   confidence_level : Double
   penalty : Double
+}
+
+pub struct ReliabilityResponseSurface {
+  intercept : Double
+  coefficients : Array[Double]
+  residual_variance : Double
+  condition_index : Double
+}
+
+pub struct ReliabilityRiskAction {
+  action_id : String
+  risk_id : String
+  owner : String
+  description : String
+  cost : Double
+  effort_hours : Double
+  expected_reduction : Double
+  due_at : Double
+  completed : Bool
+  verified : Bool
+}
+
+pub struct ReliabilityRiskControl {
+  control_id : String
+  risk_id : String
+  title : String
+  control_type : String
+  owner : String
+  design_effectiveness : Double
+  operating_effectiveness : Double
+  test_frequency : Double
+  last_tested : Double
+  evidence_count : Int
+  automated : Bool
+}
+
+pub struct ReliabilityRiskRecord {
+  risk_id : String
+  title : String
+  owner : String
+  category : String
+  probability : Double
+  consequence : Double
+  detectability : Double
+  exposure : Double
+  status : ReliabilityRiskStatus
+  treatment : ReliabilityRiskTreatment
+  due_at : Double
+  review_interval : Double
+  last_reviewed : Double
+}
+
+pub struct ReliabilityRiskReview {
+  as_of : Double
+  total_risks : Int
+  open_risks : Int
+  overdue_risks : Int
+  due_reviews : Int
+  total_exposure : Double
+  weighted_score : Double
+  residual_score : Double
+  control_coverage : Double
+  action_completion : Double
+}
+
+pub(all) enum ReliabilityRiskStatus {
+  ReliabilityRiskOpen
+  ReliabilityRiskMitigating
+  ReliabilityRiskAccepted
+  ReliabilityRiskClosed
+} derive(Eq, @debug.Debug)
+
+pub(all) enum ReliabilityRiskTreatment {
+  ReliabilityRiskAvoid
+  ReliabilityRiskReduce
+  ReliabilityRiskTransfer
+  ReliabilityRiskAccept
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityRulEstimate {
+  asset_id : Int
+  current_age : Double
+  estimated_rul : Double
+  lower_rul : Double
+  upper_rul : Double
+  confidence : Double
+  slope : Double
 }
 
 pub struct ReliabilityScorecard {
@@ -1534,6 +4062,126 @@ pub struct ReliabilityScorecard {
   recommendations : Array[String]
 }
 
+pub struct ReliabilitySensor {
+  sensor_id : String
+  asset_id : Int
+  kind : ReliabilitySignalKind
+  unit : String
+  lower_limit : Double
+  upper_limit : Double
+  calibration_scale : Double
+  calibration_offset : Double
+  sample_period : Double
+  enabled : Bool
+}
+
+pub struct ReliabilitySequentialBoundary {
+  look : Int
+  information_fraction : Double
+  upper : Double
+  lower : Double
+  should_continue : Bool
+}
+
+pub struct ReliabilityServiceCase {
+  case_id : String
+  asset_id : Int
+  opened_at : Double
+  promised_at : Double
+  state : ReliabilityServiceCaseState
+  urgency : ReliabilityServiceUrgency
+  symptom_code : String
+  estimated_hours : Double
+  customer_impact : Double
+  repeat_failure : Bool
+  warranty_covered : Bool
+}
+
+pub(all) enum ReliabilityServiceCaseState {
+  ReliabilityCaseNew
+  ReliabilityCaseTriaged
+  ReliabilityCaseDispatched
+  ReliabilityCaseOnSite
+  ReliabilityCaseWaitingPart
+  ReliabilityCaseResolved
+  ReliabilityCaseClosed
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityServiceOutcome {
+  case_id : String
+  root_cause : String
+  corrective_action : String
+  verified : Bool
+  customer_satisfied : Bool
+  repeat_within_window : Bool
+  downtime : Double
+  total_cost : Double
+  learning_value : Double
+}
+
+pub struct ReliabilityServicePartUse {
+  case_id : String
+  part_id : Int
+  quantity : Int
+  unit_cost : Double
+  returned : Int
+  stockout : Bool
+}
+
+pub struct ReliabilityServiceSla {
+  sla_id : String
+  response_target : Double
+  restoration_target : Double
+  target_fraction : Double
+  penalty_per_hour : Double
+  critical_multiplier : Double
+}
+
+pub struct ReliabilityServiceSummary {
+  case_count : Int
+  open_count : Int
+  late_count : Int
+  visit_count : Int
+  successful_visits : Int
+  repeat_count : Int
+  average_response : Double
+  average_cycle : Double
+  total_cost : Double
+  total_downtime : Double
+  sla_fraction : Double
+  first_time_fix_rate : Double
+}
+
+pub(all) enum ReliabilityServiceUrgency {
+  ReliabilityServiceCritical
+  ReliabilityServiceHigh
+  ReliabilityServiceNormal
+  ReliabilityServiceLow
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityServiceVisit {
+  visit_id : String
+  case_id : String
+  technician_id : String
+  scheduled_at : Double
+  arrival_at : Double
+  departure_at : Double
+  travel_hours : Double
+  work_hours : Double
+  distance : Double
+  successful : Bool
+  notes_quality : Double
+}
+
+pub(all) enum ReliabilitySignalKind {
+  ReliabilityVibration
+  ReliabilityTemperature
+  ReliabilityPressure
+  ReliabilityCurrent
+  ReliabilityAcoustic
+  ReliabilityCounter
+} derive(Eq, @debug.Debug)
+
 pub struct ReliabilitySnapshot {
   time : Double
   reliability : Double
@@ -1542,12 +4190,218 @@ pub struct ReliabilitySnapshot {
   mission_success : Double
 }
 
+pub struct ReliabilitySupplier {
+  supplier_id : String
+  name : String
+  tier : SupplierRiskTier
+  quality_ppm : Double
+  on_time_rate : Double
+  audit_score : Double
+  lead_time : Double
+  lead_time_variability : Double
+  annual_spend : Double
+  single_source : Bool
+}
+
+pub struct ReliabilitySupplierLot {
+  lot_id : String
+  supplier_id : String
+  part_id : Int
+  quantity : Int
+  unit_cost : Double
+  received_at : Double
+  promised_at : Double
+  criticality : Double
+  traceability_complete : Bool
+}
+
+pub struct ReliabilitySupplierScorecard {
+  supplier_id : String
+  lots : Int
+  inspected_units : Int
+  defect_units : Int
+  rejected_lots : Int
+  total_value : Double
+  on_time_deliveries : Int
+  late_deliveries : Int
+  audit_score : Double
+}
+
 pub struct ReliabilitySystem {
   name : String
   logic : SystemLogic
   component_reliabilities : Array[Double]
   reliability : Double
   importance : Array[Double]
+}
+
+pub struct ReliabilityTechnician {
+  technician_id : String
+  name : String
+  skill : String
+  home_latitude : Double
+  home_longitude : Double
+  shift_start : Double
+  shift_end : Double
+  available_hours : Double
+  hourly_cost : Double
+  enabled : Bool
+}
+
+pub struct ReliabilityTestEvidence {
+  planned_exposure : Double
+  observed_exposure : Double
+  planned_failures : Int
+  observed_failures : Int
+  target_rate : Double
+  confidence : Double
+  lower_rate : Double
+  upper_rate : Double
+  evidence_fraction : Double
+  conclusion : String
+}
+
+pub struct ReliabilityTreatmentCell {
+  cell_id : Int
+  levels : Array[ReliabilityFactor]
+  trials : Array[ReliabilityTrial]
+}
+
+pub struct ReliabilityTrial {
+  trial_id : Int
+  factors : Array[ReliabilityFactor]
+  response : Double
+  exposure : Double
+  failures : Int
+  censored : Bool
+  replicate : Int
+}
+
+pub struct ReliabilityValidationRun {
+  run_id : String
+  model_id : String
+  started_at : Double
+  finished_at : Double
+  dataset_id : String
+  metrics : Array[ReliabilityModelMetric]
+  status : ReliabilityValidationStatus
+  reviewer : String
+  reproducible : Bool
+}
+
+pub(all) enum ReliabilityValidationStatus {
+  ReliabilityValidationPassed
+  ReliabilityValidationWarning
+  ReliabilityValidationFailed
+} derive(Eq, @debug.Debug)
+
+pub struct ReliabilityWarranty {
+  warranty_id : String
+  product_code : String
+  start_age : Double
+  end_age : Double
+  deductible : Double
+  labor_rate : Double
+  parts_markup : Double
+  transfer_allowed : Bool
+}
+
+pub struct ReliabilityWarrantyAgeBand {
+  lower_age : Double
+  upper_age : Double
+  claim_count : Int
+  accepted_count : Int
+  cost : Double
+  exposure : Double
+}
+
+pub struct ReliabilityWarrantyClaim {
+  claim_id : Int
+  asset_id : Int
+  warranty_id : String
+  age : Double
+  opened_at : Double
+  closed_at : Double
+  part_cost : Double
+  labor_hours : Double
+  repeat_claim : Bool
+  accepted : Bool
+  severity : Double
+}
+
+pub struct ReliabilityWarrantyCohort {
+  cohort_id : Int
+  product_code : String
+  population : Int
+  exposure : Double
+  claims : Array[ReliabilityWarrantyClaim]
+  average_price : Double
+  reserve_rate : Double
+}
+
+pub struct ReliabilityWarrantyForecast {
+  horizon : Double
+  expected_claims : Double
+  expected_cost : Double
+  lower_cost : Double
+  upper_cost : Double
+  confidence : Double
+}
+
+pub struct ReliabilityWarrantyHazardCurve {
+  ages : Array[Double]
+  hazards : Array[Double]
+  cumulative_claims : Array[Double]
+}
+
+pub struct RepairEvent {
+  asset_id : Int
+  failure_time : Double
+  repair_start : Double
+  repair_end : Double
+  severity : Int
+}
+
+pub struct RepairHistorySummary {
+  event_count : Int
+  total_wait : Double
+  total_repair : Double
+  total_outage : Double
+  mean_wait : Double
+  mean_repair : Double
+  mean_outage : Double
+  severity_weight : Double
+  mtbf : Double
+  mttr : Double
+}
+
+pub struct RepairQueuePlan {
+  repairers : Int
+  arrival_rate : Double
+  service_rate : Double
+  utilization : Double
+  expected_queue : Double
+  expected_wait : Double
+  capacity : Double
+  stable : Bool
+}
+
+pub struct RepairableAsset {
+  asset_id : Int
+  failure_rate : Double
+  repair_rate : Double
+  preventive_rate : Double
+  spare_count : Int
+  repair_cost : Double
+  downtime_cost : Double
+}
+
+pub struct RepairableSystem {
+  assets : Array[RepairableAsset]
+  architecture : String
+  repair_capacity : Int
+  spare_pool : Int
+  name : String
 }
 
 pub struct RequirementResult {
@@ -1560,6 +4414,93 @@ pub struct RequirementResult {
   explanation : String
 }
 
+pub struct ResourceCrew {
+  crew_id : Int
+  name : String
+  skill : String
+  shift_start : Double
+  shift_end : Double
+  capacity_hours : Double
+  assigned_hours : Double
+  hourly_cost : Double
+  overtime_limit : Double
+}
+
+pub struct ResourceDispatch {
+  order_id : Int
+  crew_id : Int
+  part_ids : Array[Int]
+  accepted : Bool
+  reason : String
+  completion_time : Double
+  direct_cost : Double
+  shortage_cost : Double
+}
+
+pub(all) enum ResourceMaintenancePriority {
+  ResourceEmergency
+  ResourceUrgent
+  ResourceRoutine
+  ResourceDeferred
+} derive(Eq, @debug.Debug)
+
+pub struct ResourceSnapshot {
+  now : Double
+  open_orders : Int
+  late_orders : Int
+  crew_hours : Double
+  available_hours : Double
+  spare_value : Double
+  shortage_units : Int
+  backlog_hours : Double
+  service_level : Double
+}
+
+pub struct ResourceSpare {
+  part_id : Int
+  on_hand : Int
+  on_order : Int
+  reserved : Int
+  reorder_point : Int
+  reorder_quantity : Int
+  unit_cost : Double
+  lead_time : Double
+  criticality : Double
+}
+
+pub struct ResourceWindow {
+  window_id : Int
+  start : Double
+  end : Double
+  crew_id : Int
+  order_ids : Array[Int]
+  planned_hours : Double
+}
+
+pub struct ResourceWorkOrder {
+  work_id : Int
+  asset_id : Int
+  opened_at : Double
+  due_at : Double
+  estimated_hours : Double
+  priority : ResourceMaintenancePriority
+  state : ResourceWorkOrderState
+  required_skill : String
+  required_parts : Array[Int]
+  consequence : Double
+  customer_impact : Double
+}
+
+pub(all) enum ResourceWorkOrderState {
+  ResourcePlanned
+  ResourceQueued
+  ResourceAssigned
+  ResourceInProgress
+  ResourceCompleted
+  ResourceBlocked
+  ResourceCancelled
+} derive(Eq, @debug.Debug)
+
 pub struct RiskItem {
   name : String
   severity : Int
@@ -1567,6 +4508,83 @@ pub struct RiskItem {
   detection : Int
   risk_priority_number : Int
   recommended_action : String
+}
+
+pub struct SafetyBarrier {
+  barrier_id : Int
+  hazard_id : Int
+  name : String
+  probability_of_success : Double
+  independence : Double
+  test_interval : Double
+  last_test : Double
+  failed : Bool
+}
+
+pub struct SafetyBarrierChain {
+  hazard_id : Int
+  barriers : Array[SafetyBarrier]
+  architecture : String
+  residual_probability : Double
+  independence_penalty : Double
+}
+
+pub struct SafetyCaseSummary {
+  hazard_count : Int
+  actionable_hazards : Int
+  barrier_count : Int
+  failed_barriers : Int
+  requirement_count : Int
+  verified_requirements : Int
+  verification_count : Int
+  evidence_score : Double
+  residual_risk : Double
+  status : String
+}
+
+pub struct SafetyHazard {
+  hazard_id : Int
+  title : String
+  severity : SafetySeverity
+  likelihood : SafetyLikelihood
+  exposure : Double
+  detectability : Double
+  mitigated : Bool
+  owner : Int
+}
+
+pub(all) enum SafetyLikelihood {
+  SafetyFrequent
+  SafetyProbable
+  SafetyOccasional
+  SafetyRemote
+  SafetyImprobable
+} derive(Eq, @debug.Debug)
+
+pub struct SafetyRequirement {
+  requirement_id : Int
+  title : String
+  target_probability : Double
+  verified : Bool
+  evidence_strength : Double
+  hazard_ids : Array[Int]
+}
+
+pub(all) enum SafetySeverity {
+  SafetyNegligible
+  SafetyMinor
+  SafetySerious
+  SafetyCritical
+  SafetyCatastrophic
+} derive(Eq, @debug.Debug)
+
+pub struct SafetyVerification {
+  requirement_id : Int
+  test_id : Int
+  measured_probability : Double
+  confidence : Double
+  passed : Bool
+  evidence : String
 }
 
 pub struct SampleSummary {
@@ -1591,6 +4609,15 @@ pub struct SensitivityPoint {
   elasticity : Double
 }
 
+pub struct SequentialTestBoundary {
+  accept_failures : Int
+  reject_failures : Int
+  minimum_exposure : Double
+  maximum_exposure : Double
+  target_rate : Double
+  adverse_rate : Double
+}
+
 pub struct SlaPolicy {
   window : Double
   promised_availability : Double
@@ -1606,6 +4633,55 @@ pub struct SlaResult {
   error_budget_remaining : Double
   confidence : MetricEstimate
 }
+
+pub struct SoftwareFailureRecord {
+  time : Double
+  severity : Int
+  detection_cost : Double
+  corrected : Bool
+  component : Int
+}
+
+pub(all) enum SoftwareGrowthLaw {
+  SoftwareExponential
+  SoftwareMusaOkumoto
+  SoftwareWeibull
+  SoftwareGompertz
+} derive(Eq, @debug.Debug)
+
+pub struct SoftwareReleaseGate {
+  target_intensity : Double
+  target_reliability : Double
+  mission_exposure : Double
+  maximum_severity : Int
+  maximum_open_defects : Int
+  minimum_correction_fraction : Double
+}
+
+pub struct SoftwareReliabilityModel {
+  law : SoftwareGrowthLaw
+  initial_defects : Double
+  scale : Double
+  shape : Double
+  detection_efficiency : Double
+  name : String
+}
+
+pub struct SoftwareTestSession {
+  session_id : Int
+  start : Double
+  end : Double
+  executed_cases : Int
+  failed_cases : Int
+  failures : Array[SoftwareFailureRecord]
+}
+
+pub(all) enum SupplierRiskTier {
+  SupplierApproved
+  SupplierMonitored
+  SupplierRestricted
+  SupplierDisqualified
+} derive(Eq, @debug.Debug)
 
 pub struct SurvivalCurve {
   points : Array[SurvivalPoint]
@@ -1647,6 +4723,23 @@ pub struct TelemetryWindow {
   start : Double
   end : Double
   interval : Double
+}
+
+pub struct TestCell {
+  cell_id : Int
+  stress : Double
+  units : Int
+  duration : Double
+  cost_per_unit_hour : Double
+  expected_rate : Double
+  failures : Int
+}
+
+pub struct TestMatrix {
+  cells : Array[TestCell]
+  name : String
+  confidence : Double
+  target_rate : Double
 }
 
 pub struct TimeSeriesPoint {

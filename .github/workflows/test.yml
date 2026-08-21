@@ -58,6 +58,9 @@ jobs:
       - name: Check all targets
         run: moon check --target all --deny-warn
 
+      - name: Build all targets
+        run: moon build --target all
+
       - name: Test all targets
         run: moon test --target all --deny-warn
 
@@ -68,3 +71,6 @@ jobs:
 
       - name: Run native benchmark smoke test
         run: moon run --target native cmd/benchmark
+
+      - name: Run minimal usage example
+        run: moon run --target native cmd/example

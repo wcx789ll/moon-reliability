@@ -1,0 +1,5 @@
+import {
+  "wcx789ll/moon-reliability" @reliability,
+}
+
+pkgtype(kind: "executable")

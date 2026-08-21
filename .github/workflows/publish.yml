@@ -32,6 +32,7 @@ jobs:
           moon update
           moon fmt --check
           moon check --target all --deny-warn
+          moon build --target all
           moon test --target all --deny-warn
           moon info
           git diff --exit-code

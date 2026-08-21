@@ -8,7 +8,7 @@ This is a deterministic smoke benchmark for the public reliability-engineering A
 - 256 probability-distribution grid points.
 - Summary statistics, survival estimates, and a system reliability calculation.
 - Native executable: `cmd/benchmark`.
-- Toolchain recorded on 2026-08-18: MoonBit `0.1.20260807`, Moonc `0.10.7+bc794d341`.
+- Toolchain recorded on 2026-08-22: MoonBit `0.1.20260814`, Moonc `0.10.8+8606a5800`.
 
 Run it with:
 
@@ -34,9 +34,9 @@ The checksum lines are the acceptance signal: the same toolchain and input gener
 Five consecutive PowerShell `Measure-Command` samples around `moon run --target native cmd/benchmark` on the completed checkout were:
 
 ```text
-1444.34 ms, 319.47 ms, 314.43 ms, 313.26 ms, 314.20 ms
+1550.67 ms, 275.58 ms, 310.87 ms, 284.70 ms, 293.34 ms
 ```
 
-The first run was a cold rebuild (`1444.34 ms`). The four warm runs averaged `315.34 ms`, with a minimum of `313.26 ms` and a maximum of `319.47 ms`.
+The first run was a cold rebuild (`1550.67 ms`). The four warm runs averaged `291.12 ms`, with a minimum of `275.58 ms` and a maximum of `310.87 ms`.
 
 These timings include the command startup/build behavior of the local MoonBit installation and therefore should be compared only with repeated runs on the same class of environment.

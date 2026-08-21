@@ -48,6 +48,12 @@ let curve = @reliability.kaplan_meier(records)
 let fit = @reliability.weibull_fit_censored(records)
 ```
 
+运行仓库内置的最小端到端示例：
+
+```text
+moon run --target native cmd/example
+```
+
 ## CLI
 
 仓库包含一个用于结果校验和性能回归的 native CLI：
@@ -76,6 +82,7 @@ moon run --target native cmd/benchmark
 | `extreme_value_models.mbt`、`supply_chain_quality.mbt`、`warranty_analytics.mbt` | 极值、供应链和质保精算 |
 | `safety_case.mbt`、`risk_register.mbt`、`reliability_governance.mbt` | 安全论证、风险治理和模型发布 |
 | `observability.mbt`、`quality_control.mbt`、`reporting.mbt` | 运行时观测、质量控制和结果汇总 |
+| `cmd/example` | 最小端到端使用示例 |
 | `cmd/benchmark` | native 基准 CLI |
 | `*_test.mbt` | 单元、边界和集成测试 |
 | `pkg.generated.mbti` | 由 `moon info` 生成的公共接口文件，请勿手工编辑 |
@@ -97,6 +104,7 @@ moon run --target native cmd/benchmark
 ```text
 moon fmt --check
 moon check --target all --deny-warn
+moon build --target all
 moon test --target all --deny-warn
 moon info
 git diff --exit-code
@@ -110,9 +118,9 @@ GitHub Actions 在 Linux、macOS 和 Windows 上执行：
 
 - 安装官方 stable MoonBit 工具链并输出版本信息；
 - 安装 Node.js，覆盖 JavaScript 目标；
-- 执行格式检查、全目标编译和全目标测试；
+- 执行格式检查、全目标检查、全目标构建和全目标测试；
 - 验证 `moon info` 生成的接口文件没有未提交差异；
-- 运行 native benchmark smoke test。
+- 运行 native benchmark smoke test 和最小端到端示例。
 
 工作流位于 `.github/workflows/test.yml`。Mooncakes 发布工作流位于 `.github/workflows/publish.yml`，通过手动触发执行。
 
